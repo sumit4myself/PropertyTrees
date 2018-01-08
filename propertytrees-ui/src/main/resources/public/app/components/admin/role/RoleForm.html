@@ -1,0 +1,151 @@
+<div id="page_content">
+	<div id="page_content_inner">
+		<form id="role_form">
+			<div class="md-card">
+				<div class="md-card-content">
+					<h3 class="heading_a">Role Details</h3>
+					<div class="uk-grid" data-uk-grid-margin>
+						<div class="uk-width-medium-1-2">
+							<div class="parsley-row">
+								<label>Name *</label> <input type="text" class="md-input"
+									md-input ng-model="role.name" data-parsley-required="true"
+									ng-disabled="mode == 'view'" maxlength="100" char-counter />
+							</div>
+						</div>
+						<div class="uk-width-medium-1-2">
+							<div class="parsley-row">
+								<input type="text" selectize config="levels.config"
+									position="bottom" options="levels.options" class="md-input"
+									ng-model="role.level" data-parsley-required="true"
+									ng-disabled="mode == 'view'" />
+							</div>
+						</div>
+					</div>
+
+					<div class="uk-grid">
+						<div class="uk-width-1-1">
+							<div class="uk-form-row">
+								<div class="parsley-row">
+									<label>Description</label> <input type="text" class="md-input"
+										md-input ng-model="role.description"
+										ng-disabled="mode == 'view'" maxlength="1024" char-counter />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="md-card">
+				<div class="md-card-content">
+					<h3 class="heading_a uk-margin-bottom">Permissions</h3>
+					<div class="parsley-row">
+						<div class="md-card uk-margin-medium-bottom"
+							ng-init="permissionIndex = 0">
+							<div class="md-card-content">
+								<div class="uk-grid" data-uk-grid-margin>
+									<div class="uk-width-1-1">
+										<ul class="uk-tab" data-uk-tab="{connect:'#tabs_1'}">
+											<li ng-repeat="menu in menus"
+												ng-class="{'uk-active' : $first}"><a href="#"> <i
+													class="material-icons" ng-bind-html="menu.icon"></i>
+													{{menu.title}}
+											</a></li>
+										</ul>
+										<ul id="tabs_1" class="uk-switcher uk-margin">
+											<li ng-repeat="menu in menus">
+												<div class="md-card uk-margin-medium-bottom">
+													<div class="uk-overflow-container">
+														<table id="permissionTable"
+															class="uk-table uk-table-condensed">
+															<thead>
+																<tr class="uk-table-middle">
+																	<th ng-if="menu.submenu.length > 0 ">Module</th>
+																	<th>Welcome Page</th>
+																	<th>Permission</th>
+																	<th>Grant</th>
+																</tr>
+															</thead>
+															<tbody ng-if="menu.submenu.length > 0"
+																ng-init="totalIndex = 0">
+																<tr ng-repeat-start="subMenu in  menu.submenu">
+																	<td rowspan="{{subMenu.permissions.length + 2}}">
+																		{{subMenu.title}}</td>
+																	<td class="" width="15%"
+																		rowspan="{{subMenu.permissions.length + 2}}"><pw-switch
+																			ng-model="role.defaultPage" name="defaultPage"
+																			id="defaultPage" ng-true-value="{{subMenu.id}}"
+																			ng-false-value="null" data-checked="Yes"
+																			data-unchecked="No" data-parsley-required="true"
+																			flat="true" r="0" g="150" b="136"
+																			ng-disabled="mode == 'view'"></td>
+																</tr>
+
+
+																<tr class="uk-table-middle">
+																	<td width="15%" class="uk-text-success">Select All</td>
+																	<td width="15%"><pw-switch
+																			ng-model="selectAll[subMenu.id]"
+																			ng-true-value="{{subMenu.id}}" ng-false-value="null"
+																			data-checked="Yes" data-unchecked="No"
+																			name="select_all" ng-disabled="mode == 'view'"
+																			flat="true" r="0" g="150" b="136"
+																			ng-change="onSelectAll(subMenu.id)"> </pw-switch></td>
+																</tr>
+
+																<tr ng-repeat-end
+																	ng-repeat="permission in  subMenu.permissions"
+																	class="uk-table-middle">
+																	<td width="15%">{{permission.privilegeId.privilege}}</td>
+																	<td width="15%"><pw-switch
+																			ng-model="tempPermissions[permission.id]"
+																			ng-true-value="{{permission.id}}"
+																			ng-false-value="null" data-checked="Yes"
+																			data-unchecked="No" data-parsley-mincheck="2"
+																			flat="true" r="0" g="150" b="136" name="permissions"
+																			ng-disabled="mode == 'view'"> </pw-switch></td>
+																</tr>
+															</tbody>
+															<tbody ng-if="menu.submenu.length <= 0">
+																<tr ng-repeat="permission in  menu.permissions">
+																	<td width="15%">{{permission.privilegeId.privilege}}</td>
+																	<td width="15%"><pw-switch
+																			ng-model="tempPermissions[permission.id]"
+																			ng-true-value="{{permission.id}}"
+																			ng-false-value="null" data-checked="Yes"
+																			data-unchecked="No" data-parsley-mincheck="2"
+																			flat="true" r="0" g="150" b="136" name="permissions"
+																			ng-disabled="mode == 'view'"> </pw-switch></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="uk-grid uk-grid-width-1-1">
+						<div class="uk-clearfix">
+							<div class="uk-float-right">
+								<a class="md-btn md-btn-primary md-btn-wave-light"
+									href="javascript:void(0)" ng-click="onCancel()">Cancel</a> <a
+									class="md-btn md-btn-warning md-btn-wave-light"
+									href="javascript:void(0)" ng-click="onReset()"
+									promise-btn="resetPromise" ng-show="mode != 'view'">Reset</a> <a
+									class="md-btn md-btn-success md-btn-wave-light"
+									href="javascript:void(0)" ng-click="onSave()"
+									promise-btn="savePromise" ng-show="mode == 'create'">Save</a> <a
+									class="md-btn md-btn-success md-btn-wave-light"
+									href="javascript:void(0)" ng-click="onUpdate()"
+									promise-btn="updatePromise" ng-show="mode == 'edit'">Update</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

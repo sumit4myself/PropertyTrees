@@ -1,0 +1,38 @@
+[
+	{
+		"code": "ES-3000",
+		"message": "Json processing failed",
+		"httpStatus":  0 ,
+		"placeholders": []
+	},
+	{
+		"code": "ES-3001",
+		"message": "Error occured while preparing event from event store",
+		"httpStatus":  0 ,
+		"placeholders": []
+	},
+	{
+		"code": "ES-3002",
+		"message": "Error occured while preparing headers from event store",
+		"httpStatus":  0 ,
+		"placeholders": []
+	},
+	{
+		"code": "ES-3003",
+		"message": "Error occured while publishing event",
+		"httpStatus":  0 ,
+		"placeholders": []
+	},
+	{
+		"code": "ES-3004",
+		"message": "Error occured while consuming event",
+		"httpStatus":  0 ,
+		"placeholders": []
+	},
+	{
+		"code": "ES-3005",
+		"message": "Error occured while retring event",
+		"httpStatus":  0 ,
+		"placeholders": []
+	}
+]

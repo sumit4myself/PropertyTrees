@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2016, WebientSoft and/or its affiliates. All rights reserved. 
+ * WebientSoft PROPRIETARY/CONFIDENTIAL.Use is subject to license terms.
+ */
+
+dependencies{
+     compile 'org.postgresql:postgresql:9.4.1208.jre7'
+     compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
+}
+
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+
+// set jvm args -PjvmArgs="-Desykart.build.profile=dev"
+task runAllServices{
+   logger.info('Starting all services of esykart in tomcat embadded container.')
+  // bootRun.execute()
+   logger.info('All services started sucessfully.')
+}

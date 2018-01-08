@@ -1,0 +1,88 @@
+[
+	{
+		"code": "SE-0001",
+		"message": "System Error",
+		"httpStatus": 500,
+		"placeholders": []
+	},
+	{
+		"code": "SE-0002",
+		"message": "Invalid view name [[viewName]]",
+		"httpStatus": 404,
+		"placeholders": [
+			"viewName"
+		]
+	},
+	{
+		"code": "SE-0003",
+		"message": "Content is empty",
+		"httpStatus": 500,
+		"placeholders": []
+	},
+	{
+		"code": "SE-0004",
+		"message": "Data is empty",
+		"httpStatus": 500,
+		"placeholders": []
+	},
+	{
+		"code": "SE-0005",
+		"message": "Requested resource is not available",
+		"httpStatus": 404,
+		"placeholders": []
+	},
+	{
+		"code": "SE-0006",
+		"message": "Configuration not found [Application [[application]] , Type [[type]] , Key [[key]] ] ",
+		"httpStatus": 404,
+		"placeholders": [
+			"application",
+			"type",
+			"key"
+		]
+	},
+	{
+		"code": "VE-0101",
+		"message": "[[field]] cannot be left blank",
+		"httpStatus": 400,
+		"placeholders": [
+			"field"
+		]
+	},
+	{
+		"code": "VE-0102",
+		"message": "Maximum length allowed for [[field]] is [[length]]",
+		"httpStatus": 400,
+		"placeholders": [
+			"field",
+			"length"
+		]
+	},
+	{
+		"code": "VE-0103",
+		"message": "Data already exist for field(s) [[fields]] and value(s) [[values]] respectively",
+		"httpStatus": 400,
+		"placeholders": [
+			"fields",
+			"values"
+		]
+	},
+	{
+		"code": "VE-0104",
+		"message": "Please login as schoolAdmin role or sub role to use this form",
+		"httpStatus": 400,
+		"placeholders": []
+	},
+	{
+		"code": "VE-0105",
+		"message": "Please login as branchAdmin role or sub role to use this form",
+		"httpStatus": 400,
+		"placeholders": []
+	},
+	{
+		"code": "VE-0106",
+		"message": "Please activate the session year first to use this form",
+		"httpStatus": 400,
+		"placeholders": []
+	}
+]

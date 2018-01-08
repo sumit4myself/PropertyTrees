@@ -1,0 +1,45 @@
+
+postgres --- postgres
+
+CREATE USER esycation WITH PASSWORD 'esycation';
+
+CREATE DATABASE esycation_admin WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_attendance WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_cms WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_fee WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_hostel WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_inventory WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_notification WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_payback WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_report WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_result WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_school WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_staff WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_student WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_transport WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_config WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_eventsource WITH OWNER esycation ENCODING 'UTF8';
+CREATE DATABASE esycation_approval WITH OWNER esycation ENCODING 'UTF8';
+
+GRANT ALL PRIVILEGES ON DATABASE esycation_admin to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_attendance to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_cms to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_fee to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_hostel to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_inventory to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_notification to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_payback to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_report to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_result to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_school to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_staff to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_student to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_transport to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_config to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_eventsource to esycation;
+GRANT ALL PRIVILEGES ON DATABASE esycation_approval to esycation;
+
+
+
+
+

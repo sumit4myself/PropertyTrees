@@ -1,0 +1,33 @@
+<div id="page_content">
+	<div id="page_content_inner">
+		<div class="md-card">
+			<div class="md-card-content">
+				<h3 class="heading_a">
+					Manage User
+					<div class="uk-float-right">
+						<a class="md-btn md-btn-warning md-btn-wave-light"
+							href="javascript:void(0)" ng-click="sendPassword()"
+							promise-btn="resetPromise"> <i class="uk-icon-send"> </i>
+							Send Password
+						</a>
+						<user-permission data-permission-for="restricted.admin.manageUser"
+							data-permission-type="ADD" />
+
+					</div>
+				</h3>
+				<div class="uk-margin-top"
+					ng-controller="ManageUserTableController as TableController">
+					<table datatable id="ManageUserTable"
+						dt-options="TableController.dtOptions"
+						dt-columns="TableController.dtColumns"
+						dt-instance="TableController.dtInstance" class="uk-table"
+						cellspacing="0" width="100%">
+
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

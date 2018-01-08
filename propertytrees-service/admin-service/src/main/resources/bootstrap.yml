@@ -1,0 +1,156 @@
+spring:
+  application:
+    name: ADMINSERVICE
+
+  profiles:
+    active: dev,h2
+
+server:
+  port: ${port:9001} 
+  display-name: Admin Service
+
+management:
+  security:
+    enabled: false
+
+
+CONFIGSERVER: 
+  ribbon:
+    listOfServers: http://127.0.0.1:8888/ 
+        
+SCHOOLSERVICE:
+  ribbon:
+    listOfServers: http://127.0.0.1:9011/ 
+    
+STAFFSERVICE:
+  ribbon:
+    listOfServers: http://127.0.0.1:9012/ 
+    
+STUDENTSERVICE:
+  ribbon:
+    listOfServers: http://127.0.0.1:9013/ 
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000     
+ 
+
+
+---
+spring:
+  profiles: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  cloud:
+    bus:
+      enabled: false
+    config:
+      enabled: false
+      
+eureka:
+  client:
+    enabled: false
+    
+logging:
+  level:
+    com.webientsoft.esycation: DEBUG
+    org.springframework: INFO
+  pattern:
+    console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n' 
+
+
+ribbon:
+  eureka:
+    enabled: false 
+
+EVENTSOURCESERVICE: 
+  ribbon:
+    listOfServers: http://127.0.0.1:9015/ 
+
+---
+spring:
+  profiles: h2
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    open-in-view: true
+    database: H2
+    properties:
+      hibernate.format_sql: true
+      hibernate.hbm2ddl.import_files: /sql/h2-setup.sql
+    hibernate:
+      ddl-auto: create-drop
+
+---
+spring:
+  profiles: postgres
+  jpa: 
+    show-sql: true
+    open-in-view: true
+    database: POSTGRESQL
+    
+  datasource:
+      tomcat:
+        max-wait: 1000
+        username: esycation
+        password: esycation
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/esycation_admin
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      fail-fast: true
+      enabled: true
+      override-none: true
+      discovery:
+        enabled: true
+        service-id: CONFIGSERVER
+
+eureka:
+  client:
+    enabled: true    
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+          
+---
+spring:
+  profiles: setup
+  jpa: 
+    show-sql: false
+    properties:
+      hibernate.hbm2ddl.import_files : /sql/postgres-setup.sql
+    hibernate:
+      ddl-auto:  create
+      
+---
+spring:
+  profiles: update
+  jpa: 
+    hibernate:
+      ddl-auto:  update
+
+---
+spring:
+  profiles: debug
+  jpa: 
+    show-sql: true
+
+logging:
+  level:
+    com.webientsoft.esycation: DEBUG
+
+     
+       

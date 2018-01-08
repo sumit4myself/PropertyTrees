@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2016, WebientSoft and/or its affiliates. All rights reserved. 
+ * WebientSoft PROPRIETARY/CONFIDENTIAL.Use is subject to license terms.
+ */
+
+
+dependencies{
+    compile 'com.h2database:h2:1.4.191'
+    compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+}
+
+
+// set jvm args -PjvmArgs="-Desykart.build.profile=dev"
+task runAllServices{
+   logger.info('Starting all services of esykart in tomcat embadded container.')
+  // bootRun.execute()
+   logger.info('All services started sucessfully.')
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<FindBugsFilter>
+  <Match>
+    <!-- We only care about esykart code. -->
+<!--     <Package name="~com\.webientsoft\.esykart\*" /> -->
+  </Match>
+</FindBugsFilter>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+	version="2.1">
+
+	<named-query name="Users.FIND_BY_IDS">
+		<query>
+			SELECT U FROM Users U 
+			WHERE U.id IN (:ids) and U.status = 'A'
+		</query>
+	</named-query>
+
+	<named-query name="Users.FIND_BY_REMOTE_ID_AND_MODULE">
+		<query>
+			SELECT U FROM Users U INNER JOIN U.usersServiceMap USM
+			WHERE USM.module =:module AND USM.remoteId =:remoteId
+		</query>
+	</named-query>
+
+	<named-query name="Users.userAuthenticate">
+		<query>
+			SELECT U FROM Users U 
+			WHERE LOWER(U.userName) = LOWER(:userName) AND U.password =:password 
+			AND  U.branchId =:branchId
+		</query>
+	</named-query>
+
+	<named-query name="Users.adminUserAuthenticate">
+		<query>
+			SELECT U FROM Users U INNER JOIN U.roleList R
+			WHERE LOWER(U.userName) = LOWER(:userName) AND U.password =:password 
+			AND R.level IN (0,1,2,3) 
+		</query>
+	</named-query>
+
+	<named-query name="Users.findAdminUserByUserName">
+		<query>
+			SELECT U FROM Users U INNER JOIN U.roleList R
+			WHERE LOWER(U.userName) = LOWER(:userName)
+			AND R.level IN (0,1,2,3) 
+		</query>
+	</named-query>
+
+	<named-query name="Users.findUserByUserName">
+		<query>
+			SELECT U FROM Users U
+			WHERE LOWER(U.userName) = LOWER(:userName)
+			AND U.branchId = :branchId 
+		</query>
+	</named-query>
+
+	<named-query name="Menu.FIND_BY_PERMISSIONS">
+		<query>
+			SELECT DISTINCT M1 FROM Menu M1
+			LEFT OUTER JOIN FETCH M1.permissionList P1
+
+			LEFT OUTER JOIN FETCH M1.menuList M2
+			LEFT OUTER JOIN FETCH M2.permissionList P2
+
+			WHERE M1.parentId IS null AND ( P1 IN (:permissions)  OR P2 IN (:permissions) )
+			ORDER BY M1.sortIndex , M2.sortIndex
+		</query>
+	</named-query>
+
+
+	<named-query name="Users.Report.findStatisticsByDates">
+		<query>
+		<![CDATA[
+				SELECT U.schoolId, MONTH(U.createdOn) AS monthId, U.usersServiceMap.module, COUNT(U.id) 
+					FROM Users U
+							WHERE U.status =:status 
+							AND U.createdOn BETWEEN :fromDate  AND :toDate 
+								GROUP BY  U.schoolId, MONTH(U.createdOn), U.usersServiceMap.module
+								ORDER BY  U.schoolId, monthId, U.usersServiceMap.module 
+		]]>
+		</query>
+	</named-query>
+
+	<named-query name="Users.Report.count">
+		<query>
+		<![CDATA[
+				SELECT U.usersServiceMap.module, COUNT(U.id) 
+					FROM Users U
+						WHERE U.status =:status 
+						GROUP BY U.usersServiceMap.module
+		]]>
+		</query>
+	</named-query>
+
+	<named-query name="Users.Report.findStatisticsByDatesAndSchoolId">
+		<query>
+		<![CDATA[
+			SELECT U.branchId, MONTH(U.createdOn) AS monthId, U.usersServiceMap.module, COUNT(U.id) 
+				FROM Users U
+						WHERE U.status =:status 
+						AND U.createdOn BETWEEN :fromDate  AND :toDate 
+						AND U.schoolId =:schoolId
+							GROUP BY  U.schoolId, MONTH(U.createdOn), U.usersServiceMap.module
+							ORDER BY  U.schoolId, monthId, U.usersServiceMap.module 
+		]]>
+		</query>
+	</named-query>
+
+	<named-query name="Users.Report.countBySchoolId">
+		<query>
+		<![CDATA[
+				SELECT U.usersServiceMap.module, COUNT(U.id) 
+					FROM Users U
+						WHERE U.status =:status 
+						AND U.schoolId =:schoolId
+							GROUP BY U.usersServiceMap.module
+		]]>
+		</query>
+	</named-query>
+
+	<named-query name="Users.Report.findStatisticsByDatesAndBranchId">
+		<query>
+		<![CDATA[
+				SELECT MONTH(U.createdOn) AS monthId, U.usersServiceMap.module, COUNT(U.id) 
+					FROM Users U
+							WHERE U.status =:status 
+							AND U.branchId =:branchId
+							AND U.createdOn BETWEEN :fromDate  AND :toDate 
+								GROUP BY MONTH(U.createdOn), U.usersServiceMap.module
+								ORDER BY monthId, U.usersServiceMap.module 
+		]]>
+		</query>
+	</named-query>
+
+	<named-query name="Users.Report.countByBranchId">
+		<query>
+		<![CDATA[
+			SELECT U.usersServiceMap.module, COUNT(U.id) 
+				FROM Users U
+					WHERE U.status =:status 
+					AND U.branchId =:branchId
+						GROUP BY U.usersServiceMap.module
+		]]>
+		</query>
+	</named-query>
+
+
+</entity-mappings>

@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2016, EndToEnd and/or its affiliates. All rights reserved.
+ * EndToEnd PROPRIETARY/CONFIDENTIAL.Use is subject to license terms.
+ */
+
+rootProject.name = 'propertytrees'
+
+include 'propertytrees-common'
+include 'propertytrees-service'
+include 'propertytrees-ui'
+include 'propertytrees-service:admin-service'

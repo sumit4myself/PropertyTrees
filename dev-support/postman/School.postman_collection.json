@@ -1,0 +1,884 @@
+{
+	"id": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+	"name": "School",
+	"description": "",
+	"order": [
+		"af42b763-fc03-7fac-415b-21a79f02a1ed",
+		"e0758de2-03dc-f011-f6da-c5b15339abb1",
+		"b3e951f9-c97d-48fa-df35-9a5bcec7b654",
+		"ce93a5d0-ac58-9d0d-0ced-85cabc331fd7",
+		"a4a25cb7-d980-878c-b599-d07e23f7c101",
+		"9cfa3cfe-0524-9f01-b524-4b98e987bdac",
+		"e4fc2c3a-2587-b1e9-7a96-f3bf3683b341",
+		"df458915-106c-77f6-f1bf-4e6450c7750c",
+		"341f0f87-5f5d-82e1-4e7e-4e299aad5fb9",
+		"f71578ab-5490-8f2c-6140-983c9e890a3c",
+		"3660bcd6-0f44-5aee-068b-ee5d09a1070d",
+		"f017da8b-6a4b-33ab-5ed9-e9f8676aa723",
+		"7ebce492-e5c4-4c75-c271-17467f20c1ae",
+		"d72b782f-5413-b370-340c-eb489a9f71b6",
+		"3e0aa1c6-198a-aa5e-a365-ff00d806cc2e",
+		"f4043edd-a072-e5d3-1076-64de3cb64efb",
+		"9394ca8a-8052-2b19-202c-a48ef3ddc3cd"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": "772351",
+	"public": false,
+	"requests": [
+		{
+			"id": "341f0f87-5f5d-82e1-4e7e-4e299aad5fb9",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/subjects",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Subject 4 Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SUBJECT_ID_4\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994583730,
+			"name": "Create Subject 4",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Subejct {{randomId}}\",\n    \"code\": \"Sub_{{randomId}}\",\n    \"status\": \"A\",\n    \"type\": \"SUBJECT\"\n}"
+		},
+		{
+			"id": "3660bcd6-0f44-5aee-068b-ee5d09a1070d",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/syllabuses",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Syllabus Created for Course 1, Id =  = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500995271676,
+			"name": "Create  Syllabus 1 from Course 1",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Syllabus {{randomId}}\",\n    \"code\": \"Syllabus_{{randomId}}\",\n    \"status\": \"A\",\n    \"minimumElectiveSubjectCount\": 1,\n    \"syllabusSubjectMapList\": [{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_1}}\n    \t}\n    },{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_2}}\n    \t}\n    },{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_3}}\n    \t}\n    },{\n    \t\"eletive\" : true,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_4}}\n    \t}\n    }],\n    \"courseId\" : {\n    \t\"id\" : {{COURSE_ID}}\n    }\n}"
+		},
+		{
+			"id": "3e0aa1c6-198a-aa5e-a365-ff00d806cc2e",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/syllabuses",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Syllabus Created for Course 2, Id = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500995240256,
+			"name": "Create  Syllabus 1 from Course 2",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Syllabus {{randomId}}\",\n    \"code\": \"Syllabus_{{randomId}}\",\n    \"status\": \"A\",\n    \"minimumElectiveSubjectCount\": 1,\n    \"syllabusSubjectMapList\": [{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_1}}\n    \t}\n    },{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_2}}\n    \t}\n    },{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_3}}\n    \t}\n    },{\n    \t\"eletive\" : false,\n    \t\"subjectId\" : {\n    \t\t\"id\" : {{SUBJECT_ID_4}}\n    \t}\n    }],\n    \"courseId\" : {\n    \t\"id\" : {{COURSE_ID}}\n    }\n}"
+		},
+		{
+			"id": "7ebce492-e5c4-4c75-c271-17467f20c1ae",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/batches",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Batch Created, Id = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994034193,
+			"name": "Create Batch 2 for course 1",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Batch {{randomId}}\",\n    \"code\": \"Batch {{randomId}}\",\n    \"description\": \"Batch  {{randomId}} created from automation script\",\n    \"courseId\" :{\n    \t\"id\" : {{COURSE_ID}}\n    },\n    \"status\": \"A\"\n}"
+		},
+		{
+			"id": "9394ca8a-8052-2b19-202c-a48ef3ddc3cd",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/batches",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Batch Created, Id = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994034193,
+			"name": "Create Batch 2 for course 2",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Batch {{randomId}}\",\n    \"code\": \"Batch {{randomId}}\",\n    \"description\": \"Batch  {{randomId}} created from automation script\",\n    \"courseId\" :{\n    \t\"id\" : {{COURSE_ID}}\n    },\n    \"status\": \"A\"\n}"
+		},
+		{
+			"id": "9cfa3cfe-0524-9f01-b524-4b98e987bdac",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/subjects",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"method": "POST",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Create Subject 1",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1500994481936,
+			"version": 2,
+			"responses": [],
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Subject 1 Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SUBJECT_ID_1\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"name\": \"Subejct {{randomId}}\",\n    \"code\": \"Sub_{{randomId}}\",\n    \"status\": \"A\",\n    \"type\": \"SUBJECT\"\n}"
+		},
+		{
+			"id": "a4a25cb7-d980-878c-b599-d07e23f7c101",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/sessionYears",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Session Year Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SESSION_YEAR_ID\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500993475192,
+			"name": "Create Session Year",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Session Year {{randomId}}\",\n    \"startDate\": \"01/04/2017\",\n    \"endDate\": \"01/03/2018\",\n    \"sessionYearStatus\": \"CURRENT\"\n}"
+		},
+		{
+			"id": "af42b763-fc03-7fac-415b-21a79f02a1ed",
+			"headers": "Content-Type: application/json\nUSER_ID: 1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/schools",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"School Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SCHOOL_ID\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500992882964,
+			"name": "Create School",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"School {{randomId}}\",\n    \"status\": \"A\",\n    \"contactDetailsId\": {\n        \"phoneNumber1\": \"9999999999\",\n        \"website\": \"school.com\",\n        \"addressLine1\": \"Priyadarshini Vihar\",\n        \"city\": \"Delhi\",\n        \"state\": \"Delhi\",\n        \"pinCode\": \"110092\"\n    },\n    \"adminFullName\": \"School Admin\",\n    \"adminMobile\": \"9891939498\",\n    \"adminEmail\": \"sumit4myself@gmail.com\"\n}"
+		},
+		{
+			"id": "b3e951f9-c97d-48fa-df35-9a5bcec7b654",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/branches",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Branch Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"BRANCH_ID\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500993119887,
+			"name": "Create Branch",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Branch {{randomId}}\",\n    \"code\" : \"Branch {{randomId}}\",\n    \"status\": \"A\",\n    \"contactDetailsId\": {\n        \"phoneNumber1\": \"9999999999\",\n        \"website\": \"Branch.com\",\n        \"addressLine1\": \"Priyadarshini Vihar\",\n        \"city\": \"Delhi\",\n        \"state\": \"Delhi\",\n        \"pinCode\": \"110092\"\n    },\n    \"adminFullName\": \"Branch Admin\",\n    \"adminMobile\": \"9891939498\",\n    \"adminEmail\": \"sumit4myself@gmail.com\"\n}"
+		},
+		{
+			"id": "ce93a5d0-ac58-9d0d-0ced-85cabc331fd7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/users/search?RESPONSE_VIEW=User.NameId",
+			"queryParams": [
+				{
+					"key": "RESPONSE_VIEW",
+					"value": "User.NameId",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"User Found, Id = \"+ jsonData.contents[0].id] = jsonData.contents.length > 0;\npostman.setEnvironmentVariable(\"USER_ID\", jsonData.contents[0].id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500993184691,
+			"name": "Search Branch User",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n\t\"criterias\" : [{\n\t\t\"key\" : \"fullName\",\n\t\t\"value\" : \"Branch Admin\",\n\t\t\"operator\" : \"=\" \n\t\t}],\n\t\t\"sorts\" : [{\n\t\t\"property\" : \"updatedOn\"\t\n\t\t}],\n\t\t\"size\" : 1\n}"
+		},
+		{
+			"id": "d72b782f-5413-b370-340c-eb489a9f71b6",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/courses",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Course Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"COURSE_ID\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994040811,
+			"name": "Create Course 2",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "f71578ab-5490-8f2c-6140-983c9e890a3c",
+			"rawModeData": "{\n   \"name\": \"Course {{randomId}}\",\n    \"code\": \"Course {{randomId}}\",\n    \"description\": \"Course  {{randomId}} created from automation script\",\n    \"status\": \"A\"\n}"
+		},
+		{
+			"id": "df458915-106c-77f6-f1bf-4e6450c7750c",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/subjects",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Subject 3 Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SUBJECT_ID_3\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994556209,
+			"name": "Create Subject 3",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Subejct {{randomId}}\",\n    \"code\": \"Sub_{{randomId}}\",\n    \"status\": \"A\",\n    \"type\": \"SUBJECT\"\n}"
+		},
+		{
+			"id": "e0758de2-03dc-f011-f6da-c5b15339abb1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/users/search?RESPONSE_VIEW=User.NameId",
+			"queryParams": [
+				{
+					"key": "RESPONSE_VIEW",
+					"value": "User.NameId",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"User Found, Id = \"+ jsonData.contents[0].id] = jsonData.contents.length > 0;\npostman.setEnvironmentVariable(\"USER_ID\", jsonData.contents[0].id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500992664184,
+			"name": "Search School User",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n\t\"criterias\" : [{\n\t\t\"key\" : \"fullName\",\n\t\t\"value\" : \"School Admin\",\n\t\t\"operator\" : \"=\" \n\t\t}],\n\t\t\"sorts\" : [{\n\t\t\"property\" : \"updatedOn\"\t\n\t\t}],\n\t\t\"size\" : 1\n}"
+		},
+		{
+			"id": "e4fc2c3a-2587-b1e9-7a96-f3bf3683b341",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/subjects",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Subject 2 Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"SUBJECT_ID_2\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994646257,
+			"name": "Create Subject 2",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Subejct {{randomId}}\",\n    \"code\": \"Sub_{{randomId}}\",\n    \"status\": \"A\",\n    \"type\": \"SUBJECT\"\n}"
+		},
+		{
+			"id": "f017da8b-6a4b-33ab-5ed9-e9f8676aa723",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/batches",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Batch  Created, Id = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994043549,
+			"name": "Create Batch 1 for course 1",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n    \"name\": \"Batch {{randomId}}\",\n    \"code\": \"Batch {{randomId}}\",\n    \"description\": \"Batch  {{randomId}} created from automation script\",\n    \"courseId\" :{\n    \t\"id\" : {{COURSE_ID}}\n    },\n    \"status\": \"A\"\n}"
+		},
+		{
+			"id": "f4043edd-a072-e5d3-1076-64de3cb64efb",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/batches",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Batch  Created, Id = \" + jsonData.id] = jsonData.id > 0;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994043549,
+			"name": "Create Batch 1 for course 2",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "f017da8b-6a4b-33ab-5ed9-e9f8676aa723",
+			"rawModeData": "{\n    \"name\": \"Batch {{randomId}}\",\n    \"code\": \"Batch {{randomId}}\",\n    \"description\": \"Batch  {{randomId}} created from automation script\",\n    \"courseId\" :{\n    \t\"id\" : {{COURSE_ID}}\n    },\n    \"status\": \"A\"\n}"
+		},
+		{
+			"id": "f71578ab-5490-8f2c-6140-983c9e890a3c",
+			"headers": "Content-Type: application/json\nUSER_ID: {{USER_ID}}\nSCHOOL_ID: {{SCHOOL_ID}}\nBRANCH_ID: {{BRANCH_ID}}\nSESSION_YEAR_ID: {{SESSION_YEAR_ID}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "USER_ID",
+					"value": "{{USER_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SCHOOL_ID",
+					"value": "{{SCHOOL_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "BRANCH_ID",
+					"value": "{{BRANCH_ID}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "SESSION_YEAR_ID",
+					"value": "{{SESSION_YEAR_ID}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}/courses",
+			"queryParams": [],
+			"preRequestScript": "var randomId = Math.floor(Math.random() * 90000) + 10000;\npostman.setEnvironmentVariable(\"randomId\", randomId);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\ntests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Course Created, Id = \" + jsonData.id] = jsonData.id > 0;\npostman.setEnvironmentVariable(\"COURSE_ID\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500994040811,
+			"name": "Create Course 1",
+			"description": "",
+			"collectionId": "12a496b4-5346-7253-9f0c-5f5d06aa3114",
+			"responses": [],
+			"rawModeData": "{\n   \"name\": \"Course {{randomId}}\",\n    \"code\": \"Course {{randomId}}\",\n    \"description\": \"Course  {{randomId}} created from automation script\",\n    \"status\": \"A\"\n}"
+		}
+	]
+}

@@ -1,0 +1,2 @@
+
+					:: EduCore Admin-Service ::  ${application.formatted-version}
