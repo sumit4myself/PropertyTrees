@@ -11,7 +11,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
     repositories {
     	mavenCentral()
-    	mavenLocal()
+    	//mavenLocal()
 		maven { url "http://repo.springsource.org/plugins-release" }
 	}
 
@@ -204,6 +204,22 @@ project(":propertytrees-service:admin-service") {
 
 project(":propertytrees-ui") {
 	description = "propertytrees ui"
+	apply plugin: "org.springframework.boot"
+	springBoot {
+	    executable = true
+	}
+    dependencies {
+     	   compile "org.springframework.boot:spring-boot-starter-web"
+   	       compile "org.springframework.boot:spring-boot-starter-cache"
+	       compile "org.springframework.cloud:spring-cloud-starter-eureka"
+	       compile "org.springframework:spring-aspects"
+	       compile "org.apache.httpcomponents:httpclient"
+	       compile "com.netflix.eureka:eureka-core"
+		}
+}
+
+project(":propertytrees-ui-frontend") {
+	description = "propertytrees ui frontend"
 	apply plugin: "org.springframework.boot"
 	springBoot {
 	    executable = true
