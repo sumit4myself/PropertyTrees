@@ -1,0 +1,1 @@
+var plugin_path = 'assets/plugins/';
