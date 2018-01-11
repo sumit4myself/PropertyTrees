@@ -2,19 +2,10 @@
 		
 			$(document).ready(function() {
   console.log( "ready!" );
-});
-		$(document).ready(function() {
-			$('#Carousel').carousel({
+  $('#Carousel').carousel({
 				interval: 5000
 			})
-		});
-	   
-	   <!--Featured projects -->
-	   
-	   
-	   $(document).ready(function(){
-		   
-		   var clickEvent = false;
+  var clickEvent = false;
 		   $('#myCarousel').carousel({
 			   interval:   4000	
 		   }).on('click', '.list-group li', function() {
@@ -33,7 +24,16 @@
 			   }
 			   clickEvent = false;
 		   });
-	   })
+});
+		
+	   
+	   
+	   
+	   
+	   
+		   
+		   
+	   
 	   $(window).load(function() {
 		   var boxheight = $('#myCarousel .carousel-inner').innerHeight();
 		   var itemlength = $('#myCarousel .item').length;
