@@ -3,15 +3,15 @@ package com.propertiestree.common.entity;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Feature implements Serializable {
@@ -30,8 +30,11 @@ public class Feature implements Serializable {
 	private String typeOfFlooring;
 	private boolean gatedSociety;
 	private String Description;
-	@ManyToOne
-	@JoinColumn(name="feature_id")
+	
+	@ElementCollection(targetClass=Amenities.class)
+    @Enumerated(EnumType.STRING) 
+    @CollectionTable(name="feature_amenities")
+    @Column(name="amenities")
 	private Set<Amenities> amenities;
 
 	public long getId() {

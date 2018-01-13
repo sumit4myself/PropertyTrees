@@ -3,6 +3,7 @@ package com.propertiestree.common.entity;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,14 +26,13 @@ public class Property implements Serializable {
 	private String uuid;
 	@Enumerated(EnumType.STRING)
 	private PropertyType type;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "property_details_id")
 	private PropertyDetails details;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "property_features_id")
 	private Feature features;
-	@OneToMany
-	@JoinColumn(name = "property_id")
+	@OneToMany(mappedBy="property")
 	private Set<Photo> photos;
 
 	public long getId() {

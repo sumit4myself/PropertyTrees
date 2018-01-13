@@ -35,7 +35,7 @@ public class PropertyDetails implements Serializable{
 	private ParkingType parkingType;
 	private String projectName;
 	private String locality;
-	private Address address;
+	//private Address address;
 	private boolean AllInclusive;
 	private boolean negotiable;
 	private int expectedPrice;
@@ -174,13 +174,13 @@ public class PropertyDetails implements Serializable{
 		this.locality = locality;
 	}
 
-	public Address getAddress() {
+	/*public Address getAddress() {
 		return address;
 	}
 
 	public void setAddress(Address address) {
 		this.address = address;
-	}
+	}*/
 
 	public boolean isAllInclusive() {
 		return AllInclusive;
