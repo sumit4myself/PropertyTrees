@@ -1,2 +1,2 @@
 
-					:: EduCore Admin-Service ::  ${application.formatted-version}
+					:: PropertiesTree Admin-Service ::  ${application.formatted-version}

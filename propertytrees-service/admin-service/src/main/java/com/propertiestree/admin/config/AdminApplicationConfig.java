@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
-@EntityScan(basePackages = {"com.propertiestree.admin.entity"})
+@EntityScan(basePackages = {"com.propertiestree.admin.entity", "com.propertiestree.common.entity"})
 @SpringBootApplication(scanBasePackages = {"com.propertiestree.common", "com.propertiestree.admin"})
 @EnableAspectJAutoProxy
 public class AdminApplicationConfig {

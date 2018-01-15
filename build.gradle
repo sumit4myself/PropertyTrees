@@ -25,15 +25,14 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 
 configure(allprojects) { project ->
-	group                    = "com.webientsoft"
-	version 					= qualifyVersionIfNecessary(version)
+	group                    = "com.propertytrees"
+	version 				 = qualifyVersionIfNecessary(version)
     ext.env                  = buildEnvironment()
     ext.springBootVersion    = '1.5.4.RELEASE'
-    ext.activitiVersion    = '6.0.0'
 	ext.junitVersion         = "4.11"
 	ext.slf4jVersion         = "1.7.5"
 	ext.xstreamVersion       = "1.4.6"
-	ext.gradleScriptDir   = "${rootProject.projectDir}/gradle"
+	ext.gradleScriptDir      = "${rootProject.projectDir}/gradle"
 
 	apply plugin: "java"
 	//apply plugin: "findbugs"
@@ -147,7 +146,7 @@ configure(allprojects) { project ->
 
 
 project(":propertytrees-common") {
-	description = "propertytrees Common"
+	description = "propertytrees common"
 
 	dependencies {
 	   compile "com.fasterxml.jackson.core:jackson-annotations:2.8.1"
@@ -160,14 +159,9 @@ project(":propertytrees-common") {
        compile "commons-beanutils:commons-beanutils:1.9.2"
 
        compile "org.reflections:reflections-spring:0.9.9-RC1"
-	   compile 'com.rabbitmq:amqp-client:4.0.1'
-	   
-	   //provided "com.hazelcast:hazelcast-spring:3.9-EA"
-	   //provided "com.hazelcast:hazelcast-client:3.9-EA"
-
+	  
 	   provided "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	   provided "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-       provided "org.springframework.cloud:spring-cloud-starter-feign"
        provided "javax.servlet:javax.servlet-api:3.1.0"
 	}
 }
@@ -185,13 +179,7 @@ project(":propertytrees-service") {
 
 	    compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-	    compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
-
-		compile "org.springframework.cloud:spring-cloud-config-client"
-	    compile "org.springframework.cloud:spring-cloud-starter-bus-amqp"
-	    compile "org.springframework.cloud:spring-cloud-starter-feign"
-	    compile "org.springframework.cloud:spring-cloud-starter-eureka"
-	    compile "org.springframework.cloud:spring-cloud-starter-hystrix"
+		compile "org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE"
 		compile "org.postgresql:postgresql:42.1.1"
 		compile "org.liquibase:liquibase-core:3.5.3"
 	   }
@@ -210,11 +198,8 @@ project(":propertytrees-ui") {
 	}
     dependencies {
      	   compile "org.springframework.boot:spring-boot-starter-web"
-   	       compile "org.springframework.boot:spring-boot-starter-cache"
-	       compile "org.springframework.cloud:spring-cloud-starter-eureka"
 	       compile "org.springframework:spring-aspects"
 	       compile "org.apache.httpcomponents:httpclient"
-	       compile "com.netflix.eureka:eureka-core"
 		}
 }
 
@@ -227,10 +212,8 @@ project(":propertytrees-ui-frontend") {
     dependencies {
      	   compile "org.springframework.boot:spring-boot-starter-web"
    	       compile "org.springframework.boot:spring-boot-starter-cache"
-	       compile "org.springframework.cloud:spring-cloud-starter-eureka"
 	       compile "org.springframework:spring-aspects"
 	       compile "org.apache.httpcomponents:httpclient"
-	       compile "com.netflix.eureka:eureka-core"
 		}
 }
 
