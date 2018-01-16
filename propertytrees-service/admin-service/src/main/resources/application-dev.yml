@@ -1,0 +1,19 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    open-in-view: true
+    database: H2
+    properties:
+      hibernate.format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    com.propertiestree: DEBUG
+    org.springframework: INFO
+    org.hibernate: INFO
+  pattern:
+    console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n'
