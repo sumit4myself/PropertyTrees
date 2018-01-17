@@ -24,7 +24,7 @@ public class Banner implements Serializable {
 	private String uuid;
 	private String title;
 	private String website;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "photo_id")
 	private Photo photo;
 	@Enumerated(EnumType.STRING)

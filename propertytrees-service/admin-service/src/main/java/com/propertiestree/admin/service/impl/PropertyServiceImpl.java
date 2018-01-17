@@ -36,21 +36,21 @@ public class PropertyServiceImpl implements PropertyService{
 
 	@Override
 	public Property createProperty(Property property) throws PropertyException {
-		String uuid = uuidGenerator.nextLargeUID();
+		
 		if(property!=null) {
-			property.setUuid(uuid);
+			property.setUuid(uuidGenerator.nextLargeUID());
 			
 			if(property.getDetails() != null) {
-				property.getDetails().setUuid(uuid);
+				property.getDetails().setUuid(uuidGenerator.nextLargeUID());
 			}
 			
 			if(property.getFeatures() != null) {
-				property.getFeatures().setUuid(uuid);
+				property.getFeatures().setUuid(uuidGenerator.nextLargeUID());
 			}
 			
 			if(!CollectionUtils.isEmpty(property.getPhotos())) {
 				for(Photo photo : property.getPhotos()) {
-					photo.setUuid(uuid);
+					photo.setUuid(uuidGenerator.nextLargeUID());
 				}
 			}
 		}

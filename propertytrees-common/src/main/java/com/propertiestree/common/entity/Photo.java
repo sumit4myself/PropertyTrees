@@ -16,17 +16,12 @@ public class Photo implements Serializable {
 	private static final long serialVersionUID = -8740831958514756900L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name="photo_id")
 	private int id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
 	private String tag;
 	private String url;
 	
-	@ManyToOne
-	@JoinColumn(name="id", nullable=false)
-	private Property property;
-
 	public int getId() {
 		return id;
 	}
@@ -59,11 +54,4 @@ public class Photo implements Serializable {
 		this.url = url;
 	}
 
-	public Property getProperty() {
-		return property;
-	}
-
-	public void setProperty(Property property) {
-		this.property = property;
-	}
 }

@@ -32,7 +32,8 @@ public class Property implements Serializable {
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "property_features_id")
 	private Feature features;
-	@OneToMany(mappedBy="property")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "photo_id")
 	private Set<Photo> photos;
 
 	public long getId() {
