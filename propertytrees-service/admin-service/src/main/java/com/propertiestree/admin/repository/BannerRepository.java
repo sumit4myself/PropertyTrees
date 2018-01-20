@@ -2,11 +2,12 @@ package com.propertiestree.admin.repository;
 
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.propertiestree.common.entity.Banner;
 
-public interface BannerRepository extends JpaRepository<Banner, Long> {
+@Repository
+public interface BannerRepository extends AbstractRepository<Banner, Long> {
 
     Optional<Banner> findByUuid(String uuid);
     
