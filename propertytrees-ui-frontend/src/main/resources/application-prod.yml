@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    admin:
+      path: /v1/property/**
+      url: http://localhost:9001
