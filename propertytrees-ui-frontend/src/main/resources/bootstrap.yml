@@ -1,20 +1,5 @@
 spring:
   application:
-    name:  UISERVICE
+    name:  UISERVICE_FRONTEND
   profiles:
-    active: dev
-   
-server:
-  port: ${port:8383}
-  display-name: UI Service
-
-logging:
-  level:
-    com.webientsoft.esycation: INFO
-    org.springframework.cloud: INFO
-  pattern:
-    console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n'
-
----   
-spring:
-  profiles: dev        
+    active: ${profile:dev}
