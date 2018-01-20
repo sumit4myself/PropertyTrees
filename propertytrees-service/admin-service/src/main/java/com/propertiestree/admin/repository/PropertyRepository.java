@@ -11,4 +11,5 @@ public interface PropertyRepository extends AbstractRepository<Property, Long> {
 
     Optional<Property> findByUuid(String uuid);
     
+    void deleteByUuid(String uuid);
 }
