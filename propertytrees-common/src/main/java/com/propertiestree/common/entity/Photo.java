@@ -7,8 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class Photo implements Serializable {
@@ -21,6 +20,10 @@ public class Photo implements Serializable {
 	private String uuid;
 	private String tag;
 	private String url;
+	@Transient
+	private String base64String;
+	@Transient
+	private String extension;
 	
 	public int getId() {
 		return id;
@@ -54,4 +57,19 @@ public class Photo implements Serializable {
 		this.url = url;
 	}
 
+	public String getBase64String() {
+		return base64String;
+	}
+
+	public void setBase64String(String base64String) {
+		this.base64String = base64String;
+	}
+
+	public String getExtension() {
+		return extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
 }
