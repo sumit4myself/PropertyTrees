@@ -4,75 +4,52 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import com.propertiestree.admin.exception.PropertyException;
 import com.propertiestree.admin.exception.PropertyNotFoundException;
 import com.propertiestree.admin.helper.UUIDGenerator;
-import com.propertiestree.admin.repository.PropertyDAO;
+import com.propertiestree.admin.repository.PropertyRepository;
 import com.propertiestree.admin.service.PropertyService;
-import com.propertiestree.common.entity.Photo;
 import com.propertiestree.common.entity.Property;
 
 @Service
-public class PropertyServiceImpl implements PropertyService{
-	
-	@Autowired
-	private PropertyDAO propertyRepository;
+public class PropertyServiceImpl implements PropertyService {
+
 	@Autowired
 	private UUIDGenerator uuidGenerator;
-	
+	@Autowired
+	private PropertyRepository repository;
+
 	@Override
 	public Page<Property> listProperty(Pageable pageable) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll(pageable);
 	}
 
 	@Override
 	public Property getProperty(String uuid) throws PropertyNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findByUuid(uuid).orElseThrow(() -> new PropertyNotFoundException(uuid));
 	}
 
 	@Override
 	public Property createProperty(Property property) throws PropertyException {
-		
-		if(property!=null) {
-			property.setUuid(uuidGenerator.nextLargeUID());
-			
-			if(property.getDetails() != null) {
-				property.getDetails().setUuid(uuidGenerator.nextLargeUID());
-			}
-			
-			if(property.getFeatures() != null) {
-				property.getFeatures().setUuid(uuidGenerator.nextLargeUID());
-			}
-			
-			if(!CollectionUtils.isEmpty(property.getPhotos())) {
-				for(Photo photo : property.getPhotos()) {
-					photo.setUuid(uuidGenerator.nextLargeUID());
-				}
-			}
-		}
-		
-		return propertyRepository.save(property);
+		property.setUuid(uuidGenerator.nextLargeUID());
+		property.getDetails().setUuid(uuidGenerator.nextLargeUID());
+		property.getFeatures().setUuid(uuidGenerator.nextLargeUID());
+		return repository.save(property);
 	}
 
 	@Override
 	public Property updateProperty(Property existingProperty, Property updatedProperty) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void deleteProperty(String uuid) throws PropertyException {
-		// TODO Auto-generated method stub
-		
+		repository.deleteByUuid(uuid);
 	}
 
 	@Override
 	public Page<Property> search(String searchQuery, Pageable pageable) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

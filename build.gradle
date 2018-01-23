@@ -159,7 +159,11 @@ project(":propertytrees-common") {
        compile "commons-beanutils:commons-beanutils:1.9.2"
 
        compile "org.reflections:reflections-spring:0.9.9-RC1"
-	  
+	   compile "org.springframework.cloud:spring-cloud-starter-feign"
+	   compile "org.springframework.cloud:spring-cloud-starter-hystrix"
+   	   compile "org.springframework.cloud:spring-cloud-starter-zuul"
+   	   compile "org.springframework.cloud:spring-cloud-starter-eureka"
+   	   compile "org.springframework.cloud:spring-cloud-config-client"
 	   provided "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	   provided "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
        provided "javax.servlet:javax.servlet-api:3.1.0"
@@ -175,8 +179,7 @@ project(":propertytrees-service") {
 	   }
 	   
 	   dependencies {
-		compile(project(":propertytrees-common")){}
-
+		compile(project(":propertytrees-common"))
 	    compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 		compile "org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE"
@@ -210,11 +213,24 @@ project(":propertytrees-ui-frontend") {
 	    executable = true
 	}
     dependencies {
+           compile "org.springframework:spring-aspects"
+	       compile "org.apache.httpcomponents:httpclient"
      	   compile "org.springframework.boot:spring-boot-starter-web"
    	       compile "org.springframework.boot:spring-boot-starter-cache"
-	       compile "org.springframework:spring-aspects"
-	       compile "org.apache.httpcomponents:httpclient"
 		}
+   evaluationDependsOnChildren();
+  
+   bootRun { addResources = true }
+
+   tasks.withType(JavaCompile){ options.warnings = false }
+   
+   jar {
+	 from('angularjs-2/dist') {
+		//Public is a default supported Spring Boot resources directory.
+		into 'static' }
+  }
+  //angularjs-2:build will be run before the processResources
+  processResources.dependsOn(':propertytrees-ui-frontend:angularjs-2:build')		
 }
 
 def buildEnvironment() {
