@@ -5,15 +5,190 @@
       <h4 class="sub-title">Property</h4>
       <form>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Simple Input</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control">
+          <label class="col-sm-8">Type</label>
+          <div class="col">
+            <ng-select [ngClass]="'ng-select'" [options]="propertyTypeOption" name="type" [(ngModel)]="propModel.type"></ng-select>
+          </div>
+        </div>
+        <h4 class="sub-title">Details</h4>
+         <div class="form-group row">
+          <label class="col-sm-8">Unit Type</label>
+          <div class="col">
+            <input type="text" class="form-control" name="unitType" [(ngModel)]="propModel.details.unitType">
+          </div>
+        </div>
+             <div class="form-group row">
+          <label class="col-sm-8">Built Up area</label>
+          <div class="col">
+            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.builtUpArea">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Placeholder</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Type your title in Placeholder">
+          <label class="col-sm-8">Bedrooms</label>
+          <div class="col">
+            <input type="text" class="form-control"  name="bedrooms" [(ngModel)]="propModel.details.bedrooms">
           </div>
         </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Bathrooms</label>
+          <div class="col">
+            <input type="text" class="form-control"  name="bathrooms" [(ngModel)]="propModel.details.bathrooms">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Balconies</label>
+          <div class="col">
+            <input type="text" class="form-control" name="balconies" [(ngModel)]="propModel.details.balconies">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Pooja room</label>
+          <div class="col">
+            <input type="text" class="form-control" name="poojaRoom" [(ngModel)]="propModel.details.poojaRoom">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Study room</label>
+          <div class="col">
+            <input type="text" class="form-control" name="studyRoom" [(ngModel)]="propModel.details.studyRoom">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Servant room</label>
+          <div class="col">
+            <input type="text" class="form-control" name="servantRoom" [(ngModel)]="propModel.details.servantRoom">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Others</label>
+          <div class="col">
+            <input type="text" class="form-control" name="others" [(ngModel)]="propModel.details.others">>
+          </div>
+        </div>
+         <div class="form-group row">
+          <label class="col-sm-8">Property on Floor</label>
+          <div class="col">
+            <input type="text" class="form-control" name="propertyOnFloor" [(ngModel)]="propModel.details.propertyOnFloor">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Total Floors</label>
+          <div class="col">
+            <input type="text" class="form-control" name="totalFloors" [(ngModel)]="propModel.details.totalFloors">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Parking Type</label>
+          <div class="col">
+            <input type="text" class="form-control" name="ParkingType" [(ngModel)]="propModel.details.parkingType">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Project Name</label>
+          <div class="col">
+            <input type="text" class="form-control" name="ProjectName" [(ngModel)]="propModel.details.projectName">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Locality</label>
+          <div class="col">
+            <input type="text" class="form-control" name="Locality" [(ngModel)]="propModel.details.locality">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Nagotiable</label>
+          <div class="col">
+            <input type="text" class="form-control" name="negotiable" [(ngModel)]="propModel.details.negotiable">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Expected Price</label>
+          <div class="col">
+            <input type="text" class="form-control" name="expectedPrice" [(ngModel)]="propModel.details.expectedPrice">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Price Per Unit</label>
+          <div class="col">
+            <input type="text" class="form-control" name="pricePerUnit" [(ngModel)]="propModel.details.pricePerUnit">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Availability</label>
+          <div class="col">
+          
+           <ng-select [ngClass]="'ng-select'" [options]="availabilityOption" name="availability" [(ngModel)]="propModel.details.availability"></ng-select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">TrasactionType</label>
+          <div class="col">
+           <ng-select [ngClass]="'ng-select'" [options]="transTypeOption" name="availability" [(ngModel)]="propModel.details.transactionType"></ng-select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Possession BY</label>
+          <div class="col">
+            <input type="text" class="form-control" name="possessionBy" [(ngModel)]="propModel.details.possessionBy">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">All Inclusive</label>
+          <div class="col">
+            <input type="text" class="form-control" name="AllInclusive" [(ngModel)]="propModel.details.AllInclusive">
+          </div>
+        </div>
+       <h4 class="sub-title">Features</h4>
+       <div class="form-group row">
+          <label class="col-sm-8">Power Backup</label>
+          <div class="col">
+            <input type="text" class="form-control" name="powerBackup" [(ngModel)]="propModel.features.powerBackup">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Facig</label>
+          <div class="col">
+            <input type="text" class="form-control" name="facig" [(ngModel)]="propModel.features.facig">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Width Of Facing Road</label>
+          <div class="col">
+            <input type="text" class="form-control" name="widthOfFacingRoad" [(ngModel)]="propModel.features.widthOfFacingRoad">
+          </div>
+        </div>
+
+    <div class="form-group row">
+          <label class="col-sm-8">Width Of Facing Unit</label>
+          <div class="col">
+            <input type="text" class="form-control" name="widthOfFacingUnit" [(ngModel)]="propModel.features.widthOfFacingUnit">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Type of flooring</label>
+          <div class="col">
+            <input type="text" class="form-control" name="typeOfFlooring" [(ngModel)]="propModel.features.typeOfFlooring">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Gated Society</label>
+          <div class="col">
+            <input type="text" class="form-control" name="gatedSociety" [(ngModel)]="propModel.features.gatedSociety">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Amenities</label>
+          <div class="col">
+            <input type="text" class="form-control" name="amenities" [(ngModel)]="propModel.details.amenities">
+            <ng-select [ngClass]="'ng-select'" [options]="amenitiesOption" name="amenities"  [multiple]="true" [(ngModel)]="propModel.features.amenities"></ng-select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-8">Description</label>
+          <div class="col">
+            <input type="text" class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
+          </div>
+        </div>
+       
+       
     </form></app-card></div></div>
