@@ -7,7 +7,7 @@ export class PropertyFeatures {
 	public  widthOfFacingRoad:number;
 	public widthOfFacingUnit:String;
 	public  typeOfFlooring:String;
-	public  gatedSociety:boolean;
+	public  gatedSociety:boolean=false;
 	public  Description:String;
 	public  amenities:Array<String>;
 constructor() { }
