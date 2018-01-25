@@ -24,6 +24,7 @@ public class Property implements Serializable {
 	private long id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
+	private Location location;
 	@Enumerated(EnumType.STRING)
 	private PropertyType type;
 	@OneToOne(cascade = {CascadeType.ALL})
@@ -31,7 +32,7 @@ public class Property implements Serializable {
 	private PropertyDetails details;
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "property_features_id")
-	private Feature features;
+	private PropertyFeature features;
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "photo_id")
 	private Set<Photo> photos;
@@ -68,11 +69,11 @@ public class Property implements Serializable {
 		this.details = details;
 	}
 
-	public Feature getFeatures() {
+	public PropertyFeature getFeatures() {
 		return features;
 	}
 
-	public void setFeatures(Feature features) {
+	public void setFeatures(PropertyFeature features) {
 		this.features = features;
 	}
 

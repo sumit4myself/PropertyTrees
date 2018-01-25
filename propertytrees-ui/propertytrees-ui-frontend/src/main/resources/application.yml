@@ -1,0 +1,10 @@
+server:
+  port: ${port:8081}
+  display-name: UI Service
+
+logging:
+  level:
+    com.com.propertiestree.ui: INFO
+    org.springframework.cloud: INFO
+  pattern:
+    console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n'  

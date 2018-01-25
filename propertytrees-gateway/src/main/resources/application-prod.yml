@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    properties:
+      hibernate.format_sql: true
+      hibernate.hbm2ddl.import_files: postgres-setup.sql
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: true
+    database: POSTGRESQL
+  datasource:
+    tomcat:
+      max-wait: 1000
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/propertytrees
+logging:
+  level:
+    com.propertiestree: INFO
+    org.springframework: INFO
+    org.hibernate: INFO
+  pattern:
+    console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n'

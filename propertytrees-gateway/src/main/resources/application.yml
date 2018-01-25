@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active:
+    - dev
+server:
+  port: ${port:8080}
+  display-name: Gateway Service    
+  
+zuul:
+  routes:
+    ui:
+      url: http://localhost:8081
+    admin:
+      url: http://localhost:8082
+    service:
+      url: http://localhost:9000  

@@ -2,7 +2,6 @@ package com.propertiestree.common.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -11,16 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class PropertyDetails implements Serializable{
+public class PropertyDetails implements Serializable {
 
 	private static final long serialVersionUID = -8276470892004078810L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
-	@Column(unique = true, nullable = false, updatable = false)
-	private String uuid;
 	@Enumerated(EnumType.STRING)
 	private AreaUnitType unitType;
+	private int superBuiltUpArea;
 	private int builtUpArea;
 	private int bedrooms;
 	private int bathrooms;
@@ -33,18 +31,6 @@ public class PropertyDetails implements Serializable{
 	private int totalFloors;
 	@Enumerated(EnumType.STRING)
 	private ParkingType parkingType;
-	private String projectName;
-	private String locality;
-	//private Address address;
-	private boolean AllInclusive;
-	private boolean negotiable;
-	private int expectedPrice;
-	private int pricePerUnit;
-	@Enumerated(EnumType.STRING)
-	private Availability availability;
-	@Enumerated(EnumType.STRING)
-	private TransactionType transactionType;
-	private String possessionBy;
 
 	public long getId() {
 		return id;
@@ -54,20 +40,20 @@ public class PropertyDetails implements Serializable{
 		this.id = id;
 	}
 
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-
 	public AreaUnitType getUnitType() {
 		return unitType;
 	}
 
 	public void setUnitType(AreaUnitType unitType) {
 		this.unitType = unitType;
+	}
+
+	public int getSuperBuiltUpArea() {
+		return superBuiltUpArea;
+	}
+
+	public void setSuperBuiltUpArea(int superBuiltUpArea) {
+		this.superBuiltUpArea = superBuiltUpArea;
 	}
 
 	public int getBuiltUpArea() {
@@ -156,86 +142,6 @@ public class PropertyDetails implements Serializable{
 
 	public void setParkingType(ParkingType parkingType) {
 		this.parkingType = parkingType;
-	}
-
-	public String getProjectName() {
-		return projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-
-	public String getLocality() {
-		return locality;
-	}
-
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
-
-	/*public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}*/
-
-	public boolean isAllInclusive() {
-		return AllInclusive;
-	}
-
-	public void setAllInclusive(boolean allInclusive) {
-		AllInclusive = allInclusive;
-	}
-
-	public boolean isNegotiable() {
-		return negotiable;
-	}
-
-	public void setNegotiable(boolean negotiable) {
-		this.negotiable = negotiable;
-	}
-
-	public int getExpectedPrice() {
-		return expectedPrice;
-	}
-
-	public void setExpectedPrice(int expectedPrice) {
-		this.expectedPrice = expectedPrice;
-	}
-
-	public int getPricePerUnit() {
-		return pricePerUnit;
-	}
-
-	public void setPricePerUnit(int pricePerUnit) {
-		this.pricePerUnit = pricePerUnit;
-	}
-
-	public Availability getAvailability() {
-		return availability;
-	}
-
-	public void setAvailability(Availability availability) {
-		this.availability = availability;
-	}
-
-	public TransactionType getTransactionType() {
-		return transactionType;
-	}
-
-	public void setTransactionType(TransactionType transactionType) {
-		this.transactionType = transactionType;
-	}
-
-	public String getPossessionBy() {
-		return possessionBy;
-	}
-
-	public void setPossessionBy(String possessionBy) {
-		this.possessionBy = possessionBy;
 	}
 
 }

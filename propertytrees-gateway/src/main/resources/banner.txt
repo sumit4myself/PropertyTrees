@@ -1,0 +1,2 @@
+
+					:: PropertiesTree Gateway ::  ${application.formatted-version}

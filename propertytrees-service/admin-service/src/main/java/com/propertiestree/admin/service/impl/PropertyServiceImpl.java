@@ -33,8 +33,6 @@ public class PropertyServiceImpl implements PropertyService {
 	@Override
 	public Property createProperty(Property property) throws PropertyException {
 		property.setUuid(uuidGenerator.nextLargeUID());
-		property.getDetails().setUuid(uuidGenerator.nextLargeUID());
-		property.getFeatures().setUuid(uuidGenerator.nextLargeUID());
 		return repository.save(property);
 	}
 

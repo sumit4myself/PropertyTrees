@@ -1,0 +1,5 @@
+spring:
+  application:
+    name:  UISERVICE_ADMIN
+  profiles:
+    active: ${profile:dev}

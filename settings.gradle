@@ -4,10 +4,15 @@
  */
 
 rootProject.name = 'propertytrees'
-
+include 'propertytrees-gateway'
 include 'propertytrees-common'
 include 'propertytrees-service'
 include 'propertytrees-ui'
-include 'propertytrees-ui-frontend'
 include 'propertytrees-service:admin-service'
-include 'propertytrees-ui-frontend:angularjs-2'
+include 'propertytrees-ui:propertytrees-ui-admin'
+include 'propertytrees-ui:propertytrees-ui-frontend'
+include 'propertytrees-ui:propertytrees-ui-admin:angularjs-5'
+include 'propertytrees-ui:propertytrees-ui-frontend:angularjs-2'
+
+
+

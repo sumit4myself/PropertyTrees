@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2016, WebientSoft and/or its affiliates. All rights reserved.
- * WebientSoft PROPRIETARY/CONFIDENTIAL.Use is subject to license terms.
+ * Copyright (c) 2016, , EndToEnd and/or its affiliates. All rights reserved.
+ * EndToEnd PROPRIETARY/CONFIDENTIAL.Use is subject to license terms.
  */
 import org.apache.tools.ant.filters.ReplaceTokens
 
@@ -101,11 +101,8 @@ configure(allprojects) { project ->
 		testCompile "junit:junit:${junitVersion}"
 		testCompile "org.hamcrest:hamcrest-all:1.3"
 		testCompile "org.mockito:mockito-core:1.9.5"
-		//compile "com.netflix.feign:feign-httpclient:8.16.0"
 	}
 	
-	
-
 	ext.javadocLinks = [
 		"http://docs.oracle.com/javase/7/docs/api/",
 		"http://docs.oracle.com/javaee/6/api/",
@@ -144,8 +141,19 @@ configure(allprojects) { project ->
     excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml")
 }*/
 
+project(":propertytrees-gateway"){
+	description = "propertytrees gateway"
+    apply plugin: "org.springframework.boot"
+    springBoot {
+	    executable = true
+    }
+   
+    dependencies {
+	    compile "org.springframework.cloud:spring-cloud-starter-zuul"
+    }
+}
 
-project(":propertytrees-common") {
+project(":propertytrees-common"){
 	description = "propertytrees common"
 
 	dependencies {
@@ -195,42 +203,43 @@ project(":propertytrees-service:admin-service") {
 
 project(":propertytrees-ui") {
 	description = "propertytrees ui"
-	apply plugin: "org.springframework.boot"
-	springBoot {
-	    executable = true
-	}
-    dependencies {
-     	   compile "org.springframework.boot:spring-boot-starter-web"
-	       compile "org.springframework:spring-aspects"
-	       compile "org.apache.httpcomponents:httpclient"
+	subprojects{
+		apply plugin: "org.springframework.boot"
+		springBoot {
+		    executable = true
 		}
-}
-
-project(":propertytrees-ui-frontend") {
-	description = "propertytrees ui frontend"
-	apply plugin: "org.springframework.boot"
-	springBoot {
-	    executable = true
-	}
-    dependencies {
+	    dependencies {
            compile "org.springframework:spring-aspects"
 	       compile "org.apache.httpcomponents:httpclient"
      	   compile "org.springframework.boot:spring-boot-starter-web"
    	       compile "org.springframework.boot:spring-boot-starter-cache"
-		}
-   evaluationDependsOnChildren();
-  
-   bootRun { addResources = true }
+	   }
+	   evaluationDependsOnChildren();
+	   tasks.withType(JavaCompile){ options.warnings = false }
+   }
+}
 
-   tasks.withType(JavaCompile){ options.warnings = false }
-   
+project(":propertytrees-ui:propertytrees-ui-frontend") {
+   description = "propertytrees ui frontend"
    jar {
 	 from('angularjs-2/dist') {
-		//Public is a default supported Spring Boot resources directory.
+		//static is a default supported Spring Boot resources directory.
 		into 'static' }
   }
   //angularjs-2:build will be run before the processResources
-  processResources.dependsOn(':propertytrees-ui-frontend:angularjs-2:build')		
+  processResources.dependsOn(':propertytrees-ui:propertytrees-ui-frontend:angularjs-2:build')		
+}
+
+project(":propertytrees-ui:propertytrees-ui-admin") {
+  description = "propertytrees ui admin"
+  jar {
+	 from('angularjs-5/dist') {
+		//static is a default supported Spring Boot resources directory.
+		into 'static' 
+	}
+  }
+  //angularjs-5:build will be run before the processResources
+  processResources.dependsOn(':propertytrees-ui:propertytrees-ui-admin:angularjs-5:build')		
 }
 
 def buildEnvironment() {

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/* Styles go here */
+.header{
+ background-color: yellow;
+}
+.footer{
+  background-color: yellow;
+  position:absolute;
+  bottom: 0;
+  width:100%;
+}
+
