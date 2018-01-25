@@ -1,4 +1,0 @@
- 
-                                                                                                   
-					:: PropertiesTree UI-Service ::  ${application.formatted-version}			 
-				                                                                                  
