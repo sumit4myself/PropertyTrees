@@ -62,6 +62,13 @@ const MENUITEMS = [
         ]
       },
       {
+        state: 'proprty',
+        short_label: 'P',
+        name: 'Property',
+        type: 'link',
+        icon: 'icon-layout-cta-right'
+      },
+      {
         state: 'navigation',
         short_label: 'N',
         name: 'Navigation',

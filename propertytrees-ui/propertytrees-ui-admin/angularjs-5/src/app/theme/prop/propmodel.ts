@@ -3,7 +3,6 @@ import {PropertyDetails} from './propDetails';
 import {PropModel} from './propmodel';
 import {PropertyFeatures} from './propFeatures';
 
-
 @Injectable()
 export class PropModel {
 type:String;

@@ -43,7 +43,7 @@ getTransTypeOption(): Array<IOption> {
 getAmenitiesOption(): Array<IOption> {
         return this.cloneOptions(PropService.AMENITIES_OPTION);
     }
-    save(propObject): Void {
+    save(propObject): void {
         console.log(JSON.stringify(propObject));
     }
   constructor() { }

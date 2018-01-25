@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: './theme/navigation/navigation.module#NavigationModule'
       },
       {
+        path: 'proprty',
+        loadChildren: './theme/prop/prop.module#PropModule'
+      },
+      {
         path: 'widget',
         loadChildren: './theme/widget/widget.module#WidgetModule'
       },
