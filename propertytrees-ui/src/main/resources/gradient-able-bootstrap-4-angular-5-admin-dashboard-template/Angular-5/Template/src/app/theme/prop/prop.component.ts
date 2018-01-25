@@ -14,7 +14,11 @@ public propertyTypeOption: Array<IOption> = this.propService.getPropertyType();
 public availabilityOption: Array<IOption> = this.propService.getAvailabilityOption();
 public transTypeOption: Array<IOption> = this.propService.getTransTypeOption();
 public amenitiesOption: Array<IOption> = this.propService.getAmenitiesOption();
-
+saveMethod()
+{
+	this.propService.save(this.propModel);
+	this.propModel.isSubmitted=true;
+}
   constructor(private propService:PropService, private propModel:PropModel) { }
 
   ngOnInit() {
