@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import com.propertiestree.admin.exception.PropertyException;
 import com.propertiestree.admin.exception.PropertyNotFoundException;
 import com.propertiestree.admin.helper.UUIDGenerator;
+import com.propertiestree.admin.repository.LocationRepository;
 import com.propertiestree.admin.repository.PropertyRepository;
 import com.propertiestree.admin.service.PropertyService;
+import com.propertiestree.common.entity.Photo;
 import com.propertiestree.common.entity.Property;
 
 @Service
@@ -19,6 +21,8 @@ public class PropertyServiceImpl implements PropertyService {
 	private UUIDGenerator uuidGenerator;
 	@Autowired
 	private PropertyRepository repository;
+	@Autowired
+	private LocationRepository locationRepository;
 
 	@Override
 	public Page<Property> listProperty(Pageable pageable) {
@@ -33,6 +37,16 @@ public class PropertyServiceImpl implements PropertyService {
 	@Override
 	public Property createProperty(Property property) throws PropertyException {
 		property.setUuid(uuidGenerator.nextLargeUID());
+		property.getLocation().setCity(locationRepository.findOne(property.getLocation().getCity().getId()));
+		
+		for(Photo photo : property.getPhotos()) {
+			photo.setUuid(uuidGenerator.nextLargeUID());
+		}
+		
+		for(Photo photo : property.getFeatures().getPhotos()) {
+			photo.setUuid(uuidGenerator.nextLargeUID());
+		}
+		
 		return repository.save(property);
 	}
 

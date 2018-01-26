@@ -3,17 +3,22 @@ package com.propertiestree.common.entity;
 import java.io.Serializable;
 import java.util.Set;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "property_feature")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class PropertyFeature implements Serializable {
 
 	private static final long serialVersionUID = 8990478229114919319L;
@@ -29,11 +34,11 @@ public class PropertyFeature implements Serializable {
 	private boolean gatedSociety;
 	private boolean cornerProperty;
 	private String Description;
-	@ElementCollection(targetClass = Amenities.class)
-	@Enumerated(EnumType.STRING)
-	@CollectionTable(name = "feature_amenities")
-	@Column(name = "amenities")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "amenities_id")
 	private Set<Amenities> amenities;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "prop_feature_photo_id")
 	private Set<Photo> photos;
 
 	public long getId() {
@@ -107,6 +112,7 @@ public class PropertyFeature implements Serializable {
 	public void setDescription(String description) {
 		Description = description;
 	}
+
 
 	public Set<Amenities> getAmenities() {
 		return amenities;

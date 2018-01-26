@@ -1,5 +1,12 @@
 package com.propertiestree.common.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="apartment_feature")
+@PrimaryKeyJoinColumn(name="id")
 public class ApartmentFeature extends PropertyFeature {
 
 	private static final long serialVersionUID = 3161326869936918756L;

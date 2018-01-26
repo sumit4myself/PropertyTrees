@@ -1,5 +1,6 @@
 package com.propertiestree.common.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -9,10 +10,10 @@ import com.propertiestree.common.entity.City;
 @Embeddable
 public class Location {
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "citi_id")
 	private City city;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "project_id")
 	private Project project;
 	private String locality;

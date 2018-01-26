@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -24,6 +25,7 @@ public class Property implements Serializable {
 	private long id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
+	@Embedded
 	private Location location;
 	@Enumerated(EnumType.STRING)
 	private PropertyType type;
@@ -36,6 +38,9 @@ public class Property implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "photo_id")
 	private Set<Photo> photos;
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "pricing_id")
+	private Pricing pricing;
 
 	public long getId() {
 		return id;
@@ -85,4 +90,19 @@ public class Property implements Serializable {
 		this.photos = photos;
 	}
 
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Pricing getPricing() {
+		return pricing;
+	}
+
+	public void setPricing(Pricing pricing) {
+		this.pricing = pricing;
+	}
 }

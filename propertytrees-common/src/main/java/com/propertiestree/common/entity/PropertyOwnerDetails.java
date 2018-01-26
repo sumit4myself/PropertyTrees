@@ -1,13 +1,23 @@
 package com.propertiestree.common.entity;
 
-public class PropertyOwnerDetails {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class PropertyOwnerDetails {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	private long id;
 	private City city;
 	private int mobile;
 	private int mobile2;
 	private int mobile3;
 	private int landlinePhone1;
 	private int landlinePhone2;
+	
 	public City getCity() {
 		return city;
 	}

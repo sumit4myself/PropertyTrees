@@ -16,7 +16,7 @@ public class City implements Serializable{
 	private static final long serialVersionUID = 3601802861079572757L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;
+	private Integer id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
 	private String name;
@@ -24,11 +24,11 @@ public class City implements Serializable{
 	@JoinColumn(name="state_id")
     private State state;
     
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

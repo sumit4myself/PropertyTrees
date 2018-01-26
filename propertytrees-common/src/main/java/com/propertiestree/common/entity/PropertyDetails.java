@@ -2,12 +2,15 @@ package com.propertiestree.common.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class PropertyDetails implements Serializable {
@@ -16,8 +19,14 @@ public class PropertyDetails implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+	private String configuration;
 	@Enumerated(EnumType.STRING)
 	private AreaUnitType unitType;
+	@Enumerated(EnumType.STRING)
+	private FurnishingType furnishingType;
+	@OneToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "furnish_detail_id")
+	private FurnishingDetails furnishingDetails;
 	private int superBuiltUpArea;
 	private int builtUpArea;
 	private int bedrooms;
@@ -144,4 +153,28 @@ public class PropertyDetails implements Serializable {
 		this.parkingType = parkingType;
 	}
 
+	public String getConfiguration() {
+		return configuration;
+	}
+
+	public void setConfiguration(String configuration) {
+		this.configuration = configuration;
+	}
+
+	public FurnishingType getFurnishingType() {
+		return furnishingType;
+	}
+
+	public void setFurnishingType(FurnishingType furnishingType) {
+		this.furnishingType = furnishingType;
+	}
+
+	public FurnishingDetails getFurnishingDetails() {
+		return furnishingDetails;
+	}
+
+	public void setFurnishingDetails(FurnishingDetails furnishingDetails) {
+		this.furnishingDetails = furnishingDetails;
+	}
+	
 }
