@@ -2,15 +2,18 @@
   <div class="col-sm-12">
     <!-- Basic Form Inputs card start -->
     <app-card [title]="'Basic Form Inputs'" [cardOptionBlock]="true">
-      <h4 class="sub-title">Property</h4>
-      <form>
-        <div class="form-group row">
+    <form>
+      <form-wizard>
+  <wizard-step [title]="'Property'">
+    <div class="form-group row"></div>
+    <div class="form-group row">
           <label class="col-sm-4">Type</label>
           <div class="col">
             <ng-select [ngClass]="'ng-select'" [options]="propertyTypeOption" name="type" [(ngModel)]="propModel.type"></ng-select>
           </div>
         </div>
-        <h4 class="sub-title">Details</h4>
+  </wizard-step>
+  <wizard-step [title]="'Details'">
          <div class="form-group row">
           <label class="col-sm-4">Unit Type</label>
           <div class="col">
@@ -138,7 +141,8 @@
             <ui-switch class="js-single" color="#4680ff" name="AllInclusive" switchColor="#fff" [(ngModel)]="propModel.details.AllInclusive" size="medium" checked></ui-switch>
           </div>
         </div>
-       <h4 class="sub-title">Features</h4>
+  </wizard-step>
+  <wizard-step [title]="'Features'" (onComplete)="saveMethod()">
        <div class="form-group row">
           <label class="col-sm-4">Power Backup</label>
           <div class="col">
@@ -189,13 +193,13 @@
             <input type="text" class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
           </div>
         </div>
-         <div class="form-group row">
-          <label class="col-sm-4"></label>
-          <div class="col">
-       			<button class="btn btn-success btn-round" (click)="saveMethod()">Submit</button>
-       			<div *ngIf="propModel.isSubmitted">Success! Property informaion saved.</div>
-          </div>
-        </div>
-       
-       
-    </form></app-card></div></div>
+       <div [ngSwitch]="isCompleted">
+      <div *ngSwitchCase="true">
+        <h4>Thank you! You have completed all the steps.</h4>
+      </div>
+    </div>
+  </wizard-step> </form-wizard>
+</form>
+
+    
+     </app-card></div></div>

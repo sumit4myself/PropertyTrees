@@ -10,6 +10,8 @@ import {PropModel} from './propmodel';
 import {PropertyDetails} from './propDetails';
 import {PropertyFeatures} from './propFeatures';
 import {UiSwitchModule} from 'ng2-ui-switch';
+// Import your library
+import { FormWizardModule } from 'angular2-wizard';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import {UiSwitchModule} from 'ng2-ui-switch';
     SharedModule,
     UiSwitchModule,
     FormsModule,
-    SelectModule
+    SelectModule,
+    FormWizardModule
   ],
   declarations: [PropComponent],
   providers: [PropService,PropModel,PropertyDetails,PropertyFeatures]

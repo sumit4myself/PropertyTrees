@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {PropertyDetails} from './propDetails';
-import {PropModel} from './propmodel';
 import {PropertyFeatures} from './propFeatures';
 
 @Injectable()
