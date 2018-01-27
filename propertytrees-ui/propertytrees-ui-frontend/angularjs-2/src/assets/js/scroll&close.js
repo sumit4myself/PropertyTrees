@@ -24,33 +24,33 @@
 			   }
 			   clickEvent = false;
 		   });
-		   $('.profile-opener').on('click', function() {
-		$('body').addClass('no-scroll profile-open');
+
+ $(document).on("click",".profile-opener",function() {
+        $('body').addClass('no-scroll profile-open');
+    });
+	$('.profile-opener').on('click', function() {
+		
 	});
 	
-	$('.close').on('click', function() {
+	$(document).on("click",".close",function() {
 		$('body').removeClass('no-scroll menu-open profile-open');
 	});
 
-	 $(window).load(function() {
-		   var boxheight = $('#myCarousel .carousel-inner').innerHeight();
-		   var itemlength = $('#myCarousel .item').length;
-		   var triggerheight = Math.round(boxheight/itemlength+1);
-		   $('#myCarousel .list-group-item').outerHeight(triggerheight);
-	   });
+	 
 	   
 	<!--Side menu -->
-	
-	
-	
-
-	
-	
 			
     function Ftoggle(){
         $(".forgot").slideToggle('slow');
     }
 });
+
+		$(window).load(function() {
+		   var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+		   var itemlength = $('#myCarousel .item').length;
+		   var triggerheight = Math.round(boxheight/itemlength+1);
+		   $('#myCarousel .list-group-item').outerHeight(triggerheight);
+	   });
 		
 	   
 	   
