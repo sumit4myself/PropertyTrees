@@ -28,13 +28,21 @@
  $(document).on("click",".profile-opener",function() {
         $('body').addClass('no-scroll profile-open');
     });
-	$('.profile-opener').on('click', function() {
-		
-	});
+
 	
 	$(document).on("click",".close",function() {
 		$('body').removeClass('no-scroll menu-open profile-open');
 	});
+
+	$(document).on("focus","#buy-sub",function() {
+		$('div.buy-sub').show();
+		$(document).bind('focusin.buy-sub click.buy-sub',function(e) {
+			if ($(e.target).closest('.buy-sub, #buy-sub').length) return;
+			$(document).unbind('.buy-sub');
+			$('div.buy-sub').fadeOut('medium');
+		});
+	});
+	$('div.buy-sub').hide();
 
 	 
 	   
