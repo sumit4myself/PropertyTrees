@@ -30,4 +30,6 @@ logging:
     console: '%d{dd-MMM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n'
 image:
   upload:
-    targetDir: D:\\PHOTO\\SERVER\\   
+    targetDir: D:\\PHOTO\\SERVER\\
+allowedOrigins:
+  urls: http://localhost:4200   

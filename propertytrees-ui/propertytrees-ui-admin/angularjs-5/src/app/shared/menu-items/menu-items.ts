@@ -69,6 +69,13 @@ const MENUITEMS = [
         icon: 'icon-layout-cta-right'
       },
       {
+        state: 'registration',
+        short_label: 'R',
+        name: 'Registration',
+        type: 'link',
+        icon: 'icon-layout-cta-right'
+      },
+      {
         state: 'navigation',
         short_label: 'N',
         name: 'Navigation',
