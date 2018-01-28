@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-12">
     <!-- Basic Form Inputs card start -->
-    <app-card [title]="'Basic Form Inputs'" [cardOptionBlock]="true">
+    <app-card [title]="'Property'" [cardOptionBlock]="true">
     <form>
       <form-wizard>
   <wizard-step [title]="'Property'">
@@ -85,7 +85,7 @@
           </div>
           <label class="col-sm-4">Property on Floor</label>
           <div class="col">
-            <ng-select [ngClass]="'ng-select'" [options]="propOnFloorOption" name="totalFloors" [(ngModel)]="propModel.details.totalFloors"></ng-select>
+            <ng-select [ngClass]="'ng-select'" [options]="propOnFloorOption" name="propertyOnFloor" [(ngModel)]="propModel.details.propertyOnFloor"></ng-select>
           </div>
         </div>
          <!-- <div class="form-group row">

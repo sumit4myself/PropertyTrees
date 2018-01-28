@@ -25,8 +25,6 @@ saveMethod()
   constructor(private propService:PropService, private propModel:PropModel) { }
 
   ngOnInit() {
-  this.propModel.type='RESIDENTIAL';
-  this.propModel.details.unitType='';
   }
 
 }

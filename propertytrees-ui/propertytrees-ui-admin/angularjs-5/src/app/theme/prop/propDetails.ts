@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class PropertyDetails {
-public unitType: String;
+public unitType: String="";
 	public  builtUpArea:number;
 	public  bedrooms:String='0';
 	public  bathrooms:String='0';
@@ -11,7 +11,7 @@ public unitType: String;
 	public  studyRoom:boolean=false;
 	public  servantRoom:boolean=false;
 	public  others:boolean=false;
-	public  propertyOnFloor:number;
+	public  propertyOnFloor:String='Ground';
 	public  totalFloors:String='4';
 	public parkingType:String;
 	public  noOfCoverParking:String='0';
@@ -25,7 +25,7 @@ public unitType: String;
 	public negotiable : boolean=false;
 	public expectedPrice : number;
 	public pricePerUnit : number;
-	public  availability : String;
+	public  availability : String = "READY_TO_MOVE";
 	public transactionType : String;
 	public possessionBy : String;
 	

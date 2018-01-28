@@ -15,7 +15,7 @@ public static readonly PROPERTY_TYPE: Array<IOption> = [
   ];
 
   public static readonly NUMERIC_OPTION: Array<IOption> = [
-    {value: '0', label: '0', selected : true},
+    {value: '0', label: '0'},
     {value: '1', label: '1'},
     {value: '2', label: '2'},
     {value: '3', label: '3'},
