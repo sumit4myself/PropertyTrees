@@ -14,9 +14,33 @@ public static readonly PROPERTY_TYPE: Array<IOption> = [
     {value: 'READY_TO_MOVE', label: 'READY TO MOVE'}
   ];
 
+  public static readonly NUMERIC_OPTION: Array<IOption> = [
+    {value: '0', label: '0', selected : true},
+    {value: '1', label: '1'},
+    {value: '2', label: '2'},
+    {value: '3', label: '3'},
+    {value: '4', label: '4'},
+    {value: '5', label: '5'}
+  ];
+
   public static readonly TRANSTYPE_OPTION: Array<IOption> = [
     {value: 'RESALE', label: 'RESALE'},
     {value: 'NEW_BOOKING', label: 'NEW BOOKING'}
+  ];
+
+  public static readonly UNIT_TYPE_OPTION: Array<IOption> = [
+    {value: '', label: 'SELECT'},
+    {value: '1 BHK', label: '1 BHK'},
+    {value: '2 BHK', label: '2 BHK'},
+    {value: 'Others', label: 'Others'}
+  ];
+
+  public static readonly PROP_FLOOR_OPTION: Array<IOption> = [
+    {value: 'Basement', label: 'Basement'},
+    {value: 'LG', label: 'LG'},
+    {value: 'Ground', label: 'Ground'},
+    {value: '1', label: '1'},{value: '2', label: '2'},
+    {value: '3', label: '3'}
   ];
 
   public static readonly AMENITIES_OPTION: Array<IOption> = [
@@ -42,6 +66,15 @@ getTransTypeOption(): Array<IOption> {
     }
 getAmenitiesOption(): Array<IOption> {
         return this.cloneOptions(PropService.AMENITIES_OPTION);
+    }
+getNumericOption(): Array<IOption> {
+        return this.cloneOptions(PropService.NUMERIC_OPTION);
+    }
+getUnitTypeOption(): Array<IOption> {
+        return this.cloneOptions(PropService.UNIT_TYPE_OPTION);
+    }
+getPropOnFloorOption(): Array<IOption> {
+        return this.cloneOptions(PropService.PROP_FLOOR_OPTION);
     }
     save(propObject): void {
         console.log(JSON.stringify(propObject));

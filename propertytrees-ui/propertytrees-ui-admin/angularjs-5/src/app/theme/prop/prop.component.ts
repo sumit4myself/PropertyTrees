@@ -14,6 +14,9 @@ public propertyTypeOption: Array<IOption> = this.propService.getPropertyType();
 public availabilityOption: Array<IOption> = this.propService.getAvailabilityOption();
 public transTypeOption: Array<IOption> = this.propService.getTransTypeOption();
 public amenitiesOption: Array<IOption> = this.propService.getAmenitiesOption();
+public numericOption: Array<IOption> = this.propService.getNumericOption();
+public unitTypeOption: Array<IOption> = this.propService.getUnitTypeOption();
+propOnFloorOption: Array<IOption> = this.propService.getPropOnFloorOption();
 saveMethod()
 {
 	this.propService.save(this.propModel);
@@ -23,6 +26,7 @@ saveMethod()
 
   ngOnInit() {
   this.propModel.type='RESIDENTIAL';
+  this.propModel.details.unitType='';
   }
 
 }

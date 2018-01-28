@@ -13,80 +13,10 @@
           </div>
         </div>
   </wizard-step>
-  <wizard-step [title]="'Details'">
-         <div class="form-group row">
-          <label class="col-sm-4">Unit Type</label>
-          <div class="col">
-            <input type="text" class="form-control" name="unitType" [(ngModel)]="propModel.details.unitType">
-          </div>
-        </div>
-             <div class="form-group row">
-          <label class="col-sm-4">Built Up area</label>
-          <div class="col">
-            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.builtUpArea">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Bedrooms</label>
-          <div class="col">
-            <input type="text" class="form-control"  name="bedrooms" [(ngModel)]="propModel.details.bedrooms">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Bathrooms</label>
-          <div class="col">
-            <input type="text" class="form-control"  name="bathrooms" [(ngModel)]="propModel.details.bathrooms">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Balconies</label>
-          <div class="col">
-            <input type="text" class="form-control" name="balconies" [(ngModel)]="propModel.details.balconies">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Pooja room</label>
-          <div class="col">
-          <ui-switch class="js-single" color="#4680ff" name="poojaRoom" switchColor="#fff" [(ngModel)]="propModel.details.poojaRoom" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Study room</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="studyRoom" switchColor="#fff" [(ngModel)]="propModel.details.studyRoom" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Servant room</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="servantRoom" switchColor="#fff" [(ngModel)]="propModel.details.servantRoom" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Others</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="propModel.details.others" size="medium" checked></ui-switch>
-          </div>
-        </div>
-         <div class="form-group row">
-          <label class="col-sm-4">Property on Floor</label>
-          <div class="col">
-            <input type="text" class="form-control" name="propertyOnFloor" [(ngModel)]="propModel.details.propertyOnFloor">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Total Floors</label>
-          <div class="col">
-            <input type="text" class="form-control" name="totalFloors" [(ngModel)]="propModel.details.totalFloors">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Parking Type</label>
-          <div class="col">
-            <input type="text" class="form-control" name="ParkingType" [(ngModel)]="propModel.details.parkingType">
-          </div>
-        </div>
-        <div class="form-group row">
+
+  <wizard-step [title]="'Location'">
+    <div class="form-group row"></div>
+     <div class="form-group row">
           <label class="col-sm-4">Project Name</label>
           <div class="col">
             <input type="text" class="form-control" name="ProjectName" [(ngModel)]="propModel.details.projectName">
@@ -98,7 +28,104 @@
             <input type="text" class="form-control" name="Locality" [(ngModel)]="propModel.details.locality">
           </div>
         </div>
+  </wizard-step>
+
+  <wizard-step [title]="'Details'">
+    <div class="form-group row"></div>
+         <div class="form-group row">
+          <label class="col-sm-4">Unit Type</label>
+          <div class="col">
+            <ng-select [ngClass]="'ng-select'" [options]="unitTypeOption" name="unitType" [(ngModel)]="propModel.details.unitType"></ng-select>
+          </div>
+        </div>
+             <div class="form-group row">
+          <label class="col-sm-4">Built Up area</label>
+          <div class="col">
+            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.builtUpArea">
+          </div>
+        </div>
         <div class="form-group row">
+          <label class="col-sm-2">Bedrooms</label>
+          <div class="col-sm-2">
+             <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="bedrooms" [(ngModel)]="propModel.details.bedrooms"></ng-select>
+          </div>
+          <label class="col-sm-2">Bathrooms</label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="bathrooms" [(ngModel)]="propModel.details.bathrooms"></ng-select>
+          </div>
+          <label class="col-sm-2">Balconies</label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="balconies" [(ngModel)]="propModel.details.balconies"></ng-select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4">Pooja room</label>
+          <div class="col-sm-2">
+          <ui-switch class="js-single" color="#4680ff" name="poojaRoom" switchColor="#fff" [(ngModel)]="propModel.details.poojaRoom" size="medium" checked></ui-switch>
+          </div>
+          <label class="col-sm-4">Study room</label>
+          <div class="col-sm-2">
+            <ui-switch class="js-single" color="#4680ff" name="studyRoom" switchColor="#fff" [(ngModel)]="propModel.details.studyRoom" size="medium" checked></ui-switch>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4">Servant room</label>
+          <div class="col-sm-2">
+            <ui-switch class="js-single" color="#4680ff" name="servantRoom" switchColor="#fff" [(ngModel)]="propModel.details.servantRoom" size="medium" checked></ui-switch>
+          </div>
+          <label class="col-sm-4">Others</label>
+          <div class="col-sm-2">
+            <ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="propModel.details.others" size="medium" checked></ui-switch>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4">Total Floors</label>
+          <div class="col">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="totalFloors" [(ngModel)]="propModel.details.totalFloors"></ng-select>
+          </div>
+          <label class="col-sm-4">Property on Floor</label>
+          <div class="col">
+            <ng-select [ngClass]="'ng-select'" [options]="propOnFloorOption" name="totalFloors" [(ngModel)]="propModel.details.totalFloors"></ng-select>
+          </div>
+        </div>
+         <!-- <div class="form-group row">
+          <label class="col-sm-4">Property on Floor</label>
+          <div class="col">
+            <input type="text" class="form-control" name="propertyOnFloor" [(ngModel)]="propModel.details.propertyOnFloor">
+          </div>
+        </div> -->
+        
+        <div class="form-group row">
+          <label class=col>Parking Type</label>
+        </div>
+
+        <div class="form-group row">
+          <label class=col>No Parking</label>
+          <div class="col">
+            <ui-switch class="js-single" color="#4680ff" name="noParking" switchColor="#fff" [(ngModel)]="propModel.details.noParking" size="medium" checked></ui-switch>
+          </div>
+          <label class=col>Cover Parking</label>
+          <div class="col">
+            <ui-switch class="js-single" color="#4680ff" name="coverParking" switchColor="#fff" [(ngModel)]="propModel.details.coverParking" size="medium" checked></ui-switch>
+          </div>
+          <label class=col>Open Parking</label>
+          <div class="col">
+            <ui-switch class="js-single" color="#4680ff" name="openParking" switchColor="#fff" [(ngModel)]="propModel.details.openParking" size="medium" checked></ui-switch>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          
+          <label class="col-sm-4" *ngIf="propModel.details.noParking == false && propModel.details.coverParking == true">No of cover parking</label>
+          <div class="col" *ngIf="propModel.details.noParking == false && propModel.details.coverParking == true">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="noOfCoverParking" [(ngModel)]="propModel.details.noOfCoverParking"></ng-select>
+          </div>
+           <label class="col-sm-4" *ngIf="propModel.details.noParking == false && propModel.details.openParking == true">No of open parking</label>
+          <div class="col" *ngIf="propModel.details.noParking == false && propModel.details.openParking == true">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="noOfOpenParking" [(ngModel)]="propModel.details.noOfOpenParking"></ng-select>
+          </div>
+        </div>
+       <div class="form-group row">
           <label class="col-sm-4">Nagotiable</label>
           <div class="col">
             <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="propModel.details.negotiable" size="medium" checked></ui-switch>
