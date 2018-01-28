@@ -15,7 +15,7 @@ public class LocationServiceImpl implements LocationService{
 	private LocationRepository cityRepository;
 	
 	@Override
-	public List<City> getAllCity(){
+	public List<City> getAllCities(){
 		return cityRepository.findAll();
 	}
 	

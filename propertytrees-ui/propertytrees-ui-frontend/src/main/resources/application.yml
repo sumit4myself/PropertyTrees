@@ -1,5 +1,6 @@
 server:
   port: ${port:8081}
+  address: 34.217.106.45
   display-name: UI Service
 
 logging:

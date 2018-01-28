@@ -5,7 +5,7 @@ import java.util.List;
 import com.propertiestree.common.entity.City;
 
 public interface LocationService {
-
-	List<City> getAllCity();
+	
+	List<City> getAllCities();
 
 }

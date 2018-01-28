@@ -9920,21 +9920,14 @@ section.dark .nav-tabs.nav-stacked>li.active>a {
 	margin:0;
 }
 
-@media only screen and (max-width: 480px) {
-	.nav-tabs>li {
-		margin-bottom:3px;
-	}
-	.nav-tabs>li,
-	.nav-tabs>li>a {
-		display:block !important;
-		float:none !important;
-		border:0 !important;
-		background-color:rgba(0,0,0,0.01);
-	}
-	.nav-tabs>li>a :focus,
-	.nav-tabs>li.active>a {
-		background-color:rgba(0,0,0,0.05);
-	}
+@media only screen and (max-width: 480px){
+.nav-tabs>li, .nav-tabs>li>a{
+
+    display: block !important;
+    float: none !important;
+    border: 0 !important;
+    background-color: rgba(0,0,0,0.01);
+    color: #7d7a7a;
 }
 
 /* Stacked Alternate */

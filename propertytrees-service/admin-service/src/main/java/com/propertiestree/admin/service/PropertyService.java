@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 
 import com.propertiestree.admin.exception.PropertyException;
 import com.propertiestree.admin.exception.PropertyNotFoundException;
-import com.propertiestree.common.entity.Property;
+import com.propertiestree.common.entity.property.Property;
 
 public interface PropertyService {
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.propertiestree.admin.service.PropertyService;
-import com.propertiestree.common.entity.Property;
+import com.propertiestree.common.entity.property.Property;
 
 @RestController
 @RequestMapping("/property")

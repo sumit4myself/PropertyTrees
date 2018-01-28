@@ -1,55 +1,23 @@
-package com.propertiestree.common.entity;
+package com.propertiestree.common.model;
 
-import java.io.Serializable;
+import com.propertiestree.common.entity.UserType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+public class UserModel {
 
-@Entity
-@Table(name = "user_account")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class User implements Serializable {
-
-	private static final long serialVersionUID = -468285446816535561L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
-	@Column(unique = true, nullable = false, updatable = false)
-	private String uuid;
 	private String name;
 	private String emailid;
+	private UserType type;
 	private String city;
 	private int mobile;
 	private int mobile2;
 	private int mobile3;
 	private int landlinePhone;
 	private int landlinePhone2;
-	@Enumerated(EnumType.STRING)
-	private UserType type;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
+	private String companyName;
+	private String companyUrl;
+	private String companyAddress;
+	private String addressLine2;
+	private String companyProfile;
 
 	public String getName() {
 		return name;
@@ -65,6 +33,14 @@ public class User implements Serializable {
 
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
+	}
+
+	public UserType getType() {
+		return type;
+	}
+
+	public void setType(UserType type) {
+		this.type = type;
 	}
 
 	public String getCity() {
@@ -115,12 +91,44 @@ public class User implements Serializable {
 		this.landlinePhone2 = landlinePhone2;
 	}
 
-	public UserType getType() {
-		return type;
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setType(UserType type) {
-		this.type = type;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getCompanyUrl() {
+		return companyUrl;
+	}
+
+	public void setCompanyUrl(String companyUrl) {
+		this.companyUrl = companyUrl;
+	}
+
+	public String getCompanyAddress() {
+		return companyAddress;
+	}
+
+	public void setCompanyAddress(String companyAddress) {
+		this.companyAddress = companyAddress;
+	}
+
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
+	}
+
+	public String getCompanyProfile() {
+		return companyProfile;
+	}
+
+	public void setCompanyProfile(String companyProfile) {
+		this.companyProfile = companyProfile;
 	}
 
 }

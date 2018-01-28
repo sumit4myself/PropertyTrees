@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.propertiestree.admin.service.BannerService;
-import com.propertiestree.common.entity.Banner;
+import com.propertiestree.common.entity.property.Banner;
 
 @RestController
 @RequestMapping("/banner")

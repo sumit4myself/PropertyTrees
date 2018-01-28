@@ -4,4 +4,5 @@ spring:
     - dev
 server:
   port: ${port:9001}
+  address: 34.217.106.45
   display-name: Admin Service    

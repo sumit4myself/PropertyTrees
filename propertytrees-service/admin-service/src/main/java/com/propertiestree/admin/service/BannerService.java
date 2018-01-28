@@ -1,6 +1,6 @@
 package com.propertiestree.admin.service;
 
-import com.propertiestree.common.entity.Banner;
+import com.propertiestree.common.entity.property.Banner;
 
 public interface BannerService {
 

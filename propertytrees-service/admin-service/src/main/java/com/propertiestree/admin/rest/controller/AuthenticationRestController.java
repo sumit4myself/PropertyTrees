@@ -17,10 +17,11 @@ public class AuthenticationRestController {
 	public void login() {
 
 	}
-	
+
 	@RequestMapping("/forgetPassword")
-	public void forgetPassword(@RequestParam("username")String username,@RequestParam("email")String emailId) {
+	public void forgetPassword(@RequestParam(name = "username", required = false) String username,
+			@RequestParam(name = "email", required = false) String emailId) {
 
 	}
-	
+
 }

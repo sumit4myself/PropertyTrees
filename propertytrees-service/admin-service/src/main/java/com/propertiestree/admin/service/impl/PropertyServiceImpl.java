@@ -12,7 +12,7 @@ import com.propertiestree.admin.repository.LocationRepository;
 import com.propertiestree.admin.repository.PropertyRepository;
 import com.propertiestree.admin.service.PropertyService;
 import com.propertiestree.common.entity.Photo;
-import com.propertiestree.common.entity.Property;
+import com.propertiestree.common.entity.property.Property;
 
 @Service
 public class PropertyServiceImpl implements PropertyService {

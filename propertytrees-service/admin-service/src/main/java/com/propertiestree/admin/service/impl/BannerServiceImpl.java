@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.propertiestree.admin.helper.UUIDGenerator;
 import com.propertiestree.admin.repository.BannerRepository;
 import com.propertiestree.admin.service.BannerService;
-import com.propertiestree.common.entity.Banner;
+import com.propertiestree.common.entity.property.Banner;
 
 @Transactional
 @Service
