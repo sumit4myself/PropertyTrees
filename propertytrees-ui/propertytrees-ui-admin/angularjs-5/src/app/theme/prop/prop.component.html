@@ -41,21 +41,35 @@
         <div class="form-group row"></div>
         <div class="md-tabs">
             <ngb-tabset>
-              <ngb-tab title="Home">
+              <ngb-tab title="Residential">
                 <ng-template ngbTabContent>
                   <div [@fadeInOutTranslate] class="m-t-15">
-                    <p class="m-4">1. This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean mas Cum sociis natoque penatibus et magnis dis.....</p>
+                    <div class="deck" (click)="setPropType('O')" [class.propActive]="propModel.propType === 'O'" style="">
+              <i></i>
+                        <div class="propicons prop3"></div>
+              <span class="ng-binding">Residential Land</span>
+            </div>
+                   <div class="deck" (click)="setPropType('P')" [class.propActive]="propModel.propType === 'P'" style="">
+              <i></i>
+                        <div class="propicons prop20"></div>
+              <span class="ng-binding">Industrial Area</span>
+            </div>
                   </div>
                 </ng-template>
               </ngb-tab>
-              <ngb-tab title="Profile">
+              <ngb-tab title="Commercial">
                 <ng-template ngbTabContent>
                   <div [@fadeInOutTranslate] class="m-t-15">
-                    <ul class="userOpts" ng-class="{'userOptionsError':ClassError}">
-        <li><div class="prop1 active" (click)="setPropType('O')" [class.active]="propModel.propType === 'O'"><i></i><span></span> Farm House</div></li>
-        <li><div class="prop2" [class.active]="propModel.propType ==='A'" (click)="setPropType('A')" ><i></i><span></span> Independant House / Villa</div></li>
-        <li><div class="prop3" (click)="setPropType('B')" [class.active]="propModel.propType === 'B'"><i></i><span></span> Hotel/ Resorts</div></li>
-      </ul>
+                    <div class="deck" (click)="setPropType('O')" [class.propActive]="propModel.propType === 'O'" style="">
+              <i></i>
+                        <div class="propicons prop11"></div>
+              <span class="ng-binding">Residential Land</span>
+            </div>
+                   <div class="deck" (click)="setPropType('P')" [class.propActive]="propModel.propType === 'P'" style="">
+              <i></i>
+                        <div class="propicons prop12"></div>
+              <span class="ng-binding">Industrial Area</span>
+            </div>
                   </div>
                 </ng-template>
               </ngb-tab>
@@ -66,8 +80,12 @@
   <wizard-step [title]="'Location'">
     <div class="form-group row"></div>
      <div class="form-group row">
-          <label class="col-sm-4">Project Name</label>
-          <div class="col">
+          <label class="col-sm-3">City</label>
+          <div class="col-sm-3">
+            <ng-select [ngClass]="'ng-select'" [options]="cityOption" name="city" [(ngModel)]="propModel.details.city"></ng-select>
+          </div>
+          <label class="col-sm-3">Project Name</label>
+          <div class="col-sm-3">
             <input type="text" class="form-control" name="ProjectName" [(ngModel)]="propModel.details.projectName">
           </div>
         </div>

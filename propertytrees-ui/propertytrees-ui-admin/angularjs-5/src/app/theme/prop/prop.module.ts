@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PropComponent } from './prop.component';
 import {PropRoutingModule} from './prop-routing.module';
 import {SharedModule} from '../../shared/shared.module';
+import { HttpModule } from '@angular/http';
 import {PropService} from './prop.service';
 import {PropModel} from './propmodel';
 import {PropertyDetails} from './propDetails';
@@ -21,6 +22,7 @@ import { FormWizardModule } from 'angular2-wizard';
     PropRoutingModule,
     SharedModule,
     UiSwitchModule,
+    HttpModule,
     FormsModule,
     SelectModule,
     FormWizardModule

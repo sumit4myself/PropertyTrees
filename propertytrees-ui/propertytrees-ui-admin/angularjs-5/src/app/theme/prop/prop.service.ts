@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {IOption} from 'ng-select';
 
+import { Http, Response, Headers } from '@angular/http';
+
 @Injectable()
 export class PropService {
 public static readonly PROPERTY_TYPE: Array<IOption> = [
@@ -76,11 +78,17 @@ getUnitTypeOption(): Array<IOption> {
 getPropOnFloorOption(): Array<IOption> {
         return this.cloneOptions(PropService.PROP_FLOOR_OPTION);
     }
-
+getCityOption(): Array<IOption> {
+this.http.get("http://ec2-34-217-106-45.us-west-2.compute.amazonaws.com:9001/location/cities").subscribe(
+      (res: Response) => {
+      var obj= JSON.parse(res._body);
+      return obj.map(objct => ({ value: objct.name, label: objct.name }));
+      })
+    }
     save(propObject): void {
         console.log(JSON.stringify(propObject));
     }
-  constructor() { }
+  constructor(private http: Http) { }
 
 private cloneOptions(options: Array<IOption>): Array<IOption> {
         return options.map(option => ({ value: option.value, label: option.label }));
