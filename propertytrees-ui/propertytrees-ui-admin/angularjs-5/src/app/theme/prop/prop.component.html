@@ -5,13 +5,40 @@
     <form>
       <form-wizard>
   <wizard-step [title]="'Property'">
-    <div class="form-group row"></div>
+          
+          <div class="form-group row"></div>
+    <div class="form-group row">
+          <label class="col-sm-4">You are:</label>
+         <!--  <div class="col">
+           <ng-select [ngClass]="'ng-select'" [options]="userTypeOption" name="type" [(ngModel)]="propModel.userType"></ng-select>
+         </div> -->
+
+
+          
+                <!-- ngIf: fieldLocks['Class'] -->
+                <!-- ngIf: isFieldSuspicious('Class') -->
+            
+           </div> 
+        <ul class="userOptions" ng-class="{'userOptionsError':ClassError}">
+        <li><div class="owner active" (click)="setClass('O')" [class.active]="propModel.slctd === 'O'"><i></i><span></span> Owner</div></li>
+        <li><div class="dealer" [class.active]="propModel.slctd ==='A'" (click)="setClass('A')" ><i></i><span></span> Dealer</div></li>
+        <li><div class="builder" (click)="setClass('B')" [class.active]="propModel.slctd === 'B'"><i></i><span></span> Builder</div></li>
+      </ul>
+      <div class="error errorIcon ClassError ng-binding ng-hide" ng-show="ClassError"><span></span> </div>
+   
+
+      <div class="form-group row"></div>
     <div class="form-group row">
           <label class="col-sm-4">Type</label>
           <div class="col">
             <ng-select [ngClass]="'ng-select'" [options]="propertyTypeOption" name="type" [(ngModel)]="propModel.type"></ng-select>
           </div>
         </div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
   </wizard-step>
 
   <wizard-step [title]="'Location'">

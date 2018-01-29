@@ -6,5 +6,6 @@ import {PropertyFeatures} from './propFeatures';
 export class PropModel {
 type:String='RESIDENTIAL';
 isSubmitted:boolean=false;
+slctd:String='O';
 constructor(private details: PropertyDetails, private features:PropertyFeatures) { }
 }

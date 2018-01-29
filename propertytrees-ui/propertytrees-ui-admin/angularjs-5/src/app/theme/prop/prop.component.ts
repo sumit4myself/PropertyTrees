@@ -17,6 +17,10 @@ public amenitiesOption: Array<IOption> = this.propService.getAmenitiesOption();
 public numericOption: Array<IOption> = this.propService.getNumericOption();
 public unitTypeOption: Array<IOption> = this.propService.getUnitTypeOption();
 propOnFloorOption: Array<IOption> = this.propService.getPropOnFloorOption();
+setClass(x)
+{
+this.propModel.slctd=x;
+}
 saveMethod()
 {
 	this.propService.save(this.propModel);

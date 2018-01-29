@@ -76,6 +76,7 @@ getUnitTypeOption(): Array<IOption> {
 getPropOnFloorOption(): Array<IOption> {
         return this.cloneOptions(PropService.PROP_FLOOR_OPTION);
     }
+
     save(propObject): void {
         console.log(JSON.stringify(propObject));
     }
