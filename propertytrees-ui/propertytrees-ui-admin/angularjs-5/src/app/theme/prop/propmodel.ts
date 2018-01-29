@@ -7,5 +7,6 @@ export class PropModel {
 type:String='RESIDENTIAL';
 isSubmitted:boolean=false;
 slctd:String='O';
+propType:String='O';
 constructor(private details: PropertyDetails, private features:PropertyFeatures) { }
 }

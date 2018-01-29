@@ -10,6 +10,7 @@ import {PropModel} from './propmodel';
 import {PropertyDetails} from './propDetails';
 import {PropertyFeatures} from './propFeatures';
 import {UiSwitchModule} from 'ng2-ui-switch';
+import {animate, style, transition, trigger} from '@angular/animations';
 // Import your library
 import { FormWizardModule } from 'angular2-wizard';
 
