@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: './theme/registration/reg.module#RegModule'
       },
       {
+        path: 'login',
+        loadChildren: './theme/login/login.module#LoginModule'
+      },
+      {
         path: 'widget',
         loadChildren: './theme/widget/widget.module#WidgetModule'
       },
