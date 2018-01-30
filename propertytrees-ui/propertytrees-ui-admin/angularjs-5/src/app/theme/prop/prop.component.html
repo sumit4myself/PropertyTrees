@@ -43,33 +43,143 @@
             <ngb-tabset>
               <ngb-tab title="Residential">
                 <ng-template ngbTabContent>
-                  <div [@fadeInOutTranslate] class="m-t-15">
-                    <div class="deck" (click)="setPropType('O')" [class.propActive]="propModel.propType === 'O'" style="">
+                  <div [@fadeInOutTranslate] class="m-t-15" *ngIf="propModel.type=='SELL'">
+                    <div class="form-group row">
+                    <div class="deck col-sm-2" *ngIf="propModel.type=='SELL'" (click)="setPropType('Resi')" [class.propActive]="propModel.propType === 'Resi' || propModel.propType === 'PG'" style="">
+              <i></i>
+                        <div class="propicons prop1"></div>
+              <span class="ng-binding">Residential Apartment</span>
+            </div>
+                   <div class="deck col-sm-2" *ngIf="propModel.type=='SELL'" (click)="setPropType('ResiLand')" [class.propActive]="propModel.propType === 'ResiLand'" style="">
               <i></i>
                         <div class="propicons prop3"></div>
               <span class="ng-binding">Residential Land</span>
             </div>
-                   <div class="deck" (click)="setPropType('P')" [class.propActive]="propModel.propType === 'P'" style="">
+            <div class="deck col-sm-2" (click)="setPropType('villa')" [class.propActive]="propModel.propType === 'villa'" style="">
               <i></i>
-                        <div class="propicons prop20"></div>
-              <span class="ng-binding">Industrial Area</span>
+                        <div class="propicons prop2"></div>
+              <span class="ng-binding">Independent House/Villa</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('indo')" [class.propActive]="propModel.propType === 'indo'" style="">
+              <i></i>
+                        <div class="propicons prop4"></div>
+              <span class="ng-binding">Independent/ Builder Floor</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('farm')" [class.propActive]="propModel.propType === 'farm'" style="">
+              <i></i>
+                        <div class="propicons prop5"></div>
+              <span class="ng-binding">Farm House</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('studio')" [class.propActive]="propModel.propType === 'studio'" style="">
+              <i></i>
+                        <div class="propicons prop90"></div>
+              <span class="ng-binding">Studio Apartment</span>
+            </div></div>
+                  
+              <div class="form-group row">
+                    <div class="deck col-sm-2" (click)="setPropType('service')" [class.propActive]="propModel.propType === 'service'" style="">
+              <i></i>
+                        <div class="propicons prop22"></div>
+              <span class="ng-binding">Serviced Apartments</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('other')" [class.propActive]="propModel.propType === 'other'" style="">
+              <i></i>
+                        <div class="propicons prop80"></div>
+              <span class="ng-binding">Other</span>
+            </div></div>
+                  </div>
+                  
+                  <div [@fadeInOutTranslate] *ngIf="propModel.type=='RENT'" class="m-t-15">
+                    <div class="form-group row">
+                   
+            <div class="deck col-sm-2" (click)="setPropType('villa')" [class.propActive]="propModel.propType === 'villa'" style="">
+              <i></i>
+                        <div class="propicons prop2"></div>
+              <span class="ng-binding">Independent House/Villa</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('indo')" [class.propActive]="propModel.propType === 'indo'" style="">
+              <i></i>
+                        <div class="propicons prop4"></div>
+              <span class="ng-binding">Independent/ Builder Floor</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('farm')" [class.propActive]="propModel.propType === 'farm'" style="">
+              <i></i>
+                        <div class="propicons prop5"></div>
+              <span class="ng-binding">Farm House</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('studio')" [class.propActive]="propModel.propType === 'studio'" style="">
+              <i></i>
+                        <div class="propicons prop90"></div>
+              <span class="ng-binding">Studio Apartment</span>
+            </div>
+                    <div class="deck col-sm-2" (click)="setPropType('service')" [class.propActive]="propModel.propType === 'service'" style="">
+              <i></i>
+                        <div class="propicons prop22"></div>
+              <span class="ng-binding">Serviced Apartments</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('other')" [class.propActive]="propModel.propType === 'other'" style="">
+              <i></i>
+                        <div class="propicons prop80"></div>
+              <span class="ng-binding">Other</span>
+            </div></div>
+                  </div>
+                  <div [@fadeInOutTranslate] class="m-t-15" *ngIf="propModel.type=='PG'">
+                    <div class="form-group row">
+                    <div class="deck col-sm-2" (click)="setPropType('Resi')" [class.propActive]="propModel.propType === 'Resi'" style="">
+              <i></i>
+                        <div class="propicons prop1"></div>
+              <span class="ng-binding">Residential Apartment</span>
+            </div>
+                   
+            <div class="deck col-sm-2" (click)="setPropType('villa')" [class.propActive]="propModel.propType === 'villa'" style="">
+              <i></i>
+                        <div class="propicons prop2"></div>
+              <span class="ng-binding">Independent House/Villa</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('indo')" [class.propActive]="propModel.propType === 'indo'" style="">
+              <i></i>
+                        <div class="propicons prop4"></div>
+              <span class="ng-binding">Independent/ Builder Floor</span>
+            </div>
+
+            <div class="deck col-sm-2" (click)="setPropType('studio')" [class.propActive]="propModel.propType === 'studio'" style="">
+              <i></i>
+                        <div class="propicons prop90"></div>
+              <span class="ng-binding">Studio Apartment</span>
+            </div>
+                    <div class="deck col-sm-2" (click)="setPropType('service')" [class.propActive]="propModel.propType === 'service'" style="">
+              <i></i>
+                        <div class="propicons prop22"></div>
+              <span class="ng-binding">Serviced Apartments</span>
+            </div>
+
             </div>
                   </div>
                 </ng-template>
               </ngb-tab>
               <ngb-tab title="Commercial">
                 <ng-template ngbTabContent>
-                  <div [@fadeInOutTranslate] class="m-t-15">
-                    <div class="deck" (click)="setPropType('O')" [class.propActive]="propModel.propType === 'O'" style="">
+                  <div [@fadeInOutTranslate] class="m-t-15" >
+                    <div class="form-group row">
+                    <div class="deck  col-sm-2" (click)="setPropType('off')" [class.propActive]="propModel.propType === 'off'" style="">
               <i></i>
-                        <div class="propicons prop11"></div>
-              <span class="ng-binding">Residential Land</span>
+                        <div class="propicons prop7"></div>
+              <span class="ng-binding">Commercial Office/ Space</span>
             </div>
-                   <div class="deck" (click)="setPropType('P')" [class.propActive]="propModel.propType === 'P'" style="">
+                   <div class="deck  col-sm-2" (click)="setPropType('commshops')" [class.propActive]="propModel.propType === 'commshops'" style="">
               <i></i>
-                        <div class="propicons prop12"></div>
-              <span class="ng-binding">Industrial Area</span>
-            </div>
+                        <div class="propicons prop6"></div>
+              <span class="ng-binding">Commercial Shops</span>
+            </div></div>
                   </div>
                 </ng-template>
               </ngb-tab>
