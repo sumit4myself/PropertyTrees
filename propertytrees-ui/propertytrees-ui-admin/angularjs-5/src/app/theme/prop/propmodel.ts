@@ -4,7 +4,7 @@ import {PropertyFeatures} from './propFeatures';
 
 @Injectable()
 export class PropModel {
-type:String='RESIDENTIAL';
+type:String='SELL';
 public isSubmitted:boolean=false;
 slctd:String='O';
 propType:String='O';

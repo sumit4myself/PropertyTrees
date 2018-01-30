@@ -42,20 +42,15 @@ setPropType(x)
 {
 this.propModel.propType=x;
 }
-
 saveMethod()
 {
 	this.propService.save(this.propModel);
 	this.propModel.isSubmitted=true;
 }
-
-private cloneOptions(options: Array): Array<IOption> {
-        console.log(options);
-        this.cityOption= options.map(option => ({ value: option, label: option }));
-    }
   constructor(private propService:PropService, private propModel:PropModel) { }
 
   ngOnInit(): void {
+  this.propModel.type="SELL";
   this.promiseBooks = this.propService.getCity();
   this.promiseBooks.then(    
            opt => this.cityOption= opt);

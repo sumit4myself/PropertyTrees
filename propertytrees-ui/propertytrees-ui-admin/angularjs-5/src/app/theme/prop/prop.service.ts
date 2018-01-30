@@ -6,9 +6,9 @@ import { Http, Response, Headers } from '@angular/http';
 @Injectable()
 export class PropService {
 public static readonly PROPERTY_TYPE: Array<IOption> = [
-    {value: 'PG', label: 'PG'},
-    {value: 'RESIDENTIAL', label: 'RESIDENTIAL'},
-    {value: 'COMMERCIAL', label: 'COMMERCIAL'}
+    {value: 'RENT', label: 'RENT'},
+    {value: 'SELL', label: 'SELL'},
+    {value: 'PG', label: 'PG'}
   ];
 
   public static readonly AVAILABILITY_OPTION: Array<IOption> = [
