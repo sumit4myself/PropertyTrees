@@ -30,7 +30,9 @@ public amenitiesOption: Array<IOption> = this.propService.getAmenitiesOption();
 public numericOption: Array<IOption> = this.propService.getNumericOption();
 public unitTypeOption: Array<IOption> = this.propService.getUnitTypeOption();
 propOnFloorOption: Array<IOption> = this.propService.getPropOnFloorOption();
-cityOption: Array<IOption> = this.propService.getCityOption();
+promiseBooks: Promise<IOption[]>
+   books: IOption[];
+cityOption: Array<IOption>;
 setClass(x)
 {
 this.propModel.slctd=x;
@@ -46,9 +48,17 @@ saveMethod()
 	this.propService.save(this.propModel);
 	this.propModel.isSubmitted=true;
 }
+
+private cloneOptions(options: Array): Array<IOption> {
+        console.log(options);
+        this.cityOption= options.map(option => ({ value: option, label: option }));
+    }
   constructor(private propService:PropService, private propModel:PropModel) { }
 
-  ngOnInit() {
-  }
+  ngOnInit(): void {
+  this.promiseBooks = this.propService.getCity();
+  this.promiseBooks.then(    
+           opt => this.cityOption= opt);
+   }
 
 }
