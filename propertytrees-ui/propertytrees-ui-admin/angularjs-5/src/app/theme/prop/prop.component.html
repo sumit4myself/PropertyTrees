@@ -168,7 +168,7 @@
               </ngb-tab>
               <ngb-tab title="Commercial">
                 <ng-template ngbTabContent>
-                    <div [@fadeInOutTranslate] class="m-t-15" *ngIf="propModel.type=='SELL'" >
+                    <div [@fadeInOutTranslate] class="m-t-15" *ngIf="propModel.type=='SELL' || propModel.type=='RENT'"   >
                     <div class="form-group row">
                     <div class="deck  col-sm-2" (click)="setPropType('off')" [class.propActive]="propModel.propType === 'off'" style="">
               <i></i>
