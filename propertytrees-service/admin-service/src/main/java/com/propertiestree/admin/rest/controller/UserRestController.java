@@ -1,6 +1,7 @@
 package com.propertiestree.admin.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,7 @@ public class UserRestController {
 	@Autowired
 	private UserService service;
 
-	@RequestMapping(value = "/register")
+	@PostMapping(value = "/register")
 	public void register(@RequestBody UserModel user) {
 		service.register(user);
 	}

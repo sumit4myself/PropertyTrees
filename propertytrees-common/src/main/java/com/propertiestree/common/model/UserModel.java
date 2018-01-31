@@ -5,7 +5,8 @@ import com.propertiestree.common.entity.UserType;
 public class UserModel {
 
 	private String name;
-	private String emailid;
+	private String emailId;
+	private String password;
 	private UserType type;
 	private String city;
 	private int mobile;
@@ -27,12 +28,20 @@ public class UserModel {
 		this.name = name;
 	}
 
-	public String getEmailid() {
-		return emailid;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public UserType getType() {

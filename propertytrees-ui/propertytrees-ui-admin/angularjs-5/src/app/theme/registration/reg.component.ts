@@ -17,9 +17,11 @@ export class RegComponent implements OnInit {
     //console.log("Reg Data :: "+JSON.stringify(registration));
     this.regData = {
       "name":       registration.userName,
-      "email":      registration.email,
-      "contactNo":  registration.mobileNo,
-      "password":   registration.password
+      "emailId":      registration.email,
+      "password":      registration.password,
+      "mobile":  registration.mobileNo,
+      "type":  "OWNER"
+      
     }
   	
     this.http.post("http://localhost:9001/user/register/",this.regData).subscribe(

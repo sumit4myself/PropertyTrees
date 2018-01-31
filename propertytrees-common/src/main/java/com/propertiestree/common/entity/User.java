@@ -25,7 +25,8 @@ public class User implements Serializable {
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
 	private String name;
-	private String emailid;
+	private String emailId;
+	private String password;
 	private String city;
 	private int mobile;
 	private int mobile2;
@@ -59,12 +60,20 @@ public class User implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmailid() {
-		return emailid;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getCity() {
