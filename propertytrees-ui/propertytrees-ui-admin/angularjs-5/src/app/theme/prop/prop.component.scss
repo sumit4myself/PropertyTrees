@@ -15,6 +15,12 @@
     opacity: 1;
 }
 
+.deck span {
+    display: table;
+    margin: auto;
+}
+    
+
 .propicons {
     margin: auto;
     max-width: 36px;
@@ -180,7 +186,7 @@
 .userOpts li div span {
     background: url('../../../assets/prop_types-v2.png') top left no-repeat;
     display: inline-block;
-    width: 48px;
+    width: auto;
     height: 42px;
     max-width: 36px;
     margin:auto
