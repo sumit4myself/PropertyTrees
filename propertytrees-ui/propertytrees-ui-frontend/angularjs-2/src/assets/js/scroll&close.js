@@ -64,8 +64,7 @@
 		closeAllPanels(accordionId);
 	  }
 	
-  
-	openAllPanels = function(aId) {
+		function openAllPanels(aId){
 	  console.log("setAllPanelOpen");
 	  $(aId + ' .panel-collapse:not(".in")').collapse('show');
 	}
