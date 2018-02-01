@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IOption} from 'ng-select';
+import {PropertyType} from './propertyType';
 
 import { Http, Response, Headers } from '@angular/http';
 
@@ -9,6 +10,56 @@ public static readonly PROPERTY_TYPE: Array<IOption> = [
     {value: 'RENT', label: 'RENT'},
     {value: 'SELL', label: 'SELL'},
     {value: 'PG', label: 'PG'}
+  ];
+
+public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
+    {name: 'Residential Apartment', className: 'prop1'},
+    {name: 'Residential Land', className: 'prop3'},
+    {name: 'Independent House/Villa', className: 'prop2'},
+    {name: 'Independent/ Builder Floor', className: 'prop4'},
+    {name: 'Farm House', className: 'prop5'},
+    {name: 'Studio Apartment', className: 'prop90'},
+    {name: 'Serviced Apartments', className: 'prop22'},
+    {name: 'Other', className: 'prop80'}
+  ];
+
+  public static readonly COMMERCIAL_MENU: Array<PropertyType> = [
+    {name: 'Commercial Office/ Space', className: 'prop7'},
+    {name: 'Commercial Shops', className: 'prop6'},
+    {name: 'Commercial Land/ Inst. Land', className: 'prop9'},
+    {name: 'Commercial Showrooms', className: 'prop82'},
+    {name: 'Agricultural/ Farm Land', className: 'prop20'},
+    {name: 'Industrial Lands/ Plots', className: 'prop16'},
+    {name: 'Factory', className: 'prop18'},
+    {name: 'Ware House', className: 'prop15'},
+    {name: 'Office in IT Park', className: 'prop14'},
+    {name: 'Hotel/ Resorts', className: 'prop10'},
+    {name: 'Guest-House/ Banquet-Halls', className: 'prop83'},
+    {name: 'Space in Retail Mall', className: 'prop12'},
+    {name: 'Office in Business Park', className: 'prop13'},
+    {name: 'Business center', className: 'prop21'},
+    {name: 'Manufacturing', className: 'prop19'},
+    {name: 'Cold Storage', className: 'prop17'},
+    {name: 'Time Share', className: 'prop11'},
+    {name: 'Other', className: 'prop81'}
+    
+  ];
+
+  public static readonly PROPERTY_TYPE_RENT_MENU: Array<PropertyType> = [
+    {name: 'Independent House/Villa', className: 'prop2'},
+    {name: 'Independent/ Builder Floor', className: 'prop4'},
+    {name: 'Farm House', className: 'prop5'},
+    {name: 'Studio Apartment', className: 'prop90'},
+    {name: 'Serviced Apartments', className: 'prop22'},
+    {name: 'Other', className: 'prop80'}
+  ];
+
+  public static readonly PROPERTY_TYPE_PG_MENU: Array<PropertyType> = [
+  {name: 'Residential Apartment', className: 'prop1'},
+    {name: 'Independent House/Villa', className: 'prop2'},
+    {name: 'Independent/ Builder Floor', className: 'prop4'},
+    {name: 'Studio Apartment', className: 'prop90'},
+    {name: 'Serviced Apartments', className: 'prop22'}
   ];
 
   public static readonly AVAILABILITY_OPTION: Array<IOption> = [
@@ -81,6 +132,23 @@ getPropOnFloorOption(): Array<IOption> {
 
     save(propObject): void {
         console.log(JSON.stringify(propObject));
+    }
+getPropTypeMenu(propertyType : String): Array<PropertyType> {
+      if(propertyType==='RENT')
+      {
+      return PropService.PROPERTY_TYPE_RENT_MENU;
+      }
+      if(propertyType==='PG')
+      {
+      return PropService.PROPERTY_TYPE_PG_MENU;
+      }
+        return PropService.PROPERTY_TYPE_SELL_MENU;
+    }
+    getCommercialMenu(propertyType : String): Array<PropertyType> {
+      if(propertyType!=='PG')
+      {
+      return PropService.COMMERCIAL_MENU;
+      }
     }
 getCity(): Promise<IOption[]> {
         return this.http.get("http://ec2-34-217-106-45.us-west-2.compute.amazonaws.com:9001/location/cities").toPromise()

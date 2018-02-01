@@ -3,6 +3,7 @@ import {PropService} from './prop.service';
 import {PropModel} from './propmodel';
 import {IOption} from 'ng-select';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {PropertyType} from './propertyType';
 
 @Component({
   selector: 'app-prop',
@@ -30,6 +31,8 @@ public amenitiesOption: Array<IOption> = this.propService.getAmenitiesOption();
 public numericOption: Array<IOption> = this.propService.getNumericOption();
 public unitTypeOption: Array<IOption> = this.propService.getUnitTypeOption();
 propOnFloorOption: Array<IOption> = this.propService.getPropOnFloorOption();
+propTypeMenu: Array<PropertyType> = this.propService.getPropTypeMenu(this.propModel.propType);
+commercialMenu: Array<PropertyType> = this.propService.getCommercialMenu(this.propModel.propType);
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
@@ -41,11 +44,20 @@ this.propModel.slctd=x;
 setPropType(x)
 {
 this.propModel.propType=x;
+
+}
+
+setMenu(name)
+{
+console.log(name);
+  this.propTypeMenu=this.propService.getPropTypeMenu(name);
+  this.commercialMenu=this.propService.getCommercialMenu(name);
 }
 saveMethod()
 {
 	this.propService.save(this.propModel);
 	this.propModel.isSubmitted=true;
+
 }
   constructor(private propService:PropService, private propModel:PropModel) { }
 
