@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { MainComponent } from './main/main.component';
 import { SearchListComponent } from './search-list/search-list.component';
+import { ArchitectComponent } from './architect/architect.component';
+import { LegalConsultantComponent } from './legal-consultant/legal-consultant.component';
+import { AstrologerComponent } from './astrologer/astrologer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { SearchListComponent } from './search-list/search-list.component';
     FooterComponent,
     SearchComponent,
     MainComponent,
-    SearchListComponent
+    SearchListComponent,
+    ArchitectComponent,
+    LegalConsultantComponent,
+    AstrologerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,18 @@ import { SearchListComponent } from './search-list/search-list.component';
     {
     path: 'searchList' ,
     component: SearchListComponent
+    },
+    {
+    path: 'astrologer' ,
+    component: AstrologerComponent
+    },
+    {
+    path: 'architect' ,
+    component: ArchitectComponent
+    },
+    {
+    path: 'legal-consultant' ,
+    component: LegalConsultantComponent
     }
     ])
   ],
