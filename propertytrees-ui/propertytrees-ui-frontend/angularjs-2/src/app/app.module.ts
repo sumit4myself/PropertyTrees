@@ -14,6 +14,11 @@ import { SearchListComponent } from './search-list/search-list.component';
 import { ArchitectComponent } from './architect/architect.component';
 import { LegalConsultantComponent } from './legal-consultant/legal-consultant.component';
 import { AstrologerComponent } from './astrologer/astrologer.component';
+import { CustomerSupportComponent } from './customer-support/customer-support.component';
+import { DealersComponent } from './dealers/dealers.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { PropertyGalleryComponent } from './property-gallery/property-gallery.component';
+import { QuestionComponent } from './question/question.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { AstrologerComponent } from './astrologer/astrologer.component';
     SearchListComponent,
     ArchitectComponent,
     LegalConsultantComponent,
-    AstrologerComponent
+    AstrologerComponent,
+    CustomerSupportComponent,
+    DealersComponent,
+    ProjectsComponent,
+    PropertyGalleryComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
