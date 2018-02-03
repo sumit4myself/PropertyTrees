@@ -16,8 +16,14 @@ private type: String="buy";
 searchListMethod()
 {
 	console.log(JSON.stringify(this.searchFilter));
+	if(this.searchFilter.type == 'astrologer' || this.searchFilter.type == 'architect' || this.searchFilter.type == 'consultant')
+	{
+	this.router.navigate(["/"+this.searchFilter.type,{data:JSON.stringify(this.searchFilter)}]);
+	}
+	else
+	{
 	this.router.navigate(["/searchList",{data:JSON.stringify(this.searchFilter)}]);
-
+	}
 }
 searchMethod(param)
 {
