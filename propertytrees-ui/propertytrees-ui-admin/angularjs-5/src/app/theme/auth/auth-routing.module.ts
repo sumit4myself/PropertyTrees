@@ -5,6 +5,7 @@ const routes: Routes = [
   {
     path: '',
     data: {
+      
       title: 'Authentication',
       status: false
     },
