@@ -40,12 +40,13 @@
         <div class="form-group row"></div>
         <div class="form-group row"></div>
         <div class="md-tabs">
-            <ngb-tabset>
-              <ngb-tab title="Residential">
+            <ngb-tabset (tabChange)="beforeChange($event)">
+              <ngb-tab id="Residential" title="Residential">
                 <ng-template ngbTabContent>
                   <div [@fadeInOutTranslate] class="m-t-15">
                     <div class="form-group row">
-                    <div class="deck col-sm-2" *ngFor="let item of propTypeMenu; let i = index" (click)="setPropType(item.name)" [class.propActive]="propModel.propType === item.name" style="">
+                    <div class="deck col-sm-2" 
+                        *ngFor="let item of propTypeMenu; let i = index" (click)="setPropType(item.name)" [class.propActive]="propModel.propType === item.name" style="">
               <i></i>
                         <div class="propicons" [ngClass]=item.className></div>
               <span class="ng-binding">{{item.name}}</span>
@@ -54,11 +55,11 @@
                   </div>
                 </ng-template>
               </ngb-tab>
-              <ngb-tab title="Commercial">
+              <ngb-tab id="Commercial" title="Commercial">
                 <ng-template ngbTabContent>
                     <div [@fadeInOutTranslate] class="m-t-15">
                       <div class="form-group row">
-                    <div class="deck col-sm-2" *ngFor="let item of commercialMenu; let i = index" (click)="setPropType(item.name)" [class.propActive]="propModel.propType === item.name" style="">
+                    <div class="deck col-sm-2" *ngFor="let item of commercialMenu; let i = index" (click)="setPropType(item.name)" [class.propActive] = "propModel.propType === item.name" style="">
               <i></i>
                         <div class="propicons" [ngClass]=item.className></div>
               <span class="ng-binding">{{item.name}}</span>
@@ -68,6 +69,41 @@
               </ngb-tab>
             </ngb-tabset>
           </div>
+          <div *ngIf= "tabType==='Commercial' && propModel.propType!==undefined">
+          <div class="form-group row" style="margin-top: 15px;" >
+            <label class="col-sm-2">
+            More Rooms : 
+          </label>
+         No  <ui-switch class="js-single" [(ngModel)]="propModel.details.isMoreRoom" color="#4680ff" name="moreRooms" switchColor="#fff" size="medium" checked></ui-switch> Yes
+        </div>
+
+        <div class="form-group row" *ngIf="propModel.details.isMoreRoom">
+          <label class="col-sm-3">No of rooms</label>
+          <div class="col-sm-3">
+            <input type="text"   class="form-control" name="noOfRooms" [(ngModel)]="propModel.details.noOfRooms">
+          </div>
+        </div></div>
+        <div *ngIf= "tabType==='Residential' && propModel.propType!==undefined && propModel.type === 'RENT'" >
+        <div class="form-group row">Willing to rent out to : </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label>
+            Family : 
+          </label>
+            &nbsp;&nbsp;No  <ui-switch class="js-single" [(ngModel)]="propModel.details.rentFamily" color="#4680ff" name="rentFamily" switchColor="#fff" size="medium" checked></ui-switch> Yes&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="col-sm-4"> <label>
+            Single Man : 
+          </label>
+         No  <ui-switch class="js-single" [(ngModel)]="propModel.details.rentSingleMan" color="#4680ff" name="rentSingleMan" switchColor="#fff" size="medium" checked></ui-switch> Yes</div>
+         <div class="col-sm-4"> <label>
+            Single Woman : 
+          </label>
+         No  <ui-switch class="js-single" [(ngModel)]="propModel.details.rentSingleWoman" color="#4680ff" name="rentSingleWoman" switchColor="#fff" size="medium" checked></ui-switch> Yes</div>
+         
+        </div>
+        <div class="form-group row">Preferred Agreement Type : </div>
+         <div class="form-group row">
+            &nbsp;&nbsp;Any  <ui-switch class="js-single" [(ngModel)]="propModel.details.rentFamily" color="#4680ff" name="rentFamily" switchColor="#fff" size="medium" checked></ui-switch> CompanyLeaseType</div></div>
   </wizard-step>
 
   <wizard-step [title]="'Location'">
@@ -96,6 +132,70 @@
 
   <wizard-step [title]="'Details'">
     <div class="form-group row"></div>
+    <div *ngIf="propModel.type === 'SELL'">
+     <div class="form-group row">
+          <label class="col-sm-2">Plot Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="plotArea" [(ngModel)]="propModel.details.plotArea">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="propModel.details.areaUnit"></ng-select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Floors allowed for construction : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="floorsAllowed" [(ngModel)]="propModel.details.floorsAllowed"></ng-select>
+          </div>
+        </div>
+</div>
+<div *ngIf="propModel.type !== 'SELL'">
+         <div class="form-group row">
+         
+          <label class="col-sm-2">Configration: </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="configrationOption" name="configration" [(ngModel)]="propModel.details.configration"></ng-select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Super Build Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="superBuildArea" [(ngModel)]="propModel.details.superBuildArea">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="propModel.details.areaUnit"></ng-select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Build Up Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.buildUpArea">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="BuildAreaUnit" [(ngModel)]="propModel.details.BuildAreaUnit"></ng-select>
+          </div>
+</div> <div class="form-group row">
+           <label class="col-sm-2">Carpet Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="carpetArea" [(ngModel)]="propModel.details.carpetArea">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="carpetAreaUnit" [(ngModel)]="propModel.details.carpetAreaUnit"></ng-select>
+          </div>
+        </div>
+
+
          <div class="form-group row">
           <label class="col-sm-4">Unit Type</label>
           <div class="col">
@@ -189,49 +289,71 @@
             <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="noOfOpenParking" [(ngModel)]="propModel.details.noOfOpenParking"></ng-select>
           </div>
         </div>
-       <div class="form-group row">
-          <label class="col-sm-4">Nagotiable</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="propModel.details.negotiable" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Expected Price</label>
-          <div class="col">
-            <input type="text" class="form-control" name="expectedPrice" [(ngModel)]="propModel.details.expectedPrice">
-          </div>
-        </div>
+      
         <div class="form-group row">
           <label class="col-sm-4">Price Per Unit</label>
           <div class="col">
             <input type="text" class="form-control" name="pricePerUnit" [(ngModel)]="propModel.details.pricePerUnit">
           </div>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Availability</label>
+        </div>
+  </wizard-step>
+  <wizard-step [title]="'Pricing'">
+    <div class="form-group row"></div>
+    <div class="form-group row">
+          <label class="col-sm-2">Expected Price</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" name="expectedPrice" [(ngModel)]="propModel.details.expectedPrice">
+          </div>
+
+          <label class="col-sm-2">All Inclusive</label>
+          <div class="col-sm-2">
+            <ui-switch class="js-single" color="#4680ff" name="AllInclusive" switchColor="#fff" [(ngModel)]="propModel.details.AllInclusive" size="medium" checked></ui-switch>
+          </div>
+
+          <label class="col-sm-2">Nagotiable</label>
           <div class="col">
+            <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="propModel.details.negotiable" size="medium" checked></ui-switch>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Availability</label>
+          <div class="col-sm-2">
           
            <ng-select [ngClass]="'ng-select'" [options]="availabilityOption" name="availability" [(ngModel)]="propModel.details.availability"></ng-select>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">TrasactionType</label>
-          <div class="col">
-           <ng-select [ngClass]="'ng-select'" [options]="transTypeOption" name="availability" [(ngModel)]="propModel.details.transactionType"></ng-select>
+
+          <label class="col-sm-2" *ngIf="propModel.details.availability ==='UNDER_CONSTRUCTION'">Possession BY</label>
+          <div class="col-sm-2" *ngIf="propModel.details.availability ==='UNDER_CONSTRUCTION'">
+
+            <ng-select [ngClass]="'ng-select'" [options]="possessionOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
+          </div>
+
+          <label class="col-sm-2"  *ngIf="propModel.details.availability !=='UNDER_CONSTRUCTION'">Age of property</label>
+          <div class="col-sm-2"  *ngIf="propModel.details.availability !=='UNDER_CONSTRUCTION'">
+
+            <ng-select [ngClass]="'ng-select'" [options]="propertyAgeOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
           </div>
         </div>
+
         <div class="form-group row">
-          <label class="col-sm-4">Possession BY</label>
+          <label class="col-sm-2">TrasactionType</label>
           <div class="col">
-            <input type="text" class="form-control" name="possessionBy" [(ngModel)]="propModel.details.possessionBy">
+           <ng-select [ngClass]="'ng-select'" [options]="transTypeOption" name="transactionType" [(ngModel)]="propModel.details.transactionType"></ng-select>
+          </div>
+
+          <label class="col-sm-2">OwnerShip</label>
+          <div class="col">
+           <ng-select [ngClass]="'ng-select'" [options]="ownerShipOption" name="ownerShip" [(ngModel)]="propModel.details.ownerShip"></ng-select>
           </div>
         </div>
-        <div class="form-group row">
-          <label class="col-sm-4">All Inclusive</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="AllInclusive" switchColor="#fff" [(ngModel)]="propModel.details.AllInclusive" size="medium" checked></ui-switch>
-          </div>
-        </div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
+        <div class="form-group row"></div>
   </wizard-step>
   <wizard-step [title]="'Features'" (onComplete)="saveMethod()">
        <div class="form-group row">

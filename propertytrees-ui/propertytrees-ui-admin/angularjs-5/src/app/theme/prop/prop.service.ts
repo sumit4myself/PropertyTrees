@@ -108,6 +108,52 @@ public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
     {value: 'FIRE_ALARM', label: ' FIRE ALARM'}
   ];
 
+public static readonly AREAUNIT_OPTION: Array<IOption> = [
+    {value: 'Sq. Feets', label: 'Sq. Feets'},
+    {value: 'Sq. Yards', label: 'Sq. Feets'},
+    {value: 'Sq. Meters', label: 'Sq. Meters'},
+    {value: 'Acres', label: 'Acres'},
+    {value: 'Marls', label: 'Marla'}
+  ];
+
+  public static readonly OWNERSHIP_OPTION: Array<IOption> = [
+    {value: 'FREEHOLD', label: 'FREEHOLD'},
+    {value: 'LEASEHOLD', label: 'LEASEHOLD'},
+    {value: 'CO SOCIETY', label: 'CO SOCIETY'},
+    {value: 'POWER OF ATORNY', label: 'POWER OF ATORNY'}
+  ];
+
+  public static readonly CONFIG_OPTION: Array<IOption> = [
+    {value: '3 BHK', label: '3 BHK'},
+    {value: 'Others', label: 'Others'}
+  ];
+
+  public static readonly POSSESSION_OPTION: Array<IOption> = [
+    {value: 'Within 3 months', label: 'Within 3 months'},
+    {value: 'Within 6 months', label: 'Within 6 months'},
+    {value: 'By 2019', label: 'By 2019'},
+    {value: 'After 2019', label: 'After 2019'}
+  ];
+
+  public static readonly PROPERTY_AGE_OPTION: Array<IOption> = [
+    {value: '0-1 YEAR OLD', label: '0-1 YEAR OLD'},
+    {value: '1-10 YEAR OLD', label: '1-10 YEAR OLD'},
+    {value: '10+ YEAR OLD', label: '10+ YEAR OLD'}
+  ];
+
+getPropertyAgeOption() : Array<IOption> {
+        return this.cloneOptions(PropService.PROPERTY_AGE_OPTION);
+    }
+
+getPossessionOption() : Array<IOption> {
+        return this.cloneOptions(PropService.POSSESSION_OPTION);
+    }
+getOwnerShipOption() : Array<IOption> {
+        return this.cloneOptions(PropService.OWNERSHIP_OPTION);
+    }
+getConfigOption() : Array<IOption> {
+        return this.cloneOptions(PropService.CONFIG_OPTION);
+    }
 getPropertyType(): Array<IOption> {
         return this.cloneOptions(PropService.PROPERTY_TYPE);
     }
@@ -125,6 +171,9 @@ getNumericOption(): Array<IOption> {
     }
 getUnitTypeOption(): Array<IOption> {
         return this.cloneOptions(PropService.UNIT_TYPE_OPTION);
+    }
+    getareaUnitOption() : Array<IOption> {
+        return this.cloneOptions(PropService.AREAUNIT_OPTION);
     }
 getPropOnFloorOption(): Array<IOption> {
         return this.cloneOptions(PropService.PROP_FLOOR_OPTION);

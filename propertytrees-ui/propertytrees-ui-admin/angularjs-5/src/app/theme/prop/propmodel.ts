@@ -7,6 +7,6 @@ export class PropModel {
 type:String='SELL';
 public isSubmitted:boolean=false;
 slctd:String='O';
-propType:String='O';
+propType:String;
 constructor(private details: PropertyDetails, private features:PropertyFeatures) { }
 }
