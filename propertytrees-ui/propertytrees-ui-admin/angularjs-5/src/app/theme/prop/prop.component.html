@@ -132,7 +132,7 @@
 
   <wizard-step [title]="'Details'">
     <div class="form-group row"></div>
-    <div *ngIf="propModel.type === 'SELL'">
+    <div *ngIf="propModel.type === 'SELL' && tabType==='Commercial'">
      <div class="form-group row">
           <label class="col-sm-2">Plot Area : </label>
           <div class="col-sm-2">
@@ -152,7 +152,7 @@
           </div>
         </div>
 </div>
-<div *ngIf="propModel.type !== 'SELL'">
+<div *ngIf="propModel.type === 'SELL' && tabType==='Residential'">
          <div class="form-group row">
          
           <label class="col-sm-2">Configration: </label>
@@ -195,7 +195,7 @@
           </div>
         </div>
 
-
+<div *ngIf="propModel.type !== 'SELL'">
          <div class="form-group row">
           <label class="col-sm-4">Unit Type</label>
           <div class="col">
@@ -207,7 +207,7 @@
           <div class="col">
             <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.builtUpArea">
           </div>
-        </div>
+        </div></div>
         <div class="form-group row">
           <label class="col-sm-2">Bedrooms</label>
           <div class="col-sm-2">
@@ -319,19 +319,19 @@
 
         <div class="form-group row">
           <label class="col-sm-2">Availability</label>
-          <div class="col-sm-2">
+          <div class="col">
           
            <ng-select [ngClass]="'ng-select'" [options]="availabilityOption" name="availability" [(ngModel)]="propModel.details.availability"></ng-select>
           </div>
 
           <label class="col-sm-2" *ngIf="propModel.details.availability ==='UNDER_CONSTRUCTION'">Possession BY</label>
-          <div class="col-sm-2" *ngIf="propModel.details.availability ==='UNDER_CONSTRUCTION'">
+          <div class="col" *ngIf="propModel.details.availability ==='UNDER_CONSTRUCTION'">
 
             <ng-select [ngClass]="'ng-select'" [options]="possessionOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
           </div>
 
           <label class="col-sm-2"  *ngIf="propModel.details.availability !=='UNDER_CONSTRUCTION'">Age of property</label>
-          <div class="col-sm-2"  *ngIf="propModel.details.availability !=='UNDER_CONSTRUCTION'">
+          <div class="col"  *ngIf="propModel.details.availability !=='UNDER_CONSTRUCTION'">
 
             <ng-select [ngClass]="'ng-select'" [options]="propertyAgeOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
           </div>
@@ -359,7 +359,16 @@
        <div class="form-group row">
           <label class="col-sm-4">Power Backup</label>
           <div class="col">
-            <input type="text" class="form-control" name="powerBackup" [(ngModel)]="propModel.features.powerBackup">
+            <ng-select [ngClass]="'ng-select'" [options]="powerBackupOption" name="powerBackup" [(ngModel)]="propModel.features.powerBackup"></ng-select>
+          </div>
+        </div>
+       <div class="form-group row">
+          <label class="col-sm-4">Water Source</label>
+          <div class="col">
+            Municipal Corporation: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="municipalCorporation" switchColor="#fff" [(ngModel)]="propModel.features.municipalCorporation" size="medium" checked></ui-switch>
+          </div>
+          <div class="col">
+            Borewall/Tank &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="borewall" switchColor="#fff" [(ngModel)]="propModel.features.borewall" size="medium" checked></ui-switch>
           </div>
         </div>
         <div class="form-group row">

@@ -141,6 +141,15 @@ public static readonly AREAUNIT_OPTION: Array<IOption> = [
     {value: '10+ YEAR OLD', label: '10+ YEAR OLD'}
   ];
 
+public static readonly POWER_BACKUP_OPTION: Array<IOption> = [
+    {value: '0-1 YEAR OLD', label: '0-1 YEAR OLD'},
+    {value: '1-10 YEAR OLD', label: '1-10 YEAR OLD'},
+    {value: '10+ YEAR OLD', label: '10+ YEAR OLD'}
+  ];
+
+getPowerBackupOption() : Array<IOption> {
+        return this.cloneOptions(PropService.POWER_BACKUP_OPTION);
+    }
 getPropertyAgeOption() : Array<IOption> {
         return this.cloneOptions(PropService.PROPERTY_AGE_OPTION);
     }

@@ -39,6 +39,7 @@ propTypeMenu: Array<PropertyType> = this.propService.getPropTypeMenu(this.propMo
 commercialMenu: Array<PropertyType> = this.propService.getCommercialMenu(this.propModel.propType);
 possessionOption: Array<IOption> = this.propService.getPossessionOption();
 propertyAgeOption: Array<IOption> = this.propService.getPropertyAgeOption();
+powerBackupOption: Array<IOption> = this.propService.getPowerBackupOption();
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
