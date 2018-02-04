@@ -16,9 +16,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
+
 import com.propertiestree.common.entity.Photo;
 
 @Entity
+@Indexed
 public class Property implements Serializable {
 
 	private static final long serialVersionUID = 3560556939132795407L;
@@ -27,6 +31,7 @@ public class Property implements Serializable {
 	private long id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
+	@IndexedEmbedded
 	@Embedded
 	private Location location;
 	@Enumerated(EnumType.STRING)

@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.search.annotations.Field;
+
 @Entity
 public class Project implements Serializable {
 
@@ -15,6 +17,7 @@ public class Project implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+	@Field
 	private String name;
 
 	public long getId() {
