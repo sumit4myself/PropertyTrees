@@ -3,6 +3,7 @@
    <ul class="nav nav-tabs">
       <li [class.active]="searchFilter.type=='buy'" ><a (click)="searchMethod('buy')">BUY</a></li>
       <li [class.active]="searchFilter.type=='rent'"><a (click)="searchMethod('rent')">RENT</a></li>
+      <li [class.active]="searchFilter.type=='dealer'"><a (click)="searchMethod('dealer')">DEALER</a></li>
       <li [class.active]="searchFilter.type=='commercial'"><a href="#commercial" (click)="searchMethod('commercial')">COMMERCIAL</a></li>
       <li [class.active]="searchFilter.type=='astrologer'"><a href="#astrologer" (click)="searchMethod('astrologer')">VASTU ASTROLOGER</a></li>
       <li [class.active]="searchFilter.type=='architect'"><a href="#architect" (click)="searchMethod('architect')">ARCHITECT</a></li>
