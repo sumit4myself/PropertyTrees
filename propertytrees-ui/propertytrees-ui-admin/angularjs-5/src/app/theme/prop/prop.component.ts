@@ -34,12 +34,18 @@ public unitTypeOption: Array<IOption> = this.propService.getUnitTypeOption();
 public areaUnitOption: Array<IOption> = this.propService.getareaUnitOption();
 public configrationOption: Array<IOption> = this.propService.getConfigOption();
 propOnFloorOption: Array<IOption> = this.propService.getPropOnFloorOption();
+public amenitiesArray: Array<String> = [];
 ownerShipOption: Array<IOption> = this.propService.getOwnerShipOption();
 propTypeMenu: Array<PropertyType> = this.propService.getPropTypeMenu(this.propModel.propType);
+amenitiesMenu: Array<PropertyType> = this.propService.getAmenitiesMenu(this.propModel.propType);
+
 commercialMenu: Array<PropertyType> = this.propService.getCommercialMenu(this.propModel.propType);
 possessionOption: Array<IOption> = this.propService.getPossessionOption();
 propertyAgeOption: Array<IOption> = this.propService.getPropertyAgeOption();
 powerBackupOption: Array<IOption> = this.propService.getPowerBackupOption();
+facigOption: Array<IOption> = this.propService.getFacigOption();
+facigMeasureOption: Array<IOption> = this.propService.getFacigMeasureOption();
+flooringTypeOption: Array<IOption> = this.propService.getFlooringTypeOption();
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
@@ -51,11 +57,25 @@ this.propModel.slctd=x;
 
 setPropType(x)
 {
-
 this.propModel.propType=x;
-
 }
 
+isExist(x) : number
+{
+return this.amenitiesArray.indexOf(x);
+}
+
+setAmenties(x)
+{
+var index = this.amenitiesArray.indexOf(x);
+if (index > -1) {
+    this.amenitiesArray.splice(index, 1);
+}
+else
+{
+ this.amenitiesArray.push(x);   
+}
+}
 setMenu(name)
 {
   this.propTypeMenu=this.propService.getPropTypeMenu(name);

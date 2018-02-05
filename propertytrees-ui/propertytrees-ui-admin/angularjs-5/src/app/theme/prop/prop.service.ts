@@ -23,6 +23,17 @@ public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
     {name: 'Other', className: 'prop80'}
   ];
 
+  public static readonly AMENITES_SELL_MENU: Array<PropertyType> = [
+    {name: 'Lift', className: 'amenity21'},
+    {name: 'Park', className: 'amenity6'},
+    {name: 'Maintenance Staff', className: 'amenity23'},
+    {name: 'Visitor Parking', className: 'amenity19'},
+    {name: 'Water Storage', className: 'amenity24'},
+    {name: 'Vaastu Compliant', className: 'amenity5'},
+    {name: 'Intercom Facility', className: 'amenity20'},
+    {name: 'Security Fire Alarm', className: 'amenity17'}
+  ];
+
   public static readonly COMMERCIAL_MENU: Array<PropertyType> = [
     {name: 'Commercial Office/ Space', className: 'prop7'},
     {name: 'Commercial Shops', className: 'prop6'},
@@ -147,6 +158,41 @@ public static readonly POWER_BACKUP_OPTION: Array<IOption> = [
     {value: '10+ YEAR OLD', label: '10+ YEAR OLD'}
   ];
 
+  public static readonly FACIG_OPTION: Array<IOption> = [
+    {value: 'EAST', label: 'EAST'},
+    {value: 'WEST', label: 'WEST'},
+    {value: 'SOUTH', label: 'SOUTH'},
+    {value: 'NORTH', label: 'NORTH'}
+  ];
+
+  public static readonly FACIG_MEASURE_OPTION: Array<IOption> = [
+    {value: 'FEET', label: 'FEET'},
+    {value: 'METER', label: 'METER'}
+  ];
+
+  public static readonly FLOORING_TYPE_OPTION: Array<IOption> = [
+    {value: 'MARBLE', label: 'MARBLE'},
+    {value: 'CERAMIC', label: 'CERAMIC'},
+    {value: 'MOSAIC', label: 'MOSAIC'},
+    {value: 'GRENITE', label: 'GRENITE'},
+    {value: 'WOOD', label: 'WOOD'}
+  ];
+getAmenitiesMenu() : Array<IOption> {
+        return this.cloneOptions(PropService.FLOORING_TYPE_OPTION);
+    }
+
+getFlooringTypeOption() : Array<IOption> {
+        return this.cloneOptions(PropService.FLOORING_TYPE_OPTION);
+    }
+
+getFacigMeasureOption() : Array<IOption> {
+        return this.cloneOptions(PropService.FACIG_MEASURE_OPTION);
+    }
+
+getFacigOption() : Array<IOption> {
+        return this.cloneOptions(PropService.FACIG_OPTION);
+    }
+
 getPowerBackupOption() : Array<IOption> {
         return this.cloneOptions(PropService.POWER_BACKUP_OPTION);
     }
@@ -201,6 +247,18 @@ getPropTypeMenu(propertyType : String): Array<PropertyType> {
       return PropService.PROPERTY_TYPE_PG_MENU;
       }
         return PropService.PROPERTY_TYPE_SELL_MENU;
+    }
+
+    getAmenitiesMenu(propertyType : String): Array<PropertyType> {
+      if(propertyType==='RENT')
+      {
+      return PropService.PROPERTY_TYPE_RENT_MENU;
+      }
+      if(propertyType==='PG')
+      {
+      return PropService.PROPERTY_TYPE_PG_MENU;
+      }
+        return PropService.AMENITES_SELL_MENU;
     }
     getCommercialMenu(propertyType : String): Array<PropertyType> {
       if(propertyType!=='PG')

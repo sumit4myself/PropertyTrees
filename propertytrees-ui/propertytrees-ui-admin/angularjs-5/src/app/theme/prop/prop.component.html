@@ -223,32 +223,32 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Pooja room</label>
+          <label class="col-sm-2">Pooja room</label>
           <div class="col-sm-2">
           <ui-switch class="js-single" color="#4680ff" name="poojaRoom" switchColor="#fff" [(ngModel)]="propModel.details.poojaRoom" size="medium" checked></ui-switch>
           </div>
-          <label class="col-sm-4">Study room</label>
+          <label class="col-sm-2">Study room</label>
           <div class="col-sm-2">
             <ui-switch class="js-single" color="#4680ff" name="studyRoom" switchColor="#fff" [(ngModel)]="propModel.details.studyRoom" size="medium" checked></ui-switch>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Servant room</label>
+          <label class="col-sm-2">Servant room</label>
           <div class="col-sm-2">
             <ui-switch class="js-single" color="#4680ff" name="servantRoom" switchColor="#fff" [(ngModel)]="propModel.details.servantRoom" size="medium" checked></ui-switch>
           </div>
-          <label class="col-sm-4">Others</label>
+          <label class="col-sm-2">Others</label>
           <div class="col-sm-2">
             <ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="propModel.details.others" size="medium" checked></ui-switch>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Total Floors</label>
-          <div class="col">
+          <label class="col-sm-2">Total Floors</label>
+          <div class="col-sm-2">
             <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="totalFloors" [(ngModel)]="propModel.details.totalFloors"></ng-select>
           </div>
-          <label class="col-sm-4">Property on Floor</label>
-          <div class="col">
+          <label class="col-sm-2">Property on Floor</label>
+          <div class="col-sm-2">
             <ng-select [ngClass]="'ng-select'" [options]="propOnFloorOption" name="propertyOnFloor" [(ngModel)]="propModel.details.propertyOnFloor"></ng-select>
           </div>
         </div>
@@ -290,7 +290,7 @@
           </div>
         </div>
       
-        <div class="form-group row">
+        <div class="form-group row" *ngIf="propModel.type !== 'SELL'">
           <label class="col-sm-4">Price Per Unit</label>
           <div class="col">
             <input type="text" class="form-control" name="pricePerUnit" [(ngModel)]="propModel.details.pricePerUnit">
@@ -311,8 +311,8 @@
             <ui-switch class="js-single" color="#4680ff" name="AllInclusive" switchColor="#fff" [(ngModel)]="propModel.details.AllInclusive" size="medium" checked></ui-switch>
           </div>
 
-          <label class="col-sm-2">Nagotiable</label>
-          <div class="col">
+          <label class="col-sm-2" *ngIf="propModel.details.expectedPrice !== undefined">Nagotiable</label>
+          <div class="col" *ngIf="propModel.details.expectedPrice !== undefined">
             <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="propModel.details.negotiable" size="medium" checked></ui-switch>
           </div>
         </div>
@@ -356,63 +356,95 @@
         <div class="form-group row"></div>
   </wizard-step>
   <wizard-step [title]="'Features'" (onComplete)="saveMethod()">
+    <div class="form-group row"></div>
        <div class="form-group row">
-          <label class="col-sm-4">Power Backup</label>
-          <div class="col">
+          <label class="col-sm-2">Power Backup</label>
+          <div class="col-sm-2">
             <ng-select [ngClass]="'ng-select'" [options]="powerBackupOption" name="powerBackup" [(ngModel)]="propModel.features.powerBackup"></ng-select>
           </div>
         </div>
        <div class="form-group row">
-          <label class="col-sm-4">Water Source</label>
-          <div class="col">
+          <label class="col-sm-2">Water Source</label>
+          <div class="col-sm-4">
             Municipal Corporation: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="municipalCorporation" switchColor="#fff" [(ngModel)]="propModel.features.municipalCorporation" size="medium" checked></ui-switch>
           </div>
           <div class="col">
             Borewall/Tank &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="borewall" switchColor="#fff" [(ngModel)]="propModel.features.borewall" size="medium" checked></ui-switch>
           </div>
         </div>
+    
+
         <div class="form-group row">
-          <label class="col-sm-4">Facig</label>
+          <label class="col-sm-2">Overlooking:</label>
           <div class="col">
-            <input type="text" class="form-control" name="facig" [(ngModel)]="propModel.features.facig">
+            Park/Garden: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="park" switchColor="#fff" [(ngModel)]="propModel.features.park" size="medium" checked></ui-switch>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-4">Width Of Facing Road</label>
           <div class="col">
-            <input type="text" class="form-control" name="widthOfFacingRoad" [(ngModel)]="propModel.features.widthOfFacingRoad">
+            Main Road &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="mainRoad" switchColor="#fff" [(ngModel)]="propModel.features.mainRoad" size="medium" checked></ui-switch>
+          </div>
+          <div class="col">
+            Road Club: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="club" switchColor="#fff" [(ngModel)]="propModel.features.club" size="medium" checked></ui-switch>
+          </div>
+          <div class="col">
+            Pool &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="pool" switchColor="#fff" [(ngModel)]="propModel.features.pool" size="medium" checked></ui-switch>
+          </div>
+          <div class="col">
+            Others: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="propModel.features.others" size="medium" checked></ui-switch>
           </div>
         </div>
 
-    <div class="form-group row">
+        <div class="form-group row">
+          <label class="col-sm-2">Facig</label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="facigOption" name="facig" [(ngModel)]="propModel.features.facig"></ng-select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2">Width Of Facing Road</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" name="widthOfFacingRoad" [(ngModel)]="propModel.features.widthOfFacingRoad">
+          </div>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="facigMeasureOption" name="facigMeasurement" [(ngModel)]="propModel.features.facigMeasurement"></ng-select>
+          </div>
+        </div>
+
+     <div class="form-group row" *ngIf="propModel.type === 'NA'">
           <label class="col-sm-4">Width Of Facing Unit</label>
-          <div class="col">
+         <div class="col">
             <input type="text" class="form-control" name="widthOfFacingUnit" [(ngModel)]="propModel.features.widthOfFacingUnit">
           </div>
-        </div>
+       </div>
         <div class="form-group row">
-          <label class="col-sm-4">Type of flooring</label>
-          <div class="col">
-            <input type="text" class="form-control" name="typeOfFlooring" [(ngModel)]="propModel.features.typeOfFlooring">
+          <label class="col-sm-2">Type of flooring</label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="flooringTypeOption" name="typeOfFlooring" [(ngModel)]="propModel.features.typeOfFlooring"></ng-select>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Gated Society</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="gatedSociety" switchColor="#fff" [(ngModel)]="propModel.details.gatedSociety" size="medium" checked></ui-switch>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
+            In a gated society: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="gatedSociety" switchColor="#fff" [(ngModel)]="propModel.features.gatedSociety" size="medium" checked></ui-switch>
+          </div>
+          <div class="col-sm-2">
+            Corner Property: &nbsp;&nbsp; <ui-switch class="js-single" color="#4680ff" name="cornerProperty" switchColor="#fff" [(ngModel)]="propModel.features.cornerProperty" size="medium" checked></ui-switch>
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Amenities</label>
-          <div class="col">
-            <input type="text" class="form-control" name="amenities" [(ngModel)]="propModel.details.amenities">
-            <ng-select [ngClass]="'ng-select'" [options]="amenitiesOption" name="amenities"  [multiple]="true" [(ngModel)]="propModel.features.amenities"></ng-select>
-          </div>
+        <label class="col-sm-2">Amenities</label>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4">Description</label>
+          <div class="amenities col-sm-2" *ngFor="let item of amenitiesMenu; let i = index" [class.amenactive]="isExist(item.name) != -1" (click)="setAmenties(item.name)">
+          <i></i>
+            <div class="amenityIcons" [ngClass]=item.className></div>
+          <span class="ng-binding">{{item.name}}</span>
+        </div>
+
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2">Description</label>
           <div class="col">
-            <input type="text" class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
+            <input type="textrrea" rows="4"  class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
           </div>
         </div>
        <div [ngSwitch]="isCompleted">
