@@ -14,8 +14,8 @@ import { SearchListComponent } from './search-list/search-list.component';
 import { ArchitectComponent } from './architect/architect.component';
 import { LegalConsultantComponent } from './legal-consultant/legal-consultant.component';
 import { AstrologerComponent } from './astrologer/astrologer.component';
-import { CustomerSupportComponent } from './customer-support/customer-support.component';
 import { DealersComponent } from './dealers/dealers.component';
+import { CustomerSupportComponent } from './customer-support/customer-support.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PropertyGalleryComponent } from './property-gallery/property-gallery.component';
 import { QuestionComponent } from './question/question.component';
@@ -51,6 +51,10 @@ import { QuestionComponent } from './question/question.component';
     {
     path: 'searchList' ,
     component: SearchListComponent
+    },
+    {
+    path: 'dealer' ,
+    component: DealersComponent
     },
     {
     path: 'astrologer' ,
