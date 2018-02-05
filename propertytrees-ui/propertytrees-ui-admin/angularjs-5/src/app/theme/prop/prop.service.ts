@@ -177,9 +177,6 @@ public static readonly POWER_BACKUP_OPTION: Array<IOption> = [
     {value: 'GRENITE', label: 'GRENITE'},
     {value: 'WOOD', label: 'WOOD'}
   ];
-getAmenitiesMenu() : Array<IOption> {
-        return this.cloneOptions(PropService.FLOORING_TYPE_OPTION);
-    }
 
 getFlooringTypeOption() : Array<IOption> {
         return this.cloneOptions(PropService.FLOORING_TYPE_OPTION);
