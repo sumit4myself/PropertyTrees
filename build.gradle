@@ -172,10 +172,11 @@ project(":propertytrees-common"){
    	   compile "org.springframework.cloud:spring-cloud-starter-zuul"
    	   compile "org.springframework.cloud:spring-cloud-starter-eureka"
    	   compile "org.springframework.cloud:spring-cloud-config-client"
+   	   compile "org.hibernate:hibernate-search-orm:5.6.1.Final"
 	   provided "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	   provided "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
        provided "javax.servlet:javax.servlet-api:3.1.0"
-	}
+    }
 }
 
 project(":propertytrees-service") {

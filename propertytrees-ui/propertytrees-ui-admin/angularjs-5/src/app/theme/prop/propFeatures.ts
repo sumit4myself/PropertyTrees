@@ -10,5 +10,7 @@ export class PropertyFeatures {
 	public  gatedSociety:boolean=false;
 	public  Description:String;
 	public  amenities:Array<String>;
+	public  municipalCorporation:boolean=false;
+	public  borewall:boolean=false;
 constructor() { }
 }

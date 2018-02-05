@@ -1,11 +1,14 @@
 package com.propertiestree.admin.service;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.propertiestree.admin.exception.PropertyException;
 import com.propertiestree.admin.exception.PropertyNotFoundException;
 import com.propertiestree.common.entity.property.Property;
+import com.propertiestree.common.model.PropertyResult;
 
 public interface PropertyService {
 
@@ -20,5 +23,9 @@ public interface PropertyService {
 	void deleteProperty(String uuid) throws PropertyException;
 
 	Page<Property> search(String searchQuery, Pageable pageable);
+
+	List<PropertyResult> filterProperty(String propertyType, String availability, String city);
+
+	List<PropertyResult> searchProperty(String text);
 
 }

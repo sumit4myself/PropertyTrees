@@ -19,6 +19,8 @@ spring:
     database: H2
     properties:
       hibernate.format_sql: true
+      hibernate.search.default.directory_provider: filesystem
+      hibernate.search.default.indexBase: /var/propertytrees/lucene/indexes/
     hibernate:
       ddl-auto: create-drop
 logging:

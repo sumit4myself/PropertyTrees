@@ -40,20 +40,6 @@ const MENUITEMS = [
         name: 'Property',
         type: 'link',
         icon: 'icon-layout-cta-right'
-      },
-      {
-        state: 'registration',
-        short_label: 'R',
-        name: 'Registration',
-        type: 'link',
-        icon: 'icon-layout-cta-right'
-      },
-      {
-        state: 'login',
-        short_label: 'L',
-        name: 'Login',
-        type: 'link',
-        icon: 'icon-layout-cta-right'
       }
     ],
   }

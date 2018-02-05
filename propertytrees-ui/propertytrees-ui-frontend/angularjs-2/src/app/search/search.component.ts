@@ -16,8 +16,14 @@ private type: String="buy";
 searchListMethod()
 {
 	console.log(JSON.stringify(this.searchFilter));
+	if(this.searchFilter.type == 'astrologer' || this.searchFilter.type == 'architect' || this.searchFilter.type == 'consultant')
+	{
+	this.router.navigate(["/"+this.searchFilter.type,{data:JSON.stringify(this.searchFilter)}]);
+	}
+	else
+	{
 	this.router.navigate(["/searchList",{data:JSON.stringify(this.searchFilter)}]);
-
+	}
 }
 searchMethod(param)
 {
@@ -49,11 +55,18 @@ else if(param=='commercial')
 	this.search.push("Comm2");
 	console.log(this.search);
 }
-else
+else if(param=='astrologer')
 {
 	this.search=[];
-	this.search.push("Dealer1");
-	this.search.push("Dealer2");
+	this.search.push("astrologer1");
+	this.search.push("astrologer2");
+	console.log(this.search);
+}
+else if(param=='architect')
+{
+	this.search=[];
+	this.search.push("architect1");
+	this.search.push("architect2");
 	console.log(this.search);
 }
 	
