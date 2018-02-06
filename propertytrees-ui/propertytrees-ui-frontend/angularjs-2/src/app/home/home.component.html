@@ -620,7 +620,7 @@
 						
 						
 							<ul class="list-group col-sm-4">
-						  <li [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" *ngFor="let item of dealerInitialData; let i = index" data-target="#myCarousel" data-slide-to=i class="list-group-item"><a [routerLink]="['/dealer']" [target]="'_blank'"><h4>{{item.name}}</h4></a></li>
+							  <li   *ngFor="let item of dealerInitialData; let i = index" data-target="#myCarousel" data-slide-to=i class="list-group-item"><a (click)="onLinkClick('dealer',item.id)" [routerLinkActiveOptions]="{exact: true}"  [target]="'_blank'" routerLinkActive="active"><h4>{{item.name}}</h4></a></li>
 							</ul>
 						
 							  <!-- Controls -->

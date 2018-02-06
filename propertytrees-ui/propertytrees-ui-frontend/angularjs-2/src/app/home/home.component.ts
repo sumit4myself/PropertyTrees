@@ -8,10 +8,14 @@ import {DealerDataService, DealerDetails} from './dealer-data.service';
   providers: [DealerDataService]
 })
 export class HomeComponent implements OnInit {
+onLinkClick(x,y)
+{
+	window.open(x+"?id="+y, "_blank");
+}
 dealerInitialData : Array<DealerDetails>=this.dealerDataService.getDealerData();
   constructor(private searchFilter: SearchFilter, private dealerDataService:DealerDataService) { }
-
   ngOnInit() {
+  
   }
 
 }
