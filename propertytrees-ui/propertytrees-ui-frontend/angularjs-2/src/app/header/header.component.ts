@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchFilter} from '../common/search.filter';
 declare var $:any;
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ openModal(){
 $('#myModal').modal('show');
 }
 
-  constructor() { }
+  constructor(private searchFilter: SearchFilter) { }
 
   ngOnInit() {
   }

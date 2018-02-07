@@ -8,21 +8,7 @@
 				<h4 class="letter-spacing-1">REAL ESTATE IN INDIA</h4>
 				<ul class="footer-links list-unstyled">
 
-					<li><a title="Delhi / NCR Real Estate" href="#">Delhi /
-							NCR</a></li>
-					<li><a title="Mumbai Real Estate" href="#">Mumbai</a></li>
-					<li><a title="Bangalore Real Estate" href="#">Bangalore</a></li>
-					<li><a title="Chennai Real Estate" href="#">Chennai</a></li>
-					<li><a title="Hyderabad Real Estate" href="#">Hyderabad</a></li>
-					<li><a title="Pune Real Estate" href="#">Pune</a></li>
-					<li><a title="Kolkata Real Estate" href="#">Kolkata</a></li>
-					<li><a title="Ahmedabad Real Estate" href="#">Ahmedabad</a></li>
-					<li><a title="Chandigarh Real Estate" href="#">Chandigarh</a></li>
-					<li><a title="Jaipur Real Estate" href="#">Jaipur</a></li>
-					<li><a title="Nagpur Real Estate" href="#">Nagpur</a></li>
-					<li><a title="Bhubaneswar Real Estate" href="#">Bhubaneswar</a></li>
-					<li><a title="Coimbatore Real Estate" href="#">Coimbatore</a></li>
-					<li><a title="Goa Real Estate" href="#">Goa</a></li>
+					<li *ngFor="let city of searchFilter.cityOption;"><a title="Delhi / NCR Real Estate" [routerLink]="['']">{{city}}</a></li>
 				</ul>
 
 			</div>

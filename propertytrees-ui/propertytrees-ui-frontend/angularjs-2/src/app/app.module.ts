@@ -59,6 +59,11 @@ import { QuestionComponent } from './question/question.component';
     {
     path: 'astrologer' ,
     component: AstrologerComponent
+    }
+    ,
+    {
+    path: 'customerSupport' ,
+    component: CustomerSupportComponent
     },
     {
     path: 'architect' ,
