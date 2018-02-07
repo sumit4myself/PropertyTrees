@@ -154,111 +154,12 @@
 					<div class="row">
 						<div class="col-md-2 col-sm-2">
 								PROPERTY GALLERY<hr/>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/celebrity-serenity-s-150x100.gif" alt="image" class="img-responsive">
-										
-							    </div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/amaravati-one-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/celebrity-sqaure-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/claritas-anika-s-1-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/elan-miracle-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/kmv-projects-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/kw-delhi6-hj-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/life-republic-new-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/mahagun-manorial-hj-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/mahagun-mantra-hj-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/amaravati-one-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/celebrity-sqaure-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/claritas-anika-s-1-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/elan-miracle-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/kmv-projects-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/kw-delhi6-hj-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/life-republic-new-s-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/mahagun-manorial-hj-150x100.gif" alt="image" class="img-responsive">
-										
-								</div>
-								<div class="thumbnail">
-										
-										  <img src="assets/images/property-gallery/mahagun-mantra-hj-150x100.gif" alt="image" class="img-responsive">
+								<div class="thumbnail" *ngFor="let gallery of galleryData;">
+									<a (click)="onLinkClick('gallery',gallery.label)" [routerLinkActiveOptions]="{exact: true}"  [target]="'_blank'" routerLinkActive="active"	>
+										  <img src={{gallery.value}} alt="image" class="img-responsive"></a>
 										
 							    </div>
+								
 						</div>
 
 						<div class="col-md-10 col-sm-10">
@@ -652,9 +553,9 @@
 									<p>4000+ questions and answers on real estate!</p> 
 									<form>
 											<div class="input-group">
-											  <input type="text" class="form-control" placeholder="ASK A QUESTION">
+											  <input type="text" class="form-control" [(ngModel)]="quesion" name="quesion" placeholder="ASK A QUESTION">
 											  <div class="input-group-btn">
-												<button class="btn btn-success" type="submit">
+												<button class="btn btn-success" (click)="onLinkClick('question',quesion)">
 												  <i class="glyphicon glyphicon-comment"></i>ASK NOW
 												</button>
 											  </div>

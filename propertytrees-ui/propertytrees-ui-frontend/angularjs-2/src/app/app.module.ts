@@ -67,6 +67,14 @@ import { QuestionComponent } from './question/question.component';
     {
     path: 'legal-consultant' ,
     component: LegalConsultantComponent
+    },
+    {
+    path: 'question' ,
+    component: QuestionComponent
+    },
+    {
+    path: 'gallery' ,
+    component: PropertyGalleryComponent
     }
     ])
   ],
