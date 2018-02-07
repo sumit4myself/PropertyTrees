@@ -70,7 +70,7 @@ import { QuestionComponent } from './question/question.component';
     component: ArchitectComponent
     },
     {
-    path: 'legal-consultant' ,
+    path: 'consultant' ,
     component: LegalConsultantComponent
     },
     {
