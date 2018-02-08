@@ -3,6 +3,8 @@ package com.propertiestree.admin.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,10 +38,15 @@ public class BannerServiceImpl implements BannerService {
 	}
 	
 	@Override
-	public void remove(String uuid) {
+	public void delete(String uuid) {
 		logger.debug("start of remove() ");
 		Banner banner = bannerRepository.findByUuid(uuid).get();
 		bannerRepository.delete(banner);
 		logger.debug("end of remove() ");
+	}
+
+	@Override
+	public ResponseEntity<Page<Banner>> findAll() {
+		return null;
 	}
 }

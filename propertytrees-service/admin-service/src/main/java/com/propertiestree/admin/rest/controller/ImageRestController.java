@@ -15,7 +15,7 @@ import com.propertiestree.common.entity.Photo;
 
 @RestController
 @RequestMapping("/photo")
-public class ImageController {
+public class ImageRestController {
 
 	@Autowired
 	private ImageService imageService;
