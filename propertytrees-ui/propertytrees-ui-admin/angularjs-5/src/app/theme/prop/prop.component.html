@@ -130,9 +130,11 @@
         <div class="form-group row"></div>
   </wizard-step>
 
-  <wizard-step [title]="'Details'">
+  <wizard-step [title]="'Details'" >
+    
+
     <div class="form-group row"></div>
-    <div *ngIf="propModel.type === 'SELL' && tabType==='Commercial'">
+    <div *ngIf="propModel.type === 'SELL' && (tabType==='Commercial' || propModel.propType=='Residential Land')">
      <div class="form-group row">
           <label class="col-sm-2">Plot Area : </label>
           <div class="col-sm-2">
@@ -144,7 +146,27 @@
             <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="propModel.details.areaUnit"></ng-select>
           </div>
         </div>
+<div class="form-group row" *ngIf = "propModel.propType=='Residential Land'">
+          <label class="col-sm-2">Length of plot : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.lengthOfPlot">
+          </div>
 
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="BuildAreaUnit" [(ngModel)]="propModel.details.lengthplotAreaUnit"></ng-select>
+          </div>
+</div> <div class="form-group row" *ngIf = "propModel.propType=='Residential Land'">
+           <label class="col-sm-2">Breadth of plot : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="carpetArea" [(ngModel)]="propModel.details.breadthOfPlot">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="carpetAreaUnit" [(ngModel)]="propModel.details.breadthplotAreaUnit"></ng-select>
+          </div>
+        </div>
         <div class="form-group row">
           <label class="col-sm-2">Floors allowed for construction : </label>
           <div class="col-sm-2">
@@ -152,7 +174,7 @@
           </div>
         </div>
 </div>
-<div *ngIf="propModel.type === 'SELL' && tabType==='Residential'">
+<div *ngIf="propModel.type === 'SELL' && tabType==='Residential' && propModel.propType=='Residential Apartment'">
          <div class="form-group row">
          
           <label class="col-sm-2">Configration: </label>
@@ -317,7 +339,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row" *ngIf = "propModel.propType!='Residential Land'">
           <label class="col-sm-2">Availability</label>
           <div class="col">
           
@@ -336,6 +358,13 @@
             <ng-select [ngClass]="'ng-select'" [options]="propertyAgeOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
           </div>
         </div>
+
+<div class="form-group row" *ngIf = "propModel.propType=='Residential Land'">
+  <label class="col-sm-2">Possession BY</label>
+          <div class="col-sm-4">
+            <ng-select [ngClass]="'ng-select'" [options]="possessionOption" name="possessionBy" [(ngModel)]="propModel.details.possessionBy"></ng-select>
+          </div>
+ </div>
 
         <div class="form-group row">
           <label class="col-sm-2">TrasactionType</label>
