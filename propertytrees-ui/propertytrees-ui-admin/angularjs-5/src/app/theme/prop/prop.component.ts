@@ -46,6 +46,8 @@ powerBackupOption: Array<IOption> = this.propService.getPowerBackupOption();
 facigOption: Array<IOption> = this.propService.getFacigOption();
 facigMeasureOption: Array<IOption> = this.propService.getFacigMeasureOption();
 flooringTypeOption: Array<IOption> = this.propService.getFlooringTypeOption();
+maintenanceTypeOption: Array<IOption> = this.propService.getMaintenanceTypeOption();
+
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;

@@ -12,7 +12,25 @@ public static readonly PROPERTY_TYPE: Array<IOption> = [
     {value: 'PG', label: 'PG'}
   ];
 
+public static readonly MAINTENANCE_TYPE: Array<IOption> = [
+    {value: 'MONTHLY', label: 'MONTHLY'},
+    {value: 'YEARLY', label: 'YEARLY'},
+    {value: 'ONE TIME', label: 'ONE TIME'},
+    {value: 'ONE UNIT/MONTHLY', label: 'ONE UNIT/MONTHLY'}
+  ];
+
 public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
+    {name: 'Residential Apartment', className: 'prop1'},
+    {name: 'Residential Land', className: 'prop3'},
+    {name: 'Independent House/Villa', className: 'prop2'},
+    {name: 'Independent/ Builder Floor', className: 'prop4'},
+    {name: 'Farm House', className: 'prop5'},
+    {name: 'Studio Apartment', className: 'prop90'},
+    {name: 'Serviced Apartments', className: 'prop22'},
+    {name: 'Other', className: 'prop80'}
+  ];
+
+  public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
     {name: 'Residential Apartment', className: 'prop1'},
     {name: 'Residential Land', className: 'prop3'},
     {name: 'Independent House/Villa', className: 'prop2'},
@@ -178,6 +196,10 @@ public static readonly POWER_BACKUP_OPTION: Array<IOption> = [
     {value: 'WOOD', label: 'WOOD'}
   ];
 
+getMaintenanceTypeOption() : Array<IOption> {
+        return this.cloneOptions(PropService.MAINTENANCE_TYPE);
+    }
+    
 getFlooringTypeOption() : Array<IOption> {
         return this.cloneOptions(PropService.FLOORING_TYPE_OPTION);
     }

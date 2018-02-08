@@ -45,5 +45,19 @@ public unitType: String="";
 	public carpetArea : String;
 	public carpetAreaUnit : String;
 	public ownerShip : String;
+	public maintenanceTime : String;
+	public maintenanceAmount : String;
+	public pricePerSelected : String;
+	public lengthOfPlot : String;
+	public lengthplotAreaUnit : String;
+	public breadthOfPlot : String;
+	public breadthplotAreaUnit : String;
+	
+	
+	
+	
+	
+	
+
 constructor() { }
 }

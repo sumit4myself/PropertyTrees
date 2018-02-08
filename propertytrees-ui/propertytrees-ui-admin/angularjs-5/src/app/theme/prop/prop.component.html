@@ -149,22 +149,22 @@
 <div class="form-group row" *ngIf = "propModel.propType=='Residential Land'">
           <label class="col-sm-2">Length of plot : </label>
           <div class="col-sm-2">
-            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="propModel.details.lengthOfPlot">
+            <input type="text" class="form-control"  name="lengthOfPlot" [(ngModel)]="propModel.details.lengthOfPlot">
           </div>
 
           <label class="col-sm-2">Area Unit : </label>
           <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="BuildAreaUnit" [(ngModel)]="propModel.details.lengthplotAreaUnit"></ng-select>
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="lengthplotAreaUnit" [(ngModel)]="propModel.details.lengthplotAreaUnit"></ng-select>
           </div>
 </div> <div class="form-group row" *ngIf = "propModel.propType=='Residential Land'">
            <label class="col-sm-2">Breadth of plot : </label>
           <div class="col-sm-2">
-            <input type="text" class="form-control"  name="carpetArea" [(ngModel)]="propModel.details.breadthOfPlot">
+            <input type="text" class="form-control"  name="breadthOfPlot" [(ngModel)]="propModel.details.breadthOfPlot">
           </div>
 
           <label class="col-sm-2">Area Unit : </label>
           <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="carpetAreaUnit" [(ngModel)]="propModel.details.breadthplotAreaUnit"></ng-select>
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="breadthplotAreaUnit" [(ngModel)]="propModel.details.breadthplotAreaUnit"></ng-select>
           </div>
         </div>
         <div class="form-group row">
@@ -174,8 +174,8 @@
           </div>
         </div>
 </div>
-<div *ngIf="propModel.type === 'SELL' && tabType==='Residential' && propModel.propType=='Residential Apartment'">
-         <div class="form-group row">
+<div *ngIf="propModel.type === 'SELL' && tabType==='Residential' && (propModel.propType=='Residential Apartment' || propModel.propType=='Independent House/Villa')">
+         <div class="form-group row" *ngIf="propModel.propType!='Independent House/Villa'">
          
           <label class="col-sm-2">Configration: </label>
           <div class="col-sm-2">
@@ -183,10 +183,22 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row" *ngIf="propModel.propType!='Independent House/Villa'">
           <label class="col-sm-2">Super Build Area : </label>
           <div class="col-sm-2">
             <input type="text" class="form-control"  name="superBuildArea" [(ngModel)]="propModel.details.superBuildArea">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="propModel.details.areaUnit"></ng-select>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="propModel.propType=='Independent House/Villa'">
+          <label class="col-sm-2">Plot Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="plotArea" [(ngModel)]="propModel.details.plotArea">
           </div>
 
           <label class="col-sm-2">Area Unit : </label>
@@ -336,6 +348,23 @@
           <label class="col-sm-2" *ngIf="propModel.details.expectedPrice !== undefined">Nagotiable</label>
           <div class="col" *ngIf="propModel.details.expectedPrice !== undefined">
             <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="propModel.details.negotiable" size="medium" checked></ui-switch>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf = "propModel.propType!='Independent House/Villa'">
+          <label class="col-sm-2">Price per {{propModel.details.areaUnit}}:</label>
+          <div class="col-sm-2">
+          <input type="text" class="form-control" name="pricePerSelected" [(ngModel)]="propModel.details.pricePerSelected">
+          </div>
+
+          <label class="col-sm-2">Maintenance</label>
+          <div class="col-sm-2">
+
+            <input type="text" class="form-control" name="maintenanceAmount" [(ngModel)]="propModel.details.maintenanceAmount">
+          </div>
+
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="maintenanceTypeOption" name="maintenanceTime" [(ngModel)]="propModel.details.maintenanceTime"></ng-select>
           </div>
         </div>
 
