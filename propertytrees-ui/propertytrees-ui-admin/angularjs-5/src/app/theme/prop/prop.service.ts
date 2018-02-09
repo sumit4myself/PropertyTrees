@@ -19,17 +19,6 @@ public static readonly MAINTENANCE_TYPE: Array<IOption> = [
     {value: 'ONE UNIT/MONTHLY', label: 'ONE UNIT/MONTHLY'}
   ];
 
-public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
-    {name: 'Residential Apartment', className: 'prop1'},
-    {name: 'Residential Land', className: 'prop3'},
-    {name: 'Independent House/Villa', className: 'prop2'},
-    {name: 'Independent/ Builder Floor', className: 'prop4'},
-    {name: 'Farm House', className: 'prop5'},
-    {name: 'Studio Apartment', className: 'prop90'},
-    {name: 'Serviced Apartments', className: 'prop22'},
-    {name: 'Other', className: 'prop80'}
-  ];
-
   public static readonly PROPERTY_TYPE_SELL_MENU: Array<PropertyType> = [
     {name: 'Residential Apartment', className: 'prop1'},
     {name: 'Residential Land', className: 'prop3'},

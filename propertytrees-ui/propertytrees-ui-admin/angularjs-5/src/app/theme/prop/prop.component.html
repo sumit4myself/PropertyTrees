@@ -414,6 +414,8 @@
         <div class="form-group row"></div>
   </wizard-step>
   <wizard-step [title]="'Features'" (onComplete)="saveMethod()">
+     <div [ngSwitch]="isCompleted">
+      <div *ngSwitchDefault>
     <div class="form-group row"></div>
        <div class="form-group row">
           <label class="col-sm-2">Power Backup</label>
@@ -505,8 +507,8 @@
             <input type="textrrea" rows="4"  class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
           </div>
         </div>
-       <div [ngSwitch]="isCompleted">
-      <div *ngSwitchCase="true">
+      </div>
+      <div *ngIf="propModel.isSubmitted">
         <h4>Thank you! You have completed all the steps.</h4>
       </div>
     </div>
