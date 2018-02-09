@@ -24,6 +24,7 @@ import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
   ]
 })
 export class PropComponent implements OnInit {
+tabclick:boolean=false;
 tabType: String='Residential';
 public propertyTypeOption: Array<IOption> = this.propService.getPropertyType();
 public availabilityOption: Array<IOption> = this.propService.getAvailabilityOption();
@@ -52,6 +53,11 @@ promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
 
+checkValid(x) : boolean
+{
+return this.tabclick;
+}
+
 setClass(x)
 {
 this.propModel.slctd=x;
@@ -59,6 +65,7 @@ this.propModel.slctd=x;
 
 setPropType(x)
 {
+this.tabclick=true;
 this.propModel.propType=x;
 }
 
