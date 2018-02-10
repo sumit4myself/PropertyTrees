@@ -71,7 +71,6 @@ this.propModel.slctd=x;
 
 setPropType(x)
 {
-this.tabclick=true;
 this.propModel.propType=x;
 }
 

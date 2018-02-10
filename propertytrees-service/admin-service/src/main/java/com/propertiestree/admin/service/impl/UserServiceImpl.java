@@ -1,6 +1,6 @@
 package com.propertiestree.admin.service.impl;
 
-import org.springframework.beans.BeanUtils;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,16 +14,17 @@ import com.propertiestree.common.model.UserModel;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
+	private ModelMapper modelMapper;
+	@Autowired
 	private UserRepository repository;
 	@Autowired
 	private UUIDGenerator uuidGenerator;
 
 	@Override
-	public void register(UserModel registration) {
-		User user = new User();
-		BeanUtils.copyProperties(registration, user);
+	public User register(UserModel registration) {
+		User user = modelMapper.map(registration, User.class);
 		user.setUuid(uuidGenerator.nextLargeUID());
-		repository.save(user);
+		return repository.save(user);
 	}
 
 	@Override

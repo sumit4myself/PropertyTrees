@@ -16,13 +16,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.IndexedEmbedded;
-
 import com.propertiestree.common.entity.Photo;
 
 @Entity
-@Indexed
 public class Property implements Serializable {
 
 	private static final long serialVersionUID = 3560556939132795407L;
@@ -31,21 +27,20 @@ public class Property implements Serializable {
 	private long id;
 	@Column(unique = true, nullable = false, updatable = false)
 	private String uuid;
-	@IndexedEmbedded
 	@Embedded
 	private Location location;
 	@Enumerated(EnumType.STRING)
 	private PropertyType type;
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "property_details_id")
 	private PropertyDetails details;
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "property_features_id")
 	private PropertyFeature features;
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "photo_id")
 	private Set<Photo> photos;
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "pricing_id")
 	private Pricing pricing;
 

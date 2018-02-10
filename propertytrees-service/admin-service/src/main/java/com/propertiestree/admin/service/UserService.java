@@ -5,7 +5,7 @@ import com.propertiestree.common.model.UserModel;
 
 public interface UserService {
 
-	void register(UserModel registration);
+	User register(UserModel registration);
 
 	void updateProfile(String uuid, User updatedUser);
 
