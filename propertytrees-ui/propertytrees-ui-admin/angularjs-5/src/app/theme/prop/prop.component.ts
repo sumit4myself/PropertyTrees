@@ -5,6 +5,7 @@ import {IOption} from 'ng-select';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {PropertyType} from './propertyType';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import {MovingDirection} from 'ng2-archwizard';
 
 @Component({
   selector: 'app-prop',
@@ -24,7 +25,7 @@ import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
   ]
 })
 export class PropComponent implements OnInit {
-tabclick:boolean=false;
+showError:boolean=false;
 tabType: String='Residential';
 public propertyTypeOption: Array<IOption> = this.propService.getPropertyType();
 public availabilityOption: Array<IOption> = this.propService.getAvailabilityOption();
@@ -52,12 +53,17 @@ maintenanceTypeOption: Array<IOption> = this.propService.getMaintenanceTypeOptio
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
+canExitStep1: (MovingDirection) => boolean = (direction) => {
+    switch (direction) {
+      case MovingDirection.Forwards:
+        return this.checkStep2();
+    }
+  }
 
-checkValid(x) : boolean
-{
-return this.tabclick;
-}
-
+checkStep2(): boolean {
+      this.showError = this.propModel.propType === undefined;
+    return this.propModel.propType !== undefined;
+  }
 setClass(x)
 {
 this.propModel.slctd=x;
