@@ -244,6 +244,10 @@ getPropOnFloorOption(): Array<IOption> {
 
     save(propObject): void {
         console.log(JSON.stringify(propObject));
+        this.http.post("http://localhost:9001/user/login/",propObject).subscribe(
+      (res: Response) => {
+        console.log(res);
+      })
     }
 getPropTypeMenu(propertyType : String): Array<PropertyType> {
       if(propertyType==='RENT')

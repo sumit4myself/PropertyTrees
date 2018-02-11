@@ -14,6 +14,11 @@ public class AbstractAdminController {
 	public static final String PROPERTY_NEW_PROJECTS_DETAILS_URI = PROPERTY_BASE_URI + "/projects/{uuid}";
 	public static final String PROPERTY_LOCATION_URI = "/location/city";
 
+	public static final String USER_BASE_URI = "/user";
+	public static final String USER_REGISTRATION_URI = USER_BASE_URI + "/register";
+	public static final String USER_PROFILE_URI = USER_BASE_URI + "/profile" + "/{uuid}";
+	public static final String USER_FORGET_PASSWORD_URI = USER_BASE_URI + "/password" + "/{uuid}";
+
 	public static final String DEALER_BASE_URI = "/dealer";
 	public static final String DEALER_SEARCH_URI = DEALER_BASE_URI + "/search";
 	public static final String DEALER_UUID_URI = DEALER_BASE_URI + "/{uuid}";
