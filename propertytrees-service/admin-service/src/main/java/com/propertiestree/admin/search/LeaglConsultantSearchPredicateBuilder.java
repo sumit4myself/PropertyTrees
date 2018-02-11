@@ -3,8 +3,6 @@ package com.propertiestree.admin.search;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
 import com.propertiestree.admin.api.model.SearchCriteria;
 import com.propertiestree.admin.exception.InvalidSearchFieldException;
 import com.propertiestree.admin.exception.InvalidSearchOperatorException;
@@ -14,8 +12,7 @@ import com.querydsl.core.types.dsl.StringPath;
 
 import static com.propertiestree.common.entity.QArchitect.*;
 
-@Component
-public class PropertySearchPredicateBuilder extends SearchPredicateBuilder {
+public class LeaglConsultantSearchPredicateBuilder extends SearchPredicateBuilder {
 
 	@Override
 	public Predicate build(List<SearchCriteria> criterias)
