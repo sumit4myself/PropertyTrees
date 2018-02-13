@@ -11,7 +11,7 @@ import com.querydsl.core.types.ExpressionUtils;
 import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.StringPath;
 
-import static com.propertiestree.common.entity.QArchitect.architect;
+import static com.propertiestree.common.entity.property.QProject.project;;
 
 @Component
 public class ProjectSearchPredicateBuilder extends SearchPredicateBuilder {
@@ -25,7 +25,7 @@ public class ProjectSearchPredicateBuilder extends SearchPredicateBuilder {
 		for (SearchCriteria criteria : criterias) {
 			switch (criteria.getField()) {
 			case "city": {
-				cityExpression = applyCityOperator(cityExpression, architect.city, criteria);
+				cityExpression = applyCityOperator(cityExpression, project.location.city.name, criteria);
 				break;
 			}
 			default: {

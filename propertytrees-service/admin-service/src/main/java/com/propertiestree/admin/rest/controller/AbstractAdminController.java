@@ -18,6 +18,8 @@ public class AbstractAdminController {
 
 	public static final String PROPERTY_NEW_PROJECTS_URI = PROPERTY_BASE_URI
 			+ "/projects";
+	public static final String PROPERTY_NEW_PROJECT_ADD_URI = PROPERTY_BASE_URI
+			+ "/project";
 
 	public static final String PROPERTY_NEW_PROJECTS_UUID_URI = PROPERTY_NEW_PROJECTS_URI
 			+ "/{uuid}";

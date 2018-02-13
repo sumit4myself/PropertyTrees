@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +21,11 @@ public class ProjectRestController extends AbstractAdminController {
 
 	@Autowired
 	private ProjectService service;
+	
+	@PostMapping(path = PROPERTY_NEW_PROJECT_ADD_URI, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Project> addProject(@RequestBody Project project) {
+		return ResponseEntity.ok(service.addProject(project));
+	}
 
 	@GetMapping(path = PROPERTY_NEW_PROJECTS_UUID_URI, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Project> getProject(@PathVariable("uuid") String uuid) {
