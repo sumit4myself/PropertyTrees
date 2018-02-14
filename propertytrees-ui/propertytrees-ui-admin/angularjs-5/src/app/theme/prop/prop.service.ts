@@ -243,6 +243,16 @@ getPropOnFloorOption(): Array<IOption> {
     }
 
     save(propObject): void {
+    for (var i = 0; i < propObject.fileToUpload.length; i++) {
+                var file = propObject.fileToUpload[i];
+                if ('name' in file) {
+                    console.log("name: " + file.name);
+                }
+                if ('size' in file) {
+                    console.log("size: " + file.size + " bytes");
+                }
+            }
+    
         console.log(JSON.stringify(propObject));
     }
 getPropTypeMenu(propertyType : String): Array<PropertyType> {

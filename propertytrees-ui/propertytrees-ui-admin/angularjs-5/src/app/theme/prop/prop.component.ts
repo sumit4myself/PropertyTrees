@@ -49,15 +49,21 @@ facigMeasureOption: Array<IOption> = this.propService.getFacigMeasureOption();
 flooringTypeOption: Array<IOption> = this.propService.getFlooringTypeOption();
 maintenanceTypeOption: Array<IOption> = this.propService.getMaintenanceTypeOption();
 
+
 promiseBooks: Promise<IOption[]>
    books: IOption[];
 cityOption: Array<IOption>;
-
+onStep1Next()
+{
+  console.log('Next clicked');
+}
 checkValid(x) : boolean
 {
 return this.tabclick;
 }
-
+handleFileInput(files: FileList) {
+    this.propModel.fileToUpload = files;
+}
 setClass(x)
 {
 this.propModel.slctd=x;

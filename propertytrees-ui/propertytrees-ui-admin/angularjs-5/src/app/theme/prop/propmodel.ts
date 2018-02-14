@@ -8,5 +8,6 @@ type:String='SELL';
 public isSubmitted:boolean=false;
 slctd:String='O';
 propType:String;
+fileToUpload: File[];
 constructor(private details: PropertyDetails, private features:PropertyFeatures) { }
 }

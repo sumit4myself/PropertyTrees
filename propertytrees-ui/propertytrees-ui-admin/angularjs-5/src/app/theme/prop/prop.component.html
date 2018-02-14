@@ -426,6 +426,15 @@
      <div [ngSwitch]="isCompleted">
       <div *ngSwitchDefault>
     <div class="form-group row"></div>
+
+    <div class="form-group row">
+          <label class="col-sm-2">Image:</label>
+          <input type="file"
+           id="file" multiple
+           (change)="handleFileInput($event.target.files)">
+        </div>
+
+
        <div class="form-group row">
           <label class="col-sm-2">Power Backup</label>
           <div class="col-sm-2">
@@ -513,7 +522,7 @@
         <div class="form-group row">
           <label class="col-sm-2">Description</label>
           <div class="col">
-            <input type="textrrea" rows="4"  class="form-control" name="Description" [(ngModel)]="propModel.features.Description">
+            <textarea class="form-control" rows="5" name="Description" [(ngModel)]="propModel.features.Description" id="comment"></textarea>
           </div>
         </div>
       </div>
