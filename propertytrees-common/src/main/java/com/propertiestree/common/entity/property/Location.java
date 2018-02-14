@@ -5,19 +5,15 @@ import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import org.hibernate.search.annotations.IndexedEmbedded;
-
 import com.propertiestree.common.entity.City;
 
 @Embeddable
 public class Location {
-	
-	@IndexedEmbedded
-	@OneToOne(cascade = {CascadeType.ALL})
+
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "citi_id")
 	private City city;
-	@IndexedEmbedded
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "project_id")
 	private Project project;
 	private String locality;

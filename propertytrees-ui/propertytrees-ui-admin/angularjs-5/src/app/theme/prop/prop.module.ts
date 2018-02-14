@@ -13,7 +13,7 @@ import {PropertyFeatures} from './propFeatures';
 import {UiSwitchModule} from 'ng2-ui-switch';
 import {animate, style, transition, trigger} from '@angular/animations';
 // Import your library
-import { FormWizardModule } from 'angular2-wizard';
+import { ArchwizardModule } from 'ng2-archwizard';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { FormWizardModule } from 'angular2-wizard';
     HttpModule,
     FormsModule,
     SelectModule,
-    FormWizardModule
+    ArchwizardModule
   ],
   declarations: [PropComponent],
   providers: [PropService,PropModel,PropertyDetails,PropertyFeatures]

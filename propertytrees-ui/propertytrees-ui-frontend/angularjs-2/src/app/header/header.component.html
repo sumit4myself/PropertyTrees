@@ -117,9 +117,9 @@
 						<form method="post" id="logFrm" class="log-frm" name="logFrm"> 
 						<ul>                                                     
 							<li>Email</li>
-							<li> <input type="text" placeholder="User ID" id="userName" name="userName" class="form-control" (focus)="checkNullProf();"></li>
+							<li> <input type="text" required  placeholder="User ID" id="userName" name="userName" class="form-control" (focus)="checkNullProf();"></li>
 							<li>Password</li>
-							<li><input type="password" placeholder="Password" id="password" name="password" class="form-control" (focus)="checkNullProf();"></li>                                                
+							<li><input type="password" required placeholder="Password" id="password" name="password" class="form-control" (focus)="checkNullProf();"></li>                                                
 							<li><br/><button type="button" (click)="userLogin();" id="logBtn" class="btn btn-default">Submit</button></li>
 							<div style="display:none;" id="loginFail" class="sign">
 							<li> <font color="red">  Username or password is incorrect.</font></li>
@@ -149,19 +149,20 @@
 							<div class="o-r">
 							<span>OR</span>
 							</div>
-								 <form method="post" id="userRegisterFrm" class="log-frm" name="userRegisterFrm">  
+								 <form method="post" id="userRegisterFrm" class="log-frm" name="userRegisterFrm"> 
+								 	<!--<form (ngSubmit)="onSubmit()" #loginForm="ngForm">-->
 								<ul>
 								 <li>First Name</li>
-								<li><input type="text" placeholder="First Name" name="fName" class="form-control"></li>
+								<li><input type="text" required placeholder="First Name" name="fName" class="form-control"></li>
 								 <li>Last Name</li>
-								<li><input type="text" placeholder="Last Name" name="lName" class="form-control"></li>
+								<li><input type="text" required placeholder="Last Name" name="lName" class="form-control"></li>
 								<li>Email</li>
-								<li><input type="text" placeholder="Email Id" name="emailId" class="form-control"></li>
+								<li><input type="email" required placeholder="Email Id" name="emailId" class="form-control"></li>
 								<li>Password</li>
-								<li><input type="password" placeholder="Password" name="password" class="form-control"></li>
+								<li><input type="password" required placeholder="Password" name="password" class="form-control"></li>
 								<li>Confirm Password</li>
-								<li><input type="password" placeholder="Confirm Password" name="repassword" class="form-control"></li>
-							   <br> <li><button type="button" name="userRegBtn" class="btn btn-default">Signup Now</button></li>
+								<li><input type="password" required placeholder="Confirm Password" name="repassword" class="form-control"></li>
+							   <br> <li><button type="submit" name="userRegBtn" class="btn btn-default">Signup Now</button></li>
 								 <div style="display:none;" class="sign greenglow">
 									 <li>   <i class="icon-check"></i><br>
 										 <font color="red"> 
@@ -183,7 +184,7 @@
 						</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="submit" class="btn btn-primary">Save changes</button>
 					</div>
 				</div>
 			</div>
