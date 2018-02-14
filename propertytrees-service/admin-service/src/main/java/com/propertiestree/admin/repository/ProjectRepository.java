@@ -11,4 +11,6 @@ public interface ProjectRepository extends AbstractRepository<Project, Long> {
 
     Optional<Project> findByUuid(String uuid);
     
+    long deleteByUuid(String uuid);
+    
 }

@@ -15,4 +15,8 @@ public interface ProjectService {
 
 	Project addProject(Project project);
 
+	Project updateProject(Project project);
+
+	void deleteProject(String uuid);
+
 }
