@@ -130,8 +130,8 @@
 									 <form method="post" id="logFrm1" class="log-frm" name="logFrm1"> 
 									<ul>                                    
 										<li>
-											<a class="for-got" (click)="Ftoggle();" href="javascript:;">Forgot your password?</a>
-											<div class="forgot">
+											<a class="for-got" (click)="Ftoggle()" href="javascript:;">Forgot your password?</a>
+											<div class="forgot" id="forget"><button type="button" class="close" (click)="Ftogglehide()" aria-hidden="true">×</button>
 											<ul>                                          
 											<li><p>Enter your Email Address here to receive a link to change password.</p></li>
 											<li>Email Id</li>

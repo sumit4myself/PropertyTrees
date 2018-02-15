@@ -19,12 +19,12 @@ import { CustomerSupportComponent } from './customer-support/customer-support.co
 import { ProjectsComponent } from './projects/projects.component';
 import { PropertyGalleryComponent } from './property-gallery/property-gallery.component';
 import { QuestionComponent } from './question/question.component';
-import { ComercialComponent } from './comercial/comercial.component';
+import { CommercialComponent } from './commercial/commercial.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComercialComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
@@ -34,7 +34,7 @@ import { ComercialComponent } from './comercial/comercial.component';
     ArchitectComponent,
     LegalConsultantComponent,
     AstrologerComponent,
-
+    CommercialComponent,
     CustomerSupportComponent,
     DealersComponent,
     ProjectsComponent,
@@ -72,14 +72,15 @@ import { ComercialComponent } from './comercial/comercial.component';
     path: 'architect' ,
     component: ArchitectComponent
     },
-    {
-    path: 'comercial' ,
-    component: ComercialComponent
-    },
+  
     {
       path: 'consultant' ,
       component: LegalConsultantComponent
       },
+      {
+        path: 'commercial' ,
+        component: CommercialComponent
+        },
 
     {
     path: 'question' ,

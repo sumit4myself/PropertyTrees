@@ -11,6 +11,13 @@ export class HeaderComponent implements OnInit {
 openModal(){
 $('#myModal').modal('show');
 }
+Ftoggle(){
+  $('#forget').show();
+  }
+
+  Ftogglehide(){
+    $('#forget').hide();
+    }
 
   constructor(private searchFilter: SearchFilter) { }
 
