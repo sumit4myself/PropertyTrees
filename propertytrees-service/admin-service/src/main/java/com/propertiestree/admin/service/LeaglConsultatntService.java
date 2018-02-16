@@ -12,4 +12,6 @@ public interface LeaglConsultatntService {
 
 	Page<LeaglConsultatnt> search(String searchQuery, Pageable pageable);
 
+	void updateProfile(String uuid, LeaglConsultatnt leaglConsultatnt);
+
 }

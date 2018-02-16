@@ -31,6 +31,8 @@ public class AbstractAdminController {
 	public static final String USER_BASE_URI = "/user";
 
 	public static final String USER_REGISTRATION_URI = USER_BASE_URI + "/register";
+	
+	public static final String USER_SEARCH_URI = USER_BASE_URI + "/search";
 
 	public static final String USER_PROFILE_URI = USER_BASE_URI + "/profile" + "/{uuid}";
 
@@ -66,5 +68,11 @@ public class AbstractAdminController {
 	public static final String QUESTION_SEARCH_URI = QUESTION_BASE_URI + "/search";
 
 	public static final String QUESTION_UUID_URI = CONSULTANT_BASE_URI + "/{uuid}";
+	
+	public static final String AGENT_BASE_URI = "/agent";
+
+	public static final String AGENT_SEARCH_URI = AGENT_BASE_URI + "/search";
+
+	public static final String AGENT_UUID_URI = AGENT_BASE_URI + "/{uuid}";
 
 }

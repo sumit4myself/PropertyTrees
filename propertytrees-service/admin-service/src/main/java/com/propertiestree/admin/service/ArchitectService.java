@@ -9,4 +9,8 @@ public interface ArchitectService {
 
 	Page<Architect> search(String searchQuery, Pageable pageable);
 
+	Architect getArchitect(String uuid);
+
+	void updateProfile(String uuid, Architect architect);
+
 }

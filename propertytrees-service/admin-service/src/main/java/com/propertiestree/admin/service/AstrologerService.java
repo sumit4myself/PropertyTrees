@@ -12,4 +12,6 @@ public interface AstrologerService {
 
 	Page<Astrologer> search(String searchQuery, Pageable pageable);
 
+	void updateProfile(String uuid, Astrologer astrologer);
+
 }

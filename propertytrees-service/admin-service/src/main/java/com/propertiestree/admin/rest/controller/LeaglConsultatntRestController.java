@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +32,11 @@ public class LeaglConsultatntRestController extends AbstractAdminController {
 	public ResponseEntity<Page<LeaglConsultatnt>> searchLeaglConsultatnts(
 			@RequestParam("q") String searchQuery, Pageable pageable) {
 		return ResponseEntity.ok(service.search(searchQuery, pageable));
+	}
+	
+	@PutMapping(value = CONSULTANT_BASE_URI, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> updateProfile(@RequestBody LeaglConsultatnt leaglConsultatnt) {
+		service.updateProfile(leaglConsultatnt.getUuid(), leaglConsultatnt);
+		return ResponseEntity.ok("Success");
 	}
 }

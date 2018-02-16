@@ -1,6 +1,6 @@
-package com.propertiestree.common.entity;
+ package com.propertiestree.common.entity;
 
 public enum UserType {
 
-	BUYER, OWNER, DEALER, BUILDER;
+	BUYER, OWNER, DEALER, BUILDER, AGENT, ARCHITECH, ASTROLOGER, LEAGL_CONSULTATNT;
 }

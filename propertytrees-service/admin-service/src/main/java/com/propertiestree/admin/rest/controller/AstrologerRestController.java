@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,12 @@ public class AstrologerRestController extends AbstractAdminController {
 	public ResponseEntity<Page<Astrologer>> searchAstrologers(
 			@RequestParam("q") String searchQuery, Pageable pageable) {
 		return ResponseEntity.ok(service.search(searchQuery, pageable));
+	}
+	
+	@PutMapping(value = ASTROLOGER_BASE_URI, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> updateProfile(@RequestBody Astrologer astrologer) {
+		service.updateProfile(astrologer.getUuid(), astrologer);
+		return ResponseEntity.ok("Success");
 	}
 
 }

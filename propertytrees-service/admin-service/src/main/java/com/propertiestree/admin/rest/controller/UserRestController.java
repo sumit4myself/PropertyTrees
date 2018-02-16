@@ -1,8 +1,11 @@
 package com.propertiestree.admin.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,5 +37,10 @@ public class UserRestController extends AbstractAdminController {
 	public ResponseEntity<Void> changePassword(@RequestParam("uuid") String uuid, String updatedPassword) {
 		service.changePassword(uuid, updatedPassword);
 		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping(path = USER_SEARCH_URI, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Page<User>> searchAgents(@RequestParam("q") String searchQuery, Pageable pageable) {
+		return ResponseEntity.ok(service.search(searchQuery, pageable));
 	}
 }
