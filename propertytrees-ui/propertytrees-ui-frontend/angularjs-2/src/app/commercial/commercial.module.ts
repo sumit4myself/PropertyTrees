@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CommercialService } from './commercial.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [CommercialService]
+
 })
-export class ArchitectModule { }
+export class CommerialModule { }
