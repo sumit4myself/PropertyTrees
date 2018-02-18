@@ -75,7 +75,7 @@ public class FilenameUtils extends org.apache.commons.io.FilenameUtils {
         if (isDir) {
             return filename + i;
         } else {
-            return getBaseName(filename) + i + EXTENSION_SEPARATOR + getExtension(filename);
+            return getBaseName(filename) + i + "." + getExtension(filename);
         }
     }
 

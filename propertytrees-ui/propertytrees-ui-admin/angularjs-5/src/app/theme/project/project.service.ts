@@ -261,6 +261,18 @@ getPropTypeMenu(propertyType : String): Array<PropertyType> {
         return ProjectService.PROPERTY_TYPE_SELL_MENU;
     }
 
+    getProjectTypeMenu(propertyType : String): Array<PropertyType> {
+      if(propertyType==='RENT')
+      {
+      return ProjectService.PROPERTY_TYPE_RENT_MENU;
+      }
+      if(propertyType==='PG')
+      {
+      return ProjectService.PROPERTY_TYPE_PG_MENU;
+      }
+        return ProjectService.PROPERTY_TYPE_SELL_MENU;
+    }
+
     getAmenitiesMenu(propertyType : String): Array<PropertyType> {
       if(propertyType==='RENT')
       {

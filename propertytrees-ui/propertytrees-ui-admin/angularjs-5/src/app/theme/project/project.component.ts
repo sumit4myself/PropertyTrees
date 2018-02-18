@@ -3,7 +3,7 @@ import {ProjectService} from './project.service';
 import {ProjectModel} from './projectmodel';
 import {IOption} from 'ng-select';
 import {animate, style, transition, trigger} from '@angular/animations';
-import {ProjectertyType} from './propertyType';
+import {PropertyType} from './propertyType';
 import {NgbTabChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 import {MovingDirection} from 'ng2-archwizard';
 
@@ -27,7 +27,7 @@ import {MovingDirection} from 'ng2-archwizard';
 export class ProjectComponent implements OnInit {
 showError:boolean=false;
 tabType: String='Residential';
-public propertyTypeOption: Array<IOption> = this.projectService.getProjectertyType();
+public propertyTypeOption: Array<IOption> = this.projectService.getPropertyType();
 public availabilityOption: Array<IOption> = this.projectService.getAvailabilityOption();
 public transTypeOption: Array<IOption> = this.projectService.getTransTypeOption();
 public amenitiesOption: Array<IOption> = this.projectService.getAmenitiesOption();
@@ -35,15 +35,15 @@ public numericOption: Array<IOption> = this.projectService.getNumericOption();
 public unitTypeOption: Array<IOption> = this.projectService.getUnitTypeOption();
 public areaUnitOption: Array<IOption> = this.projectService.getareaUnitOption();
 public configrationOption: Array<IOption> = this.projectService.getConfigOption();
-propOnFloorOption: Array<IOption> = this.projectService.getProjectOnFloorOption();
+propOnFloorOption: Array<IOption> = this.projectService.getPropOnFloorOption();
 public amenitiesArray: Array<String> = [];
 ownerShipOption: Array<IOption> = this.projectService.getOwnerShipOption();
-propTypeMenu: Array<ProjectertyType> = this.projectService.getProjectTypeMenu(this.projectModel.propType);
-amenitiesMenu: Array<ProjectertyType> = this.projectService.getAmenitiesMenu(this.projectModel.propType);
+propTypeMenu: Array<PropertyType> = this.projectService.getProjectTypeMenu(this.projectModel.propType);
+amenitiesMenu: Array<PropertyType> = this.projectService.getAmenitiesMenu(this.projectModel.propType);
 
-commercialMenu: Array<ProjectertyType> = this.projectService.getCommercialMenu(this.projectModel.propType);
+commercialMenu: Array<PropertyType> = this.projectService.getCommercialMenu(this.projectModel.propType);
 possessionOption: Array<IOption> = this.projectService.getPossessionOption();
-propertyAgeOption: Array<IOption> = this.projectService.getProjectertyAgeOption();
+propertyAgeOption: Array<IOption> = this.projectService.getPropertyAgeOption();
 powerBackupOption: Array<IOption> = this.projectService.getPowerBackupOption();
 facigOption: Array<IOption> = this.projectService.getFacigOption();
 facigMeasureOption: Array<IOption> = this.projectService.getFacigMeasureOption();

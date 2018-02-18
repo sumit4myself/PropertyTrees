@@ -41,8 +41,20 @@ const MENUITEMS = [
         type: 'link',
         icon: 'icon-layout-cta-right'
       }
-    ],
-  }
+    ]
+  },
+  {
+    label: 'Project',
+    main: [
+      {
+        state: 'project',
+        short_label: 'P',
+        name: 'Project',
+        type: 'link',
+        icon: 'icon-layout-cta-right'
+      }
+    ]
+    }
 ];
 
 @Injectable()

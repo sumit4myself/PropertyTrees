@@ -26,6 +26,10 @@ const routes: Routes = [
         loadChildren: './theme/prop/prop.module#PropModule'
       },
       {
+        path: 'project',
+        loadChildren: './theme/project/project.module#ProjectModule'
+      },
+      {
         path: 'registration',
         loadChildren: './theme/registration/reg.module#RegModule'
       },
