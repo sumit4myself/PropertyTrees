@@ -2,7 +2,7 @@ package com.propertiestree.admin.service.impl;
 
 import java.util.List;
 
-import org.modelmapper.ModelMapper;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -24,8 +24,6 @@ import com.querydsl.core.types.Predicate;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private ModelMapper modelMapper;
-	@Autowired
 	private UserRepository repository;
 	@Autowired
 	private UUIDGenerator uuidGenerator;
@@ -36,7 +34,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User register(UserModel registration) {
-		User user = modelMapper.map(registration, User.class);
+		User user = new User();
+		BeanUtils.copyProperties(registration, user);
 		user.setUuid(uuidGenerator.nextLargeUID());
 		return repository.save(user);
 	}

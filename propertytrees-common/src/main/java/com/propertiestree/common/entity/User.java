@@ -28,11 +28,11 @@ public class User implements Serializable {
 	private String emailId;
 	private String password;
 	private String city;
-	private int mobile;
-	private int mobile2;
-	private int mobile3;
-	private int landlinePhone;
-	private int landlinePhone2;
+	private String mobile;
+	private String mobile2;
+	private String mobile3;
+	private String landlinePhone;
+	private String landlinePhone2;
 	@Enumerated(EnumType.STRING)
 	private UserType type;
 
@@ -84,43 +84,43 @@ public class User implements Serializable {
 		this.city = city;
 	}
 
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
-	public int getMobile2() {
+	public String getMobile2() {
 		return mobile2;
 	}
 
-	public void setMobile2(int mobile2) {
+	public void setMobile2(String mobile2) {
 		this.mobile2 = mobile2;
 	}
 
-	public int getMobile3() {
+	public String getMobile3() {
 		return mobile3;
 	}
 
-	public void setMobile3(int mobile3) {
+	public void setMobile3(String mobile3) {
 		this.mobile3 = mobile3;
 	}
 
-	public int getLandlinePhone() {
+	public String getLandlinePhone() {
 		return landlinePhone;
 	}
 
-	public void setLandlinePhone(int landlinePhone) {
+	public void setLandlinePhone(String landlinePhone) {
 		this.landlinePhone = landlinePhone;
 	}
 
-	public int getLandlinePhone2() {
+	public String getLandlinePhone2() {
 		return landlinePhone2;
 	}
 
-	public void setLandlinePhone2(int landlinePhone2) {
+	public void setLandlinePhone2(String landlinePhone2) {
 		this.landlinePhone2 = landlinePhone2;
 	}
 
