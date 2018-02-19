@@ -13,22 +13,28 @@ import com.propertiestree.admin.api.model.SearchCriteria;
 import com.propertiestree.admin.exception.ProjectNotFoundException;
 import com.propertiestree.admin.helper.UUIDGenerator;
 import com.propertiestree.admin.repository.ProjectRepository;
+import com.propertiestree.admin.repository.UserRepository;
 import com.propertiestree.admin.search.SearchPredicateBuilder;
 import com.propertiestree.admin.service.ProjectService;
 import com.propertiestree.admin.utils.SearchQueryParser;
 import com.propertiestree.common.entity.Photo;
+import com.propertiestree.common.entity.property.Plan;
 import com.propertiestree.common.entity.property.Project;
+import com.propertiestree.common.entity.property.Property;
 import com.querydsl.core.types.Predicate;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
-	
+
 	@Autowired
 	private ProjectRepository projectRepository;
-	
+
 	@Autowired
 	private UUIDGenerator uuidGenerator;
-	
+
+	@Autowired
+	private UserRepository userRepository;
+
 	@Autowired
 	@Qualifier("projectSearchPredicateBuilder")
 	private SearchPredicateBuilder predicateBuilder;
@@ -47,20 +53,41 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	public Project addProject(Project project) {
-		
+
 		project.getBanner().setUuid(uuidGenerator.nextLargeUID());
 		project.getBanner().getPhoto().setUuid(uuidGenerator.nextLargeUID());
-		
-		for(Photo gallery : project.getGallery()) {
+		project.setUser(userRepository.findOne(project.getUser().getId()));
+		for (Photo gallery : project.getGallery()) {
 			gallery.setUuid(uuidGenerator.nextLargeUID());
 		}
 		
+		for (Plan plan : project.getPlans()) {
+			plan.getFloorPlan().setUuid(uuidGenerator.nextLargeUID());
+		}
+		
+		for (Property prop : project.getProperties()) {
+			for(Photo p :prop.getPhotos()) {
+				p.setUuid(uuidGenerator.nextLargeUID());
+			}
+			for(Photo p : prop.getFeatures().getPhotos()) {
+				p.setUuid(uuidGenerator.nextLargeUID());
+			}
+		}
+		
+		for (Property prop : project.getProperties()) {
+			for(Photo p : prop.getFeatures().getPhotos()) {
+				p.setUuid(uuidGenerator.nextLargeUID());
+			}
+		}
+
+
 		return projectRepository.save(project);
 	}
 
 	@Override
 	public Project updateProject(Project project) {
-		project.setId(projectRepository.findByUuid(project.getUuid()).orElseThrow(() -> new ProjectNotFoundException(project.getUuid())).getId());
+		project.setId(projectRepository.findByUuid(project.getUuid())
+				.orElseThrow(() -> new ProjectNotFoundException(project.getUuid())).getId());
 		return projectRepository.save(project);
 	}
 
