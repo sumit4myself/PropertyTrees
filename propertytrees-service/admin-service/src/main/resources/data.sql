@@ -30,6 +30,13 @@ insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/pr
 insert into photo ( id,uuid, url) values ( 9,'uuid9','/assets/images/projects/project4.png');
 insert into photo ( id,uuid, url) values ( 10,'uuid10','/assets/images/projects/project5.png');
 insert into photo ( id,uuid, url) values ( 11,'uuid11','/assets/images/projects/project6.png');
+insert into photo ( id,uuid, url) values ( 12,'uuid12','/assets/images/projects/project7.png');
+insert into photo ( id,uuid, url) values ( 13,'uuid13','/assets/images/projects/project8.png');
+insert into photo ( id,uuid, url) values ( 14,'uuid14','/assets/images/projects/project9.png');
+insert into photo ( id,uuid, url) values ( 15,'uuid15','/assets/images/projects/project10.png');
+insert into photo ( id,uuid, url) values ( 16,'uuid16','/assets/images/projects/project11.png');
+insert into photo ( id,uuid, url) values ( 17,'uuid17','/assets/images/projects/project12.png');
+insert into photo ( id,uuid, url) values ( 18,'uuid18','/assets/images/projects/project13.png');
 
 
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 1,'uuid1','SIDE','www.propertytrees.com',1) ;
@@ -41,6 +48,13 @@ insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 6,'uuid
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 7,'uuid7','STRIP','www.propertytrees.com',7) ;
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 8,'uuid8','STRIP','www.propertytrees.com',8) ;
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 9,'uuid9','STRIP','www.propertytrees.com',9) ;
-insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 10,'uuid10','STRIP','www.propertytrees.com',10) ;
-insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 11,'uuid11','STRIP','www.propertytrees.com',11) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 10,'uuid10','STRIP','www.propertytrees.com',10);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 11,'uuid11','STRIP','www.propertytrees.com',11);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 12,'uuid12','STRIP','www.propertytrees.com',12);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 13,'uuid13','STRIP','www.propertytrees.com',13);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 14,'uuid14','STRIP','www.propertytrees.com',14);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 15,'uuid15','STRIP','www.propertytrees.com',15);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 16,'uuid16','STRIP','www.propertytrees.com',16);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 17,'uuid17','STRIP','www.propertytrees.com',17);
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 18,'uuid18','STRIP','www.propertytrees.com',18);
 
