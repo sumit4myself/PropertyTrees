@@ -16,10 +16,17 @@ onLinkClick(x,y)
 	window.open(x+"?id="+y, "_blank");
 }
 dealerInitialData : Array<DealerDetails>=this.homeService.getDealerData();
-galleryData : Array<IOption>=this.homeService.getGalleryData();
+getBannerPromise : Promise<IOption[]>;
+getBannerData: Array<IOption>;
+galleryPromise : Promise<IOption[]>;
+galleryData : Array<IOption>;
   constructor(private searchFilter: SearchFilter, private homeService:HomeService) { }
   ngOnInit() {
-  
+   this.galleryPromise = this.homeService.getGalleryData();
+  this.galleryPromise.then(    
+           opt => this.galleryData= opt);
+           this.getBannerPromise = this.homeService.getBannerData();
+  this.getBannerPromise.then(    
+           opt => this.getBannerData= opt);
   }
-
 }

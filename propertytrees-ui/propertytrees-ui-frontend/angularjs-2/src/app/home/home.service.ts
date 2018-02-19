@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IOption} from 'ng-select';
+import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
 export class HomeService {
@@ -16,34 +17,30 @@ public static readonly DEALER_DATA: Array<DealerDetails> = [
     {type:'Apartment',count:80 },{type:'House/Villa',count:2 },{type:'Land',count:1 }]}
   ];
 
-  public static readonly GALLERY_DATA: Array<IOption> = [
-    { value:'assets/images/property-gallery/celebrity-serenity-s-150x100.gif', label:'1' },
-    { value:'assets/images/property-gallery/amaravati-one-s-150x100.gif', label:'2' },
-    { value:'assets/images/property-gallery/celebrity-sqaure-s-150x100.gif', label:'3' },
-    { value:'assets/images/property-gallery/claritas-anika-s-1-150x100.gif', label:'4' },
-    { value:'assets/images/property-gallery/elan-miracle-s-150x100.gif', label:'5' },
-    { value:'assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif', label:'6' },
-    { value:'assets/images/property-gallery/kmv-projects-s-150x100.gif', label:'7' },
-    { value:'assets/images/property-gallery/kw-delhi6-hj-150x100.gif', label:'8' },
-    { value:'assets/images/property-gallery/life-republic-new-s-150x100.gif', label:'9' },
-    { value:'assets/images/property-gallery/mahagun-manorial-hj-150x100.gif', label:'10' },
-    { value:'assets/images/property-gallery/mahagun-mantra-hj-150x100.gif', label:'11' },
-    { value:'assets/images/property-gallery/celebrity-sqaure-s-150x100.gif', label:'12' },
-    { value:'assets/images/property-gallery/claritas-anika-s-1-150x100.gif', label:'13' },
-    { value:'assets/images/property-gallery/elan-miracle-s-150x100.gif', label:'14' },
-    { value:'assets/images/property-gallery/kmv-projects-s-150x100.gif', label:'15' },
-    { value:'assets/images/property-gallery/kw-delhi6-hj-150x100.gif', label:'16' },
-    { value:'assets/images/property-gallery/life-republic-new-s-150x100.gif', label:'17' },
-    { value:'assets/images/property-gallery/mahagun-manorial-hj-150x100.gif', label:'18' },
-    { value:'assets/images/property-gallery/mahagun-mantra-hj-150x100.gif', label:'19' },
-    { value:'assets/images/property-gallery/amaravati-one-s-150x100.gif', label:'20' }
-    
-  ];
-
-  constructor() { }
-  getGalleryData() : Array<IOption> {
-        return HomeService.GALLERY_DATA;
+getBannerData(): Promise<IOption[]> {
+        return this.http.get("http://localhost:9001/v1/property/banner?type=STRIP").toPromise()
+      .then(this.extractData)
+      .catch(this.handleErrorPromise);
     }
+
+getGalleryData(): Promise<IOption[]> {
+        return this.http.get("http://localhost:9001/v1/property/banner?type=SIDE").toPromise()
+      .then(this.extractData)
+      .catch(this.handleErrorPromise);
+    }
+
+    private extractData(res: Response) {
+    var resArray= new Array();
+      var obj= res.json();
+      return obj.content.map(objcts => ( {value:objcts.photo.url, label:objcts.id} ));
+    }
+
+    private handleErrorPromise (error: Response | any) {
+  console.error(error.message || error);
+  return Promise.reject(error.message || error);
+    }
+
+  constructor(private http:Http) { }
 
 getDealerData() : Array<DealerDetails> {
         return HomeService.DEALER_DATA;

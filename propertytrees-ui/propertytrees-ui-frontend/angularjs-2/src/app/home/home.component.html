@@ -23,34 +23,20 @@
 								<!-- Carousel items -->
 								<div class="carousel-inner">
 									
-								<div class="item active">
-									<div class="row">
-									  <div class="col-md-3"><img src="assets/images/projects/project1.png" alt="Image" style="max-width:100%;"></div>
-									  <div class="col-md-3"><img src="assets/images/projects/project2.png" alt="Image" style="max-width:100%;"></div>
-									  <div class="col-md-3"><img src="assets/images/projects/project3.png" alt="Image" style="max-width:100%;"></div>
-									  <div class="col-md-3"><img src="assets/images/projects/project4.png" alt="Image" style="max-width:100%;"></div>
-									</div><!--.row-->
-								</div><!--.item-->
+									<div class="item active" >
+										<div class="row">
+											<div class="col-md-3" *ngFor="let item of getBannerData | slice:0:4; let i = index"><img src={{item.value}} alt="Image" style="max-width:100%;"></div>
+										</div></div>
 								 
-								<div class="item">
-									<div class="row">
-										<div class="col-md-3"><img src="assets/images/projects/project1.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project1.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project2.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project2.png" alt="Image" style="max-width:100%;"></div>
-									</div><!--.row-->
-								</div><!--.item-->
-								 
-								<div class="item">
-									<div class="row">
-										<div class="col-md-3"><img src="assets/images/projects/project3.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project3.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project4.png" alt="Image" style="max-width:100%;"></div>
-										<div class="col-md-3"><img src="assets/images/projects/project4.png" alt="Image" style="max-width:100%;"></div>
-									</div><!--.row-->
-								</div><!--.item-->
-								
-								 
+								 <div class="item">
+										<div class="row">
+											<div class="col-md-3" *ngFor="let item of getBannerData | slice:4:8; let i = index"><img src={{item.value}} alt="Image" style="max-width:100%;"></div>
+										</div></div>
+
+										<div class="item">
+										<div class="row">
+											<div class="col-md-3" *ngFor="let item of getBannerData | slice:8:12; let i = index"><img src={{item.value}} alt="Image" style="max-width:100%;"></div>
+										</div></div>
 								</div><!--.carousel-inner-->
 								  
 								</div><!--.Carousel-->
