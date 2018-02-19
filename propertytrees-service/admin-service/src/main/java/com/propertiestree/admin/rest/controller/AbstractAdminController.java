@@ -12,7 +12,7 @@ public class AbstractAdminController {
 
 	public static final String PROPERTY_UUID_URI = PROPERTY_BASE_URI + "/{uuid}";
 
-	public static final String PROPERTY_POST_URI = PROPERTY_UUID_URI + "/post";
+	public static final String PROPERTY_POST_URI = PROPERTY_BASE_URI + "/post";
 
 	public static final String PROPERTY_GALLERY_URI = PROPERTY_BASE_URI + "/gallery";
 

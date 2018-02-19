@@ -13,3 +13,8 @@ insert into CITY values
 (9,'Gurgaon','UUID001CT9',201), 
 (10,'Noida','UUID001CT10',201), 
 (11,'Delhi East','UUID001CT11',201);
+
+insert into user_account
+(city, email_id, landline_phone, landline_phone2, mobile, mobile2, mobile3, name, password, type, uuid, id) 
+values
+('Noida', 'abc.xyz@mail.com', '', '', '9999999999', '', '', 'Test User', 'My@pass', 'BUYER', 'UUIDDUMY001', '10');

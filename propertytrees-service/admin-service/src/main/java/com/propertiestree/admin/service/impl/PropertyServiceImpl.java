@@ -43,6 +43,7 @@ public class PropertyServiceImpl implements PropertyService {
 	public Property createProperty(Property property) throws PropertyException {
 		property.setUuid(uuidGenerator.nextLargeUID());
 		property.getLocation().setCity(locationService.findByUuid(property.getLocation().getCity().getUuid()));
+		property.getLocation().getProject().setUuid(uuidGenerator.nextLargeUID());
 		for (Photo photo : property.getPhotos()) {
 			photo.setUuid(uuidGenerator.nextLargeUID());
 		}
