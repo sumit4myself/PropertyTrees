@@ -60,9 +60,7 @@ getAvailabilityOption(): Array<IOption> {
         return this.cloneOptions(ProjectService.AVAILABILITY_OPTION);
     }
 
-getNumericOption(): Array<IOption> {
-        return this.cloneOptions(ProjectService.NUMERIC_OPTION);
-    }
+
     getareaUnitOption() : Array<IOption> {
         return this.cloneOptions(ProjectService.AREAUNIT_OPTION);
     }
@@ -79,12 +77,7 @@ getNumericOption(): Array<IOption> {
     getAmenitiesMenu(propertyType : String): Array<PropertyType> {
         return ProjectService.AMENITES_SELL_MENU;
     }
-    getCommercialMenu(propertyType : String): Array<PropertyType> {
-      if(propertyType!=='PG')
-      {
-      return ProjectService.COMMERCIAL_MENU;
-      }
-    }
+    
 getCity(): Promise<IOption[]> {
         return this.http.get("http://ec2-34-217-106-45.us-west-2.compute.amazonaws.com:9001/location/cities").toPromise()
       .then(this.extractData)

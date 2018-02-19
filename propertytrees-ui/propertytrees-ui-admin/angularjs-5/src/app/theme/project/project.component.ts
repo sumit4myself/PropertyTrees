@@ -30,7 +30,7 @@ public amenitiesArray: Array<String> = [];
 tabType: String='Residential';
 public propertyTypeOption: Array<IOption> = this.projectService.getPropertyType();
 public areaUnitOption: Array<IOption> = this.projectService.getareaUnitOption();
-bannerTypeOption: Array<PropertyType> = this.projectService.getBannerTypeOption();
+bannerTypeOption: Array<IOption> = this.projectService.getBannerTypeOption();
 public availabilityOption: Array<IOption> = this.projectService.getAvailabilityOption();
 amenitiesMenu: Array<PropertyType> = this.projectService.getAmenitiesMenu('x');
 

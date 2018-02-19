@@ -7,6 +7,7 @@ constructor() { }
 
 @Injectable()
 export class FloorPlan {
+fileToUpload: FileList ;
 constructor() { }
 }
 
@@ -28,6 +29,6 @@ constructor() { }
 
 @Injectable()
 export class Plan {
-constructor(private floorPlan : FloorPlan) { }
+constructor(public floorPlan : FloorPlan) { }
 }
 
