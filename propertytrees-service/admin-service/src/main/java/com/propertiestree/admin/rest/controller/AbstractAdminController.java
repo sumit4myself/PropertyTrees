@@ -14,7 +14,7 @@ public class AbstractAdminController {
 
 	public static final String PROPERTY_POST_URI = PROPERTY_BASE_URI + "/post";
 
-	public static final String PROPERTY_GALLERY_URI = PROPERTY_BASE_URI + "/gallery";
+	public static final String PROPERTY_BANNER_URI = PROPERTY_BASE_URI + "/banner";
 
 	public static final String PROPERTY_NEW_PROJECTS_URI = PROPERTY_BASE_URI
 			+ "/projects";

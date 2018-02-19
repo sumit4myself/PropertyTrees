@@ -18,3 +18,29 @@ insert into user_account
 (city, email_id, landline_phone, landline_phone2, mobile, mobile2, mobile3, name, password, type, uuid, id) 
 values
 ('Noida', 'abc.xyz@mail.com', '', '', '9999999999', '', '', 'Test User', 'My@pass', 'BUYER', 'UUIDDUMY001', '10');
+
+insert into photo ( id,uuid, url) values ( 1,'uuid1','/assets/images/property-gallery/celebrity-serenity-s-150x100.gif');
+insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-gallery/amaravati-one-s-150x100.gif');
+insert into photo ( id,uuid, url) values ( 3,'uuid3','/assets/images/property-gallery/celebrity-sqaure-s-150x100.gif');
+insert into photo ( id,uuid, url) values ( 4,'uuid4','/assets/images/property-gallery/claritas-anika-s-1-150x100.gif');
+insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif');
+insert into photo ( id,uuid, url) values ( 6,'uuid6','/assets/images/projects/project1.png');
+insert into photo ( id,uuid, url) values ( 7,'uuid7','/assets/images/projects/project2.png');
+insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/project3.png');
+insert into photo ( id,uuid, url) values ( 9,'uuid9','/assets/images/projects/project4.png');
+insert into photo ( id,uuid, url) values ( 10,'uuid10','/assets/images/projects/project5.png');
+insert into photo ( id,uuid, url) values ( 11,'uuid11','/assets/images/projects/project6.png');
+
+
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 1,'uuid1','SIDE','www.propertytrees.com',1) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 2,'uuid2','SIDE','www.propertytrees.com',2) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 3,'uuid3','SIDE','www.propertytrees.com',3) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 4,'uuid4','SIDE','www.propertytrees.com',4) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 5,'uuid5','SIDE','www.propertytrees.com',5) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 6,'uuid6','STRIP','www.propertytrees.com',6) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 7,'uuid7','STRIP','www.propertytrees.com',7) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 8,'uuid8','STRIP','www.propertytrees.com',8) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 9,'uuid9','STRIP','www.propertytrees.com',9) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 10,'uuid10','STRIP','www.propertytrees.com',10) ;
+insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 11,'uuid11','STRIP','www.propertytrees.com',11) ;
+

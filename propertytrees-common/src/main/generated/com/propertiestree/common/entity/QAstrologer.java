@@ -31,19 +31,19 @@ public class QAstrologer extends EntityPathBase<Astrologer> {
     public final NumberPath<Long> id = _super.id;
 
     //inherited
-    public final NumberPath<Integer> landlinePhone = _super.landlinePhone;
+    public final StringPath landlinePhone = _super.landlinePhone;
 
     //inherited
-    public final NumberPath<Integer> landlinePhone2 = _super.landlinePhone2;
+    public final StringPath landlinePhone2 = _super.landlinePhone2;
 
     //inherited
-    public final NumberPath<Integer> mobile = _super.mobile;
+    public final StringPath mobile = _super.mobile;
 
     //inherited
-    public final NumberPath<Integer> mobile2 = _super.mobile2;
+    public final StringPath mobile2 = _super.mobile2;
 
     //inherited
-    public final NumberPath<Integer> mobile3 = _super.mobile3;
+    public final StringPath mobile3 = _super.mobile3;
 
     //inherited
     public final StringPath name = _super.name;

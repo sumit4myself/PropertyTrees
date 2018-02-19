@@ -1,5 +1,10 @@
 package com.propertiestree.common.entity;
 
-public class Dealer {
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+
+@Entity
+@PrimaryKeyJoinColumn(referencedColumnName = "id")
+public class Dealer extends User{
 
 }

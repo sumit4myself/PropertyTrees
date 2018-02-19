@@ -25,15 +25,15 @@ public class QUser extends EntityPathBase<User> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final NumberPath<Integer> landlinePhone = createNumber("landlinePhone", Integer.class);
+    public final StringPath landlinePhone = createString("landlinePhone");
 
-    public final NumberPath<Integer> landlinePhone2 = createNumber("landlinePhone2", Integer.class);
+    public final StringPath landlinePhone2 = createString("landlinePhone2");
 
-    public final NumberPath<Integer> mobile = createNumber("mobile", Integer.class);
+    public final StringPath mobile = createString("mobile");
 
-    public final NumberPath<Integer> mobile2 = createNumber("mobile2", Integer.class);
+    public final StringPath mobile2 = createString("mobile2");
 
-    public final NumberPath<Integer> mobile3 = createNumber("mobile3", Integer.class);
+    public final StringPath mobile3 = createString("mobile3");
 
     public final StringPath name = createString("name");
 

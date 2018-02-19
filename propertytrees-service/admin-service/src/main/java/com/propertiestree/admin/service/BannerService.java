@@ -1,9 +1,11 @@
+
 package com.propertiestree.admin.service;
 
 import org.springframework.data.domain.Page;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Pageable;
 
 import com.propertiestree.common.entity.property.Banner;
+import com.propertiestree.common.entity.property.BannerType;
 
 public interface BannerService {
 
@@ -11,6 +13,6 @@ public interface BannerService {
 
 	void delete(String uuid);
 
-	ResponseEntity<Page<Banner>> findAll();
+	Page<Banner> findAll(BannerType bannerType, Pageable pageable);
 
 }

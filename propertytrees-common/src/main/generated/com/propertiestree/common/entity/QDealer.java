@@ -10,29 +10,19 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * QAgent is a Querydsl query type for Agent
+ * QDealer is a Querydsl query type for Dealer
  */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class QAgent extends EntityPathBase<Agent> {
+public class QDealer extends EntityPathBase<Dealer> {
 
-    private static final long serialVersionUID = 1506132397L;
+    private static final long serialVersionUID = -470616975L;
 
-    public static final QAgent agent = new QAgent("agent");
+    public static final QDealer dealer = new QDealer("dealer");
 
     public final QUser _super = new QUser(this);
 
-    public final StringPath addressLine2 = createString("addressLine2");
-
     //inherited
     public final StringPath city = _super.city;
-
-    public final StringPath companyAddress = createString("companyAddress");
-
-    public final StringPath companyName = createString("companyName");
-
-    public final StringPath companyProfile = createString("companyProfile");
-
-    public final StringPath companyUrl = createString("companyUrl");
 
     //inherited
     public final StringPath emailId = _super.emailId;
@@ -67,16 +57,16 @@ public class QAgent extends EntityPathBase<Agent> {
     //inherited
     public final StringPath uuid = _super.uuid;
 
-    public QAgent(String variable) {
-        super(Agent.class, forVariable(variable));
+    public QDealer(String variable) {
+        super(Dealer.class, forVariable(variable));
     }
 
-    public QAgent(Path<? extends Agent> path) {
+    public QDealer(Path<? extends Dealer> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QAgent(PathMetadata metadata) {
-        super(Agent.class, metadata);
+    public QDealer(PathMetadata metadata) {
+        super(Dealer.class, metadata);
     }
 
 }

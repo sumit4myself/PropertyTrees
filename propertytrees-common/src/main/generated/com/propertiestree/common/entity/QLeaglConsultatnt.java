@@ -10,29 +10,19 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * QAgent is a Querydsl query type for Agent
+ * QLeaglConsultatnt is a Querydsl query type for LeaglConsultatnt
  */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class QAgent extends EntityPathBase<Agent> {
+public class QLeaglConsultatnt extends EntityPathBase<LeaglConsultatnt> {
 
-    private static final long serialVersionUID = 1506132397L;
+    private static final long serialVersionUID = 1277115472L;
 
-    public static final QAgent agent = new QAgent("agent");
+    public static final QLeaglConsultatnt leaglConsultatnt = new QLeaglConsultatnt("leaglConsultatnt");
 
     public final QUser _super = new QUser(this);
 
-    public final StringPath addressLine2 = createString("addressLine2");
-
     //inherited
     public final StringPath city = _super.city;
-
-    public final StringPath companyAddress = createString("companyAddress");
-
-    public final StringPath companyName = createString("companyName");
-
-    public final StringPath companyProfile = createString("companyProfile");
-
-    public final StringPath companyUrl = createString("companyUrl");
 
     //inherited
     public final StringPath emailId = _super.emailId;
@@ -67,16 +57,16 @@ public class QAgent extends EntityPathBase<Agent> {
     //inherited
     public final StringPath uuid = _super.uuid;
 
-    public QAgent(String variable) {
-        super(Agent.class, forVariable(variable));
+    public QLeaglConsultatnt(String variable) {
+        super(LeaglConsultatnt.class, forVariable(variable));
     }
 
-    public QAgent(Path<? extends Agent> path) {
+    public QLeaglConsultatnt(Path<? extends LeaglConsultatnt> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QAgent(PathMetadata metadata) {
-        super(Agent.class, metadata);
+    public QLeaglConsultatnt(PathMetadata metadata) {
+        super(LeaglConsultatnt.class, metadata);
     }
 
 }
