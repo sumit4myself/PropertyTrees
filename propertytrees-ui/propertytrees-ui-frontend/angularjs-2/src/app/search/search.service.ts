@@ -10,5 +10,14 @@ buyService()
 	this.search.push("Buy2");
 	return this.search;
 }
+
+buyService1()
+{
+ this.search=[];
+ this.search.push("com1");
+	return this.search;
+}
+
+
  constructor() { }
 }

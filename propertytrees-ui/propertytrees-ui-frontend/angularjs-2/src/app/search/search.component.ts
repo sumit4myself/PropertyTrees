@@ -51,8 +51,7 @@ else if(param=='projects')
 else if(param=='commercial')
 {
 	this.search=[];
-	this.search.push("Comm1");
-	this.search.push("Comm2");
+	this.search=this.searchService.buyService1();
 	console.log(this.search);
 }
 else if(param=='astrologer')

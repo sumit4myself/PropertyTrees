@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -20,11 +19,13 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PropertyGalleryComponent } from './property-gallery/property-gallery.component';
 import { QuestionComponent } from './question/question.component';
 import { CommercialComponent } from './commercial/commercial.component';
+import { UserService } from './header/sign_up.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     HeaderComponent,
     HomeComponent,
     FooterComponent,
@@ -92,7 +93,7 @@ import { CommercialComponent } from './commercial/commercial.component';
     }
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
