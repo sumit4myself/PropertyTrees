@@ -26,29 +26,17 @@ import {MovingDirection} from 'ng2-archwizard';
 })
 export class ProjectComponent implements OnInit {
 showError:boolean=false;
+public amenitiesArray: Array<String> = [];
 tabType: String='Residential';
 public propertyTypeOption: Array<IOption> = this.projectService.getPropertyType();
-public availabilityOption: Array<IOption> = this.projectService.getAvailabilityOption();
-public transTypeOption: Array<IOption> = this.projectService.getTransTypeOption();
-public amenitiesOption: Array<IOption> = this.projectService.getAmenitiesOption();
-public numericOption: Array<IOption> = this.projectService.getNumericOption();
-public unitTypeOption: Array<IOption> = this.projectService.getUnitTypeOption();
 public areaUnitOption: Array<IOption> = this.projectService.getareaUnitOption();
-public configrationOption: Array<IOption> = this.projectService.getConfigOption();
-propOnFloorOption: Array<IOption> = this.projectService.getPropOnFloorOption();
-public amenitiesArray: Array<String> = [];
-ownerShipOption: Array<IOption> = this.projectService.getOwnerShipOption();
-propTypeMenu: Array<PropertyType> = this.projectService.getProjectTypeMenu(this.projectModel.propType);
-amenitiesMenu: Array<PropertyType> = this.projectService.getAmenitiesMenu(this.projectModel.propType);
+bannerTypeOption: Array<PropertyType> = this.projectService.getBannerTypeOption();
+public availabilityOption: Array<IOption> = this.projectService.getAvailabilityOption();
+amenitiesMenu: Array<PropertyType> = this.projectService.getAmenitiesMenu('x');
 
-commercialMenu: Array<PropertyType> = this.projectService.getCommercialMenu(this.projectModel.propType);
-possessionOption: Array<IOption> = this.projectService.getPossessionOption();
-propertyAgeOption: Array<IOption> = this.projectService.getPropertyAgeOption();
-powerBackupOption: Array<IOption> = this.projectService.getPowerBackupOption();
-facigOption: Array<IOption> = this.projectService.getFacigOption();
-facigMeasureOption: Array<IOption> = this.projectService.getFacigMeasureOption();
-flooringTypeOption: Array<IOption> = this.projectService.getFlooringTypeOption();
-maintenanceTypeOption: Array<IOption> = this.projectService.getMaintenanceTypeOption();
+handlePlanImage(files: FileList) {
+    this.projectModel.plan.floorPlan.fileToUpload = files;
+}
 
 promiseBooks: Promise<IOption[]>
    books: IOption[];
@@ -61,18 +49,9 @@ canExitStep1: (MovingDirection) => boolean = (direction) => {
   }
 
 checkStep2(): boolean {
-      this.showError = this.projectModel.propType === undefined;
-    return this.projectModel.propType !== undefined;
+      
+    return true;
   }
-setClass(x)
-{
-this.projectModel.slctd=x;
-}
-
-setProjectType(x)
-{
-this.projectModel.propType=x;
-}
 
 isExist(x) : number
 {
@@ -90,11 +69,7 @@ else
  this.amenitiesArray.push(x);   
 }
 }
-setMenu(name)
-{
-  this.propTypeMenu=this.projectService.getProjectTypeMenu(name);
-  this.commercialMenu=this.projectService.getCommercialMenu(name);
-}
+
 saveMethod()
 {
 	this.projectService.save(this.projectModel);
@@ -102,11 +77,6 @@ saveMethod()
 
 }
   constructor(private projectService:ProjectService, private projectModel:ProjectModel) { }
-
-public beforeChange($event: NgbTabChangeEvent) {
-this.projectModel.propType=undefined;
-        this.tabType=$event.nextId;
-    };
 
   ngOnInit(): void {
   this.projectModel.type="SELL";

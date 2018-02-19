@@ -8,7 +8,7 @@ import {SharedModule} from '../../shared/shared.module';
 import { HttpModule } from '@angular/http';
 import {ProjectService} from './project.service';
 import {ProjectModel} from './projectmodel';
-import {ProjectDetails} from './projectDetails';
+import {ProjectDetails, Location, Banner , Gallery , Plan , FloorPlan, Specifications} from './projectDetails';
 import {ProjectFeatures} from './projectFeatures';
 import {UiSwitchModule} from 'ng2-ui-switch';
 import {animate, style, transition, trigger} from '@angular/animations';
@@ -28,6 +28,6 @@ import { ArchwizardModule } from 'ng2-archwizard';
     ArchwizardModule
   ],
   declarations: [ProjectComponent],
-  providers: [ProjectService,ProjectModel,ProjectDetails,ProjectFeatures]
+  providers: [ProjectService,ProjectModel,Location, Gallery, Banner , Plan , FloorPlan ,ProjectDetails,ProjectFeatures, Specifications]
 })
 export class ProjectModule { }

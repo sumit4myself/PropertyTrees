@@ -8,30 +8,17 @@
           
           <div class="form-group row"></div>
     <div class="form-group row">
-          <label class="col-sm-4">You are:</label>
-         <!--  <div class="col">
-           <ng-select [ngClass]="'ng-select'" [options]="userTypeOption" name="type" [(ngModel)]="projectModel.userType"></ng-select>
-         </div> -->
-
-
-          
-                <!-- ngIf: fieldLocks['Class'] -->
-                <!-- ngIf: isFieldSuspicious('Class') -->
-            
-           </div> 
-        <ul class="userOptions" ng-class="{'userOptionsError':ClassError}">
-        <li><div class="owner active" (click)="setClass('O')" [class.active]="projectModel.slctd === 'O'"><i></i><span></span> Owner</div></li>
-        <li><div class="dealer" [class.active]="projectModel.slctd ==='A'" (click)="setClass('A')" ><i></i><span></span> Dealer</div></li>
-        <li><div class="builder" (click)="setClass('B')" [class.active]="projectModel.slctd === 'B'"><i></i><span></span> Builder</div></li>
-      </ul>
-      <div class="error errorIcon ClassError ng-binding ng-hide" ng-show="ClassError"><span></span> </div>
-   
+          <label class="col-sm-2">Name:</label>
+          <div class="col-sm-2">
+           <input type="text" class="form-control" name="projectName" [(ngModel)]="projectModel.name">
+         </div> 
+           </div>   
 
       <div class="form-group row"></div>
     <div class="form-group row">
           <label class="col-sm-2">List Project for:</label>
           <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="propertyTypeOption" (ngModelChange)="setMenu($event)" name="type" [(ngModel)]="projectModel.type"></ng-select>
+            <ng-select [ngClass]="'ng-select'" [options]="propertyTypeOption" name="type" [(ngModel)]="projectModel.type"></ng-select>
           </div>
         </div>
         <div class="form-group row"></div>
@@ -39,82 +26,7 @@
         <div class="form-group row"></div>
         <div class="form-group row"></div>
         <div class="form-group row"></div>
-
-        <div class="form-group row">
-          <label class="col-sm-2">Project Type: *</label>
-        </div>
-        <div class="md-tabs">
-            <ngb-tabset (tabChange)="beforeChange($event)">
-              <ngb-tab id="Residential" title="Residential">
-                <ng-template ngbTabContent>
-                  <div [@fadeInOutTranslate] class="m-t-15">
-                    <div class="form-group row">
-                    <div class="deck col-sm-2" 
-                        *ngFor="let item of propTypeMenu; let i = index" (click)="setPropType(item.name)" [class.projectActive]="projectModelModel.propType === item.name" style="">
-              <i></i>
-                        <div class="propicons" [ngClass]=item.className></div>
-              <span class="ng-binding">{{item.name}}</span>
-            </div>
-                   </div>
-                  </div>
-                </ng-template>
-              </ngb-tab>
-              <ngb-tab id="Commercial" title="Commercial">
-                <ng-template ngbTabContent>
-                    <div [@fadeInOutTranslate] class="m-t-15">
-                      <div class="form-group row">
-                    <div class="deck col-sm-2" *ngFor="let item of commercialMenu; let i = index" (click)="setPropType(item.name)" [class.propActive] = "projectModel.propType === item.name" style="">
-              <i></i>
-                        <div class="propicons" [ngClass]=item.className></div>
-              <span class="ng-binding">{{item.name}}</span>
-            </div></div>
-                  </div>
-                </ng-template>
-              </ngb-tab>
-            </ngb-tabset>
-          </div>
-          
-          <div class="form-group has-danger row" *ngIf="projectModel.propType===undefined && showError">
-        <div class="col-sm-10">
-          <div class="col-form-label">Please Select Property Type</div>
-        </div>
-      </div>
-          <div *ngIf= "tabType==='Commercial' && projectModel.propType!==undefined">
-          <div class="form-group row" style="margin-top: 15px;" >
-            <label class="col-sm-2">
-            More Rooms : 
-          </label>
-         No  <ui-switch class="js-single" [(ngModel)]="projectModel.details.isMoreRoom" color="#4680ff" name="moreRooms" switchColor="#fff" size="medium" checked></ui-switch> Yes
-        </div>
-
-        <div class="form-group row" *ngIf="projectModel.details.isMoreRoom">
-          <label class="col-sm-3">No of rooms</label>
-          <div class="col-sm-3">
-            <input type="text"   class="form-control" name="noOfRooms" [(ngModel)]="projectModel.details.noOfRooms">
-          </div>
-        </div></div>
-        <div *ngIf= "tabType==='Residential' && projectModel.propType!==undefined && projectModel.type === 'RENT'" >
-        <div class="form-group row">Willing to rent out to : </div>
-        <div class="form-group row">
-          <div class="col-sm-4">
-            <label>
-            Family : 
-          </label>
-            &nbsp;&nbsp;No  <ui-switch class="js-single" [(ngModel)]="projectModel.details.rentFamily" color="#4680ff" name="rentFamily" switchColor="#fff" size="medium" checked></ui-switch> Yes&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="col-sm-4"> <label>
-            Single Man : 
-          </label>
-         No  <ui-switch class="js-single" [(ngModel)]="projectModel.details.rentSingleMan" color="#4680ff" name="rentSingleMan" switchColor="#fff" size="medium" checked></ui-switch> Yes</div>
-         <div class="col-sm-4"> <label>
-            Single Woman : 
-          </label>
-         No  <ui-switch class="js-single" [(ngModel)]="projectModel.details.rentSingleWoman" color="#4680ff" name="rentSingleWoman" switchColor="#fff" size="medium" checked></ui-switch> Yes</div>
-         
-        </div>
-        <div class="form-group row">Preferred Agreement Type : </div>
-         <div class="form-group row">
-            &nbsp;&nbsp;Any  <ui-switch class="js-single" [(ngModel)]="projectModel.details.rentFamily" color="#4680ff" name="rentFamily" switchColor="#fff" size="medium" checked></ui-switch> CompanyLeaseType</div></div>
-            <button type="button" nextStep>Next Step</button>
+       <button type="button" nextStep>Next Step</button>
   </wizard-step>
 
   <wizard-step stepTitle="Location">
@@ -122,17 +34,17 @@
      <div class="form-group row">
           <label class="col-sm-3">City</label>
           <div class="col-sm-3">
-            <ng-select [ngClass]="'ng-select'" [options]="cityOption" name="city" [(ngModel)]="projectModel.details.city"></ng-select>
+            <ng-select [ngClass]="'ng-select'" [options]="cityOption" name="city" [(ngModel)]="projectModel.location.city"></ng-select>
           </div>
           <label class="col-sm-3">Project Name</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="ProjectName" [(ngModel)]="projectModel.details.projectName">
+            <input type="text" class="form-control" name="ProjectName" [(ngModel)]="projectModel.location.projectName">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-3">Locality</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="Locality" [(ngModel)]="projectModel.details.locality">
+            <input type="text" class="form-control" name="Locality" [(ngModel)]="projectModel.location.locality">
           </div>
         </div>
         <div class="form-group row"></div>
@@ -143,370 +55,123 @@
     <button type="button" nextStep>Go to next step</button>
   </wizard-step>
 
-  <wizard-step stepTitle="Details" >
+  <wizard-step stepTitle="plans" >
+    <div class="form-group row"></div>
+    
+     <div class="form-group row">
+          <label class="col-sm-2">Area : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="area" [(ngModel)]="projectModel.plan.area">
+          </div>
+
+          <label class="col-sm-2">Area Unit : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="projectModel.plan.areaUnit"></ng-select>
+          </div>
+          <label class="col-sm-2">Base Price : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="basePrice" [(ngModel)]="projectModel.plan.basePrice">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Type : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="area" [(ngModel)]="projectModel.plan.type">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Floor Plan : </label></div>
+          <div class="form-group row">
+
+          <label class="col-sm-2">Tag : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="tag" [(ngModel)]="projectModel.plan.floorPlan.tag">
+          </div>
+          <label class="col-sm-2">File : </label>
+
+          <input type="file"
+           id="file" multiple
+           (change)="handlePlanImage($event.target.files)">
+          </div>
+        <button type="button" previousStep>Go to previous step</button>
+    <button type="button" nextStep>Go to next step</button>
+  </wizard-step>
+  <wizard-step stepTitle="banner" >
+    <div class="form-group row"></div>
+    
+     <div class="form-group row">
+          <label class="col-sm-2">Banner Type : </label>
+          <div class="col-sm-2">
+            <ng-select [ngClass]="'ng-select'" [options]="bannerTypeOption" name="bannerType" [(ngModel)]="projectModel.banner.bannerType"></ng-select>
+          </div>
+
+          <label class="col-sm-2">Title : </label>
+          <div class="col-sm-2">
+           <input type="text" class="form-control"  name="title" [(ngModel)]="projectModel.banner.title">
+          </div>
+
+          <label class="col-sm-2">Website : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="website" [(ngModel)]="projectModel.banner.website">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Photo : </label>
+          <div class="col-sm-2">
+          </div>
+
+          <label class="col-sm-2">Tag : </label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="tag" [(ngModel)]="projectModel.banner.tag">
+          </div>
+          <label class="col-sm-2">File : </label>
+
+          <input type="file"
+           id="file" multiple
+           (change)="handleBannerImage($event.target.files)">
+          </div>
+        <button type="button" previousStep>Go to previous step</button>
+    <button type="button" nextStep>Go to next step</button>
+  </wizard-step>
+
+  <wizard-step stepTitle="Gallery" >
     
 
     <div class="form-group row"></div>
-    <div *ngIf="projectModel.type === 'SELL' && (tabType==='Commercial' || projectModel.propType=='Residential Land')">
-     <div class="form-group row">
-          <label class="col-sm-2">Plot Area : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="plotArea" [(ngModel)]="projectModel.details.plotArea">
-          </div>
-
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="projectModel.details.areaUnit"></ng-select>
-          </div>
-        </div>
-<div class="form-group row" *ngIf = "projectModel.propType=='Residential Land'">
-          <label class="col-sm-2">Length of plot : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="lengthOfPlot" [(ngModel)]="projectModel.details.lengthOfPlot">
-          </div>
-
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="lengthplotAreaUnit" [(ngModel)]="projectModel.details.lengthplotAreaUnit"></ng-select>
-          </div>
-</div> <div class="form-group row" *ngIf = "projectModel.propType=='Residential Land'">
-           <label class="col-sm-2">Breadth of plot : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="breadthOfPlot" [(ngModel)]="projectModel.details.breadthOfPlot">
-          </div>
-
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="breadthplotAreaUnit" [(ngModel)]="projectModel.details.breadthplotAreaUnit"></ng-select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Floors allowed for construction : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="floorsAllowed" [(ngModel)]="projectModel.details.floorsAllowed"></ng-select>
-          </div>
-        </div>
-</div>
-<div *ngIf="projectModel.type === 'SELL' && tabType==='Residential' && (projectModel.propType=='Residential Apartment' || projectModel.propType=='Independent House/Villa')">
-         <div class="form-group row" *ngIf="projectModel.propType!='Independent House/Villa'">
-         
-          <label class="col-sm-2">Configration: </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="configrationOption" name="configration" [(ngModel)]="projectModel.details.configration"></ng-select>
-          </div>
-        </div>
-
-        <div class="form-group row" *ngIf="projectModel.propType!='Independent House/Villa'">
-          <label class="col-sm-2">Super Build Area : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="superBuildArea" [(ngModel)]="projectModel.details.superBuildArea">
-          </div>
-
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="projectModel.details.areaUnit"></ng-select>
-          </div>
-        </div>
-
-        <div class="form-group row" *ngIf="projectModel.propType=='Independent House/Villa'">
-          <label class="col-sm-2">Plot Area : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="plotArea" [(ngModel)]="projectModel.details.plotArea">
-          </div>
-
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="areaUnit" [(ngModel)]="projectModel.details.areaUnit"></ng-select>
-          </div>
-        </div>
 
         <div class="form-group row">
-          <label class="col-sm-2">Build Up Area : </label>
+          <label class="col-sm-2">Photo : </label>
           <div class="col-sm-2">
-            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="projectModel.details.buildUpArea">
           </div>
 
-          <label class="col-sm-2">Area Unit : </label>
+          <label class="col-sm-2">Tag : </label>
           <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="BuildAreaUnit" [(ngModel)]="projectModel.details.BuildAreaUnit"></ng-select>
+            <input type="text" class="form-control"  name="tag" [(ngModel)]="projectModel.gallery.tag">
           </div>
-</div> <div class="form-group row">
-           <label class="col-sm-2">Carpet Area : </label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control"  name="carpetArea" [(ngModel)]="projectModel.details.carpetArea">
-          </div>
+          <label class="col-sm-2">File : </label>
 
-          <label class="col-sm-2">Area Unit : </label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="areaUnitOption" name="carpetAreaUnit" [(ngModel)]="projectModel.details.carpetAreaUnit"></ng-select>
+          <input type="file"
+           id="file" multiple
+           (change)="handleGalleryImage($event.target.files)">
           </div>
-        </div>
-
-<div *ngIf="projectModel.type !== 'SELL'">
-         <div class="form-group row">
-          <label class="col-sm-4">Unit Type</label>
-          <div class="col">
-            <ng-select [ngClass]="'ng-select'" [options]="unitTypeOption" name="unitType" [(ngModel)]="projectModel.details.unitType"></ng-select>
-          </div>
-        </div>
-             <div class="form-group row">
-          <label class="col-sm-4">Built Up area</label>
-          <div class="col">
-            <input type="text" class="form-control"  name="buildUpArea" [(ngModel)]="projectModel.details.builtUpArea">
-          </div>
-        </div></div>
-        <div class="form-group row">
-          <label class="col-sm-2">Bedrooms</label>
-          <div class="col-sm-2">
-             <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="bedrooms" [(ngModel)]="projectModel.details.bedrooms"></ng-select>
-          </div>
-          <label class="col-sm-2">Bathrooms</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="bathrooms" [(ngModel)]="projectModel.details.bathrooms"></ng-select>
-          </div>
-          <label class="col-sm-2">Balconies</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="balconies" [(ngModel)]="projectModel.details.balconies"></ng-select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Pooja room</label>
-          <div class="col-sm-2">
-          <ui-switch class="js-single" color="#4680ff" name="poojaRoom" switchColor="#fff" [(ngModel)]="projectModel.details.poojaRoom" size="medium" checked></ui-switch>
-          </div>
-          <label class="col-sm-2">Study room</label>
-          <div class="col-sm-2">
-            <ui-switch class="js-single" color="#4680ff" name="studyRoom" switchColor="#fff" [(ngModel)]="projectModel.details.studyRoom" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Servant room</label>
-          <div class="col-sm-2">
-            <ui-switch class="js-single" color="#4680ff" name="servantRoom" switchColor="#fff" [(ngModel)]="projectModel.details.servantRoom" size="medium" checked></ui-switch>
-          </div>
-          <label class="col-sm-2">Others</label>
-          <div class="col-sm-2">
-            <ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="projectModel.details.others" size="medium" checked></ui-switch>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Total Floors</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="totalFloors" [(ngModel)]="projectModel.details.totalFloors"></ng-select>
-          </div>
-          <label class="col-sm-2">Property on Floor</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="propOnFloorOption" name="propertyOnFloor" [(ngModel)]="projectModel.details.propertyOnFloor"></ng-select>
-          </div>
-        </div>
-         <!-- <div class="form-group row">
-          <label class="col-sm-4">Property on Floor</label>
-          <div class="col">
-            <input type="text" class="form-control" name="propertyOnFloor" [(ngModel)]="projectModel.details.propertyOnFloor">
-          </div>
-        </div> -->
-        
-        <div class="form-group row">
-          <label class=col>Parking Type</label>
-        </div>
-
-        <div class="form-group row">
-          <label class=col>No Parking</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="noParking" switchColor="#fff" [(ngModel)]="projectModel.details.noParking" size="medium" checked></ui-switch>
-          </div>
-          <label class=col>Cover Parking</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="coverParking" switchColor="#fff" [(ngModel)]="projectModel.details.coverParking" size="medium" checked></ui-switch>
-          </div>
-          <label class=col>Open Parking</label>
-          <div class="col">
-            <ui-switch class="js-single" color="#4680ff" name="openParking" switchColor="#fff" [(ngModel)]="projectModel.details.openParking" size="medium" checked></ui-switch>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          
-          <label class="col-sm-4" *ngIf="projectModel.details.noParking == false && projectModel.details.coverParking == true">No of cover parking</label>
-          <div class="col" *ngIf="projectModel.details.noParking == false && projectModel.details.coverParking == true">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="noOfCoverParking" [(ngModel)]="projectModel.details.noOfCoverParking"></ng-select>
-          </div>
-           <label class="col-sm-4" *ngIf="projectModel.details.noParking == false && projectModel.details.openParking == true">No of open parking</label>
-          <div class="col" *ngIf="projectModel.details.noParking == false && projectModel.details.openParking == true">
-            <ng-select [ngClass]="'ng-select'" [options]="numericOption" name="noOfOpenParking" [(ngModel)]="projectModel.details.noOfOpenParking"></ng-select>
-          </div>
-        </div>
-      
-        <div class="form-group row" *ngIf="projectModel.type !== 'SELL'">
-          <label class="col-sm-4">Price Per Unit</label>
-          <div class="col">
-            <input type="text" class="form-control" name="pricePerUnit" [(ngModel)]="projectModel.details.pricePerUnit">
-          </div>
-        </div>
-        </div>
         <button type="button" previousStep>Go to previous step</button>
     <button type="button" nextStep>Go to next step</button>
   </wizard-step>
-  <wizard-step stepTitle="Pricing">
+
+  <wizard-step stepTitle="Features">
+     
     <div class="form-group row"></div>
-    <div class="form-group row">
-          <label class="col-sm-2">Expected Price</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control" name="expectedPrice" [(ngModel)]="projectModel.details.expectedPrice">
-          </div>
-
-          <label class="col-sm-2">All Inclusive</label>
-          <div class="col-sm-2">
-            <ui-switch class="js-single" color="#4680ff" name="AllInclusive" switchColor="#fff" [(ngModel)]="projectModel.details.AllInclusive" size="medium" checked></ui-switch>
-          </div>
-
-          <label class="col-sm-2" *ngIf="projectModel.details.expectedPrice !== undefined">Nagotiable</label>
-          <div class="col" *ngIf="projectModel.details.expectedPrice !== undefined">
-            <ui-switch class="js-single" color="#4680ff" name="negotiable" switchColor="#fff" [(ngModel)]="projectModel.details.negotiable" size="medium" checked></ui-switch>
-          </div>
-        </div>
-
-        <div class="form-group row" *ngIf = "projectModel.propType!='Independent House/Villa'">
-          <label class="col-sm-2">Price per {{projectModel.details.areaUnit}}:</label>
-          <div class="col-sm-2">
-          <input type="text" class="form-control" name="pricePerSelected" [(ngModel)]="projectModel.details.pricePerSelected">
-          </div>
-
-          <label class="col-sm-2">Maintenance</label>
-          <div class="col-sm-2">
-
-            <input type="text" class="form-control" name="maintenanceAmount" [(ngModel)]="projectModel.details.maintenanceAmount">
-          </div>
-
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="maintenanceTypeOption" name="maintenanceTime" [(ngModel)]="projectModel.details.maintenanceTime"></ng-select>
-          </div>
-        </div>
-
-        <div class="form-group row" *ngIf = "projectModel.propType!='Residential Land'">
+       <div class="form-group row">
           <label class="col-sm-2">Availability</label>
           <div class="col">
           
-           <ng-select [ngClass]="'ng-select'" [options]="availabilityOption" name="availability" [(ngModel)]="projectModel.details.availability"></ng-select>
-          </div>
-
-          <label class="col-sm-2" *ngIf="projectModel.details.availability ==='UNDER_CONSTRUCTION'">Possession BY</label>
-          <div class="col" *ngIf="projectModel.details.availability ==='UNDER_CONSTRUCTION'">
-
-            <ng-select [ngClass]="'ng-select'" [options]="possessionOption" name="possessionBy" [(ngModel)]="projectModel.details.possessionBy"></ng-select>
-          </div>
-
-          <label class="col-sm-2"  *ngIf="projectModel.details.availability !=='UNDER_CONSTRUCTION'">Age of property</label>
-          <div class="col"  *ngIf="projectModel.details.availability !=='UNDER_CONSTRUCTION'">
-
-            <ng-select [ngClass]="'ng-select'" [options]="propertyAgeOption" name="possessionBy" [(ngModel)]="projectModel.details.possessionBy"></ng-select>
+           <ng-select [ngClass]="'ng-select'" [options]="availabilityOption" name="availability" [(ngModel)]="projectModel.availability"></ng-select>
           </div>
         </div>
 
-<div class="form-group row" *ngIf = "projectModel.propType=='Residential Land'">
-  <label class="col-sm-2">Possession BY</label>
-          <div class="col-sm-4">
-            <ng-select [ngClass]="'ng-select'" [options]="possessionOption" name="possessionBy" [(ngModel)]="projectModel.details.possessionBy"></ng-select>
-          </div>
- </div>
-
-        <div class="form-group row">
-          <label class="col-sm-2">TrasactionType</label>
-          <div class="col">
-           <ng-select [ngClass]="'ng-select'" [options]="transTypeOption" name="transactionType" [(ngModel)]="projectModel.details.transactionType"></ng-select>
-          </div>
-
-          <label class="col-sm-2">OwnerShip</label>
-          <div class="col">
-           <ng-select [ngClass]="'ng-select'" [options]="ownerShipOption" name="ownerShip" [(ngModel)]="projectModel.details.ownerShip"></ng-select>
-          </div>
-        </div>
-        <div class="form-group row"></div>
-        <div class="form-group row"></div>
-        <div class="form-group row"></div>
-        <div class="form-group row"></div>
-        <div class="form-group row"></div>
-        <div class="form-group row"></div>
-        <button type="button" previousStep>Go to previous step</button>
-    <button type="button" nextStep>Go to next step</button>
-  </wizard-step>
-  <wizard-step stepTitle="Features">
-     <div [ngSwitch]="isCompleted">
-      <div *ngSwitchDefault>
-    <div class="form-group row"></div>
-       <div class="form-group row">
-          <label class="col-sm-2">Power Backup</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="powerBackupOption" name="powerBackup" [(ngModel)]="projectModel.features.powerBackup"></ng-select>
-          </div>
-        </div>
-       <div class="form-group row">
-          <label class="col-sm-2">Water Source</label>
-          <div class="col-sm-4">
-            Municipal Corporation: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="municipalCorporation" switchColor="#fff" [(ngModel)]="projectModel.features.municipalCorporation" size="medium" checked></ui-switch>
-          </div>
-          <div class="col">
-            Borewall/Tank &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="borewall" switchColor="#fff" [(ngModel)]="projectModel.features.borewall" size="medium" checked></ui-switch>
-          </div>
-        </div>
-    
-
-        <div class="form-group row">
-          <label class="col-sm-2">Overlooking:</label>
-          <div class="col">
-            Park/Garden: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="park" switchColor="#fff" [(ngModel)]="projectModel.features.park" size="medium" checked></ui-switch>
-          </div>
-          <div class="col">
-            Main Road &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="mainRoad" switchColor="#fff" [(ngModel)]="projectModel.features.mainRoad" size="medium" checked></ui-switch>
-          </div>
-          <div class="col">
-            Road Club: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="club" switchColor="#fff" [(ngModel)]="projectModel.features.club" size="medium" checked></ui-switch>
-          </div>
-          <div class="col">
-            Pool &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="pool" switchColor="#fff" [(ngModel)]="projectModel.features.pool" size="medium" checked></ui-switch>
-          </div>
-          <div class="col">
-            Others: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="others" switchColor="#fff" [(ngModel)]="projectModel.features.others" size="medium" checked></ui-switch>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-sm-2">Facig</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="facigOption" name="facig" [(ngModel)]="projectModel.features.facig"></ng-select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Width Of Facing Road</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control" name="widthOfFacingRoad" [(ngModel)]="projectModel.features.widthOfFacingRoad">
-          </div>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="facigMeasureOption" name="facigMeasurement" [(ngModel)]="projectModel.features.facigMeasurement"></ng-select>
-          </div>
-        </div>
-
-     <div class="form-group row" *ngIf="projectModel.type === 'NA'">
-          <label class="col-sm-4">Width Of Facing Unit</label>
-         <div class="col">
-            <input type="text" class="form-control" name="widthOfFacingUnit" [(ngModel)]="projectModel.features.widthOfFacingUnit">
-          </div>
-       </div>
-        <div class="form-group row">
-          <label class="col-sm-2">Type of flooring</label>
-          <div class="col-sm-2">
-            <ng-select [ngClass]="'ng-select'" [options]="flooringTypeOption" name="typeOfFlooring" [(ngModel)]="projectModel.features.typeOfFlooring"></ng-select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-2">
-            In a gated society: &nbsp;&nbsp;<ui-switch class="js-single" color="#4680ff" name="gatedSociety" switchColor="#fff" [(ngModel)]="projectModel.features.gatedSociety" size="medium" checked></ui-switch>
-          </div>
-          <div class="col-sm-2">
-            Corner Property: &nbsp;&nbsp; <ui-switch class="js-single" color="#4680ff" name="cornerProperty" switchColor="#fff" [(ngModel)]="projectModel.features.cornerProperty" size="medium" checked></ui-switch>
-          </div>
-        </div>
         <div class="form-group row">
         <label class="col-sm-2">Amenities</label>
         </div>
@@ -515,20 +180,34 @@
           <i></i>
             <div class="amenityIcons" [ngClass]=item.className></div>
           <span class="ng-binding">{{item.name}}</span>
-        </div>
+        </div></div>
 
-        </div>
         <div class="form-group row">
-          <label class="col-sm-2">Description</label>
+          <label class="col-sm-2">Overview</label>
           <div class="col">
-            <input type="textrrea" rows="4"  class="form-control" name="Description" [(ngModel)]="projectModel.features.Description">
+          
+          <input type="text" class="form-control"  name="overview" [(ngModel)]="projectModel.overview">
           </div>
         </div>
-      </div>
+       <div class="form-group row">
+          <label class="col-sm-2">Specifications</label>
+        </div>
+    <div class="form-group row">
+          <label class="col-sm-2">Content</label>
+          <div class="col">
+            <textarea class="form-control" rows="5" name="content" [(ngModel)]="projectModel.specifications.content" id="comment"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2">Title:</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control"  name="title" [(ngModel)]="projectModel.specifications.title">
+          </div>
+        </div>
       <div *ngIf="projectModel.isSubmitted">
         <h4>Thank you! You have completed all the steps.</h4>
       </div>
-    </div>
     <button type="button" previousStep>Previous Step</button>
     <button type="button" (click)="saveMethod()">Finish</button>
   </wizard-step> </wizard>
