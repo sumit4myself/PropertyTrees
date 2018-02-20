@@ -19,11 +19,11 @@ insert into user_account
 values
 ('Noida', 'abc.xyz@mail.com', '', '', '9999999999', '', '', 'Test User', 'My@pass', 'BUYER', 'UUIDDUMY001', '10');
 
-insert into photo ( id,uuid, url) values ( 1,'uuid1','/assets/images/property-gallery/celebrity-serenity-s-150x100.gif');
-insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-gallery/amaravati-one-s-150x100.gif');
-insert into photo ( id,uuid, url) values ( 3,'uuid3','/assets/images/property-gallery/celebrity-sqaure-s-150x100.gif');
-insert into photo ( id,uuid, url) values ( 4,'uuid4','/assets/images/property-gallery/claritas-anika-s-1-150x100.gif');
-insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif');
+insert into photo ( id,uuid, url) values ( 1,'uuid1','/assets/images/property-gallery/ls_banner.gif');
+insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-gallery/ls_banner1.gif');
+insert into photo ( id,uuid, url) values ( 3,'uuid3','/assets/images/property-gallery/ls_banner2.gif');
+insert into photo ( id,uuid, url) values ( 4,'uuid4','/assets/images/property-gallery/ls_banner3.gif');
+insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/ls_banner3.gif');
 insert into photo ( id,uuid, url) values ( 6,'uuid6','/assets/images/projects/slider1.png');
 insert into photo ( id,uuid, url) values ( 7,'uuid7','/assets/images/projects/slider2.png');
 insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/slider3.png');
