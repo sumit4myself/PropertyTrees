@@ -117,11 +117,11 @@
 						<form method="post" id="logFrm" class="log-frm" name="logFrm"> 
 						<ul>                                                     
 							<li>Email</li>
-							<li> <input type="text" required  placeholder="User ID" id="userName" [(ngModel)]="signIn.username" [ngModelOptions]="{standalone: true}" class="form-control" (focus)="checkNullProf();"></li>
+							<li> <input type="text" required  placeholder="User ID" id="userName" name="userName" class="form-control" (focus)="checkNullProf();"></li>
 							<li>Password</li>
-							<li><input type="password" required placeholder="Password" id="password" [(ngModel)]="signIn.password" [ngModelOptions]="{standalone: true}" class="form-control" (focus)="checkNullProf();"></li>                                                
-							<li><br/><button type="button"  id="logBtn" (click)="logIn(signIn)" class="btn btn-default">Submit</button></li>
-							<div style="display:none;" id="loginFail" class="sign"> 
+							<li><input type="password" required placeholder="Password" id="password" name="password" class="form-control" (focus)="checkNullProf();"></li>                                                
+							<li><br/><button type="button" (click)="userLogin();" id="logBtn" class="btn btn-default">Submit</button></li>
+							<div style="display:none;" id="loginFail" class="sign">
 							<li> <font color="red">  Username or password is incorrect.</font></li>
 							</div>
 							   </ul>
@@ -149,20 +149,20 @@
 							<div class="o-r">
 							<span>OR</span>
 							</div>
-						 <form  id="userRegisterFrm" class="log-frm"   name="userRegisterFrm"> 
+						 <form method="post" id="userRegisterFrm" class="log-frm" (ngSubmit])="SaveRecord(data)"  name="userRegisterFrm"> 
 								 	<!--<form (ngSubmit)="onSubmit()" #loginForm="ngForm">-->
 								<ul>
 								 <li>First Name</li>
-								<li><input type="text" required placeholder="First Name" [(ngModel)]="data.firstName" [ngModelOptions]="{standalone: true}" class="form-control"></li>
+								<li><input type="text" required placeholder="First Name" [(ngModel)]="data.firstName" class="form-control"></li>
 								 <li>Last Name</li>
-								<li><input type="text" required placeholder="Last Name" [(ngModel)]="data.lastName" [ngModelOptions]="{standalone: true}" class="form-control"></li>
+								<li><input type="text" required placeholder="Last Name" [(ngModel)]="data.lastName" class="form-control"></li>
 								<li>Email</li>
-								<li><input type="text" required placeholder="Email Id" [(ngModel)]="data.email" [ngModelOptions]="{standalone: true}" class="form-control"></li>
+								<li><input type="email" required placeholder="Email Id" [(ngModel)]="data.email" class="form-control"></li>
 								<li>Password</li>
-								<li><input type="password" required placeholder="Password" [(ngModel)]="data.password" [ngModelOptions]="{standalone: true}" class="form-control"></li>
+								<li><input type="password" required placeholder="Password" [(ngModel)]="data.password" class="form-control"></li>
 								<li>Confirm Password</li>
-								<li><input type="password" required placeholder="Confirm Password" [(ngModel)]="data.repassword" [ngModelOptions]="{standalone: true}" class="form-control"></li>
-							   <br> <li><button type="submit" name="userRegBtn" class="btn btn-default"  (click)="SaveRecord(data)">Signup Now</button></li>
+								<li><input type="password" required placeholder="Confirm Password" [(ngModel)]="data.repassword" class="form-control"></li>
+							   <br> <li><button type="submit" name="userRegBtn" class="btn btn-default"  >Signup Now</button></li>
 								 <div style="display:none;" class="sign greenglow">
 									 <li>   <i class="icon-check"></i><br>
 										 <font color="red"> 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchFilter} from '../common/search.filter';
 import { UserService } from '../header/sign_up.service';
-
+import {Observable} from 'rxjs/Observable';
  declare var $:any;
 @Component({
   selector: 'app-header',
@@ -16,7 +16,7 @@ data ={
   password:'',
   repassword:''
 };
-signIn= {
+sigsignInnIn= {
   username:'',
   password:''
 }
@@ -29,20 +29,21 @@ Ftoggle(){
 
   Ftogglehide(){
     $('#forget').hide();
-    }
+    } 
 
   constructor(private userServ: UserService) { }
 
   ngOnInit() {
   }
-
+  testResponse:any;
   SaveRecord(sinup)
   {
-    this.userServ
-        .singUpUsers(sinup)
-        .subscribe(()=> this.goBack());
+    //
+ // this.userServ.singUpUsers(sinup).subscribe((response:Response)=>response.json())
+     //console.log(this.testResponse);
   }
-  // logIn(data){
+  // logIn(data){  
+    
   //   this.userServ.loginUser(data).subscribe(()=>this.goBack());
   // }
 

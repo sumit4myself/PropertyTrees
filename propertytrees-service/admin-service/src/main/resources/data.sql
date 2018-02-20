@@ -24,19 +24,19 @@ insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-ga
 insert into photo ( id,uuid, url) values ( 3,'uuid3','/assets/images/property-gallery/celebrity-sqaure-s-150x100.gif');
 insert into photo ( id,uuid, url) values ( 4,'uuid4','/assets/images/property-gallery/claritas-anika-s-1-150x100.gif');
 insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/fortune-butterfly-city-s-150x100.gif');
-insert into photo ( id,uuid, url) values ( 6,'uuid6','/assets/images/projects/project1.png');
-insert into photo ( id,uuid, url) values ( 7,'uuid7','/assets/images/projects/project2.png');
-insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/project3.png');
-insert into photo ( id,uuid, url) values ( 9,'uuid9','/assets/images/projects/project4.png');
-insert into photo ( id,uuid, url) values ( 10,'uuid10','/assets/images/projects/project5.png');
-insert into photo ( id,uuid, url) values ( 11,'uuid11','/assets/images/projects/project6.png');
-insert into photo ( id,uuid, url) values ( 12,'uuid12','/assets/images/projects/project7.png');
-insert into photo ( id,uuid, url) values ( 13,'uuid13','/assets/images/projects/project8.png');
-insert into photo ( id,uuid, url) values ( 14,'uuid14','/assets/images/projects/project9.png');
-insert into photo ( id,uuid, url) values ( 15,'uuid15','/assets/images/projects/project10.png');
-insert into photo ( id,uuid, url) values ( 16,'uuid16','/assets/images/projects/project11.png');
-insert into photo ( id,uuid, url) values ( 17,'uuid17','/assets/images/projects/project12.png');
-insert into photo ( id,uuid, url) values ( 18,'uuid18','/assets/images/projects/project13.png');
+insert into photo ( id,uuid, url) values ( 6,'uuid6','/assets/images/projects/slider1.png');
+insert into photo ( id,uuid, url) values ( 7,'uuid7','/assets/images/projects/slider2.png');
+insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/slider3.png');
+insert into photo ( id,uuid, url) values ( 9,'uuid9','/assets/images/projects/slider4.png');
+insert into photo ( id,uuid, url) values ( 10,'uuid10','/assets/images/projects/slider5.png');
+insert into photo ( id,uuid, url) values ( 11,'uuid11','/assets/images/projects/slider6.png');
+insert into photo ( id,uuid, url) values ( 12,'uuid12','/assets/images/projects/slider7.png');
+insert into photo ( id,uuid, url) values ( 13,'uuid13','/assets/images/projects/slider8.png');
+insert into photo ( id,uuid, url) values ( 14,'uuid14','/assets/images/projects/slider9.png');
+insert into photo ( id,uuid, url) values ( 15,'uuid15','/assets/images/projects/slider10.png');
+insert into photo ( id,uuid, url) values ( 16,'uuid16','/assets/images/projects/slider11.png');
+insert into photo ( id,uuid, url) values ( 17,'uuid17','/assets/images/projects/slider12.png');
+insert into photo ( id,uuid, url) values ( 18,'uuid18','/assets/images/projects/slider13.png');
 
 
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 1,'uuid1','SIDE','www.propertytrees.com',1) ;
