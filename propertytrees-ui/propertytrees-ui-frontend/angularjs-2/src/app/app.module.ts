@@ -20,6 +20,8 @@ import { PropertyGalleryComponent } from './property-gallery/property-gallery.co
 import { QuestionComponent } from './question/question.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { UserService } from './header/sign_up.service';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { SubFooterComponent } from './sub-footer/sub-footer.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { UserService } from './header/sign_up.service';
     DealersComponent,
     ProjectsComponent,
     PropertyGalleryComponent,
-    QuestionComponent
+    QuestionComponent,
+    SubHeaderComponent,
+    SubFooterComponent
   ],
   imports: [
     BrowserModule,

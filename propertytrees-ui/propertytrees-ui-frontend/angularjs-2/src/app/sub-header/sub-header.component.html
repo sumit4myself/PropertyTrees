@@ -1,0 +1,1712 @@
+<div id="header" class="sticky transparent gray noborder clearfix">
+                  <!-- TOP NAV -->
+                  <header id="topNav">
+                     <div class="full-container">
+                        <!-- Mobile Menu Button -->
+                        <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- BUTTONS -->
+                        <ul class="pull-right nav nav-pills nav-second-main">
+                           <!-- SEARCH -->
+                           <li class="search">
+                              <a href="javascript:;">
+                              <i class="fa fa-search"></i>
+                              </a>
+                              <div class="search-box">
+                                 <form action="page-search-result-1.html" method="get">
+                                    <div class="input-group">
+                                       <input type="text" name="src" placeholder="Search by Property Code" class="form-control" />
+                                       <span class="input-group-btn">
+                                       <button class="btn btn-primary" type="submit">Search</button>
+                                       </span>
+                                    </div>
+                                 </form>
+                              </div>
+                           </li>
+                           <!-- /SEARCH -->
+                           <!--SIDE MENU -->
+                           <li >
+                              <a href="javascript:;">
+                              <i class="fa fa-bars profile-opener" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                        </ul>
+                        <!-- /BUTTONS -->
+                        <div class="nav-slide side-profile">
+                           <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i> Set Alerts</a> | <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i>Shortlist</a>  <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
+                           <ul class="nav nav-pills nav-stacked">
+                              <!-- Button HTML (to Trigger Modal) -->
+                              <li class="active"><a href="#myModal" data-toggle="modal">LOGIN / REGISTER</a></li>
+                              <li class="dropdown">
+                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Advice
+                                 <span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Ask a Question</a></li>
+                                    <li><a href="#">Discussion a Topic</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#">Sell / Rent Property</a></li>
+                              <li><a href="#">Buy Our Services</a></li>
+                           </ul>
+                        </div>
+                        <!--/SIDE MENU -->
+                        <!--Login and register -->
+                        <!-- Modal HTML -->
+                        <div id="myModal" class="modal fade">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">Login & Register</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    <div class="col-md-6 col-sm-6 no-padng">
+                                       <div class="model-l">
+                                          <form method="post" id="logFrm" class="log-frm" name="logFrm">
+                                             <ul>
+                                                <li>Email</li>
+                                                <li> <input type="text" placeholder="User ID" id="userName" name="userName" class="form-control" onfocus="checkNullProf();"></li>
+                                                <li>Password</li>
+                                                <li><input type="password" placeholder="Password" id="password" name="password" class="form-control" onfocus="checkNullProf();"></li>
+                                                <li><br/><button type="button" onclick="userLogin();" id="logBtn" class="btn btn-default">Submit</button></li>
+                                                <div style="display:none;" id="loginFail" class="sign">
+                                                   <li> <font color="red">  Username or password is incorrect.</font></li>
+                                                </div>
+                                             </ul>
+                                          </form>
+                                          <div class="clearfix"></div>
+                                          <form method="post" id="logFrm1" class="log-frm" name="logFrm1">
+                                             <ul>
+                                                <li>
+                                                   <a class="for-got" onclick="Ftoggle();" href="javascript:;">Forgot your password?</a>
+                                                   <div class="forgot">
+                                                      <ul>
+                                                         <li>
+                                                            <p>Enter your Email Address here to receive a link to change password.</p>
+                                                         </li>
+                                                         <li>Email Id</li>
+                                                         <li><input type="text" placeholder="Your email id" id="forgetemailId" class="form-control" name="forgetemailId"></li>
+                                                         <li><button type="button" class="btn btn-default" onclick="forgot();">Send Mail</button></li>
+                                                      </ul>
+                                                   </div>
+                                                </li>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 no-padng">
+                                       <div class="model-r">
+                                          <div class="o-r">
+                                             <span>OR</span>
+                                          </div>
+                                          <form method="post" id="userRegisterFrm" class="log-frm" name="userRegisterFrm">
+                                             <ul>
+                                                <li>First Name</li>
+                                                <li><input type="text" placeholder="First Name" name="fName" class="form-control"></li>
+                                                <li>Last Name</li>
+                                                <li><input type="text" placeholder="Last Name" name="lName" class="form-control"></li>
+                                                <li>Email</li>
+                                                <li><input type="text" placeholder="Email Id" name="emailId" class="form-control"></li>
+                                                <li>Password</li>
+                                                <li><input type="password" placeholder="Password" name="password" class="form-control"></li>
+                                                <li>Confirm Password</li>
+                                                <li><input type="password" placeholder="Confirm Password" name="repassword" class="form-control"></li>
+                                                <br> 
+                                                <li><button type="button" name="userRegBtn" class="btn btn-default">Signup Now</button></li>
+                                                <div style="display:none;" class="sign greenglow">
+                                                   <li>   <i class="icon-check"></i><br>
+                                                      <font color="red"> 
+                                                      User registration successful.<br>
+                                                      Your login Url already send to your email.
+                                                      </font>
+                                                   </li>
+                                                </div>
+                                                <div style="display:none;" id="regnSuc11" class="sign redglow">
+                                                   <li>   <i class="icon-mail"></i><br>
+                                                      <font color="red">    Email Exist.</font>
+                                                   </li>
+                                                </div>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--/Login and register -->
+                        <!-- Logo -->
+                        <a class="logo pull-left" href="index.html">
+                           <img src="assets/images/logo-white.png" alt="" /> <!-- light logo -->
+                           <img src="assets/images/logo.png" alt="" /> <!-- dark logo -->
+                        </a>
+                        <!-- 
+                           Top Nav 
+                           
+                           AVAILABLE CLASSES:
+                           submenu-dark = dark sub menu
+                           -->
+                        <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+                           <nav class="nav-main">
+                              <!--
+                                 NOTE
+                                 
+                                 For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
+                                 Direct Link Example: 
+                                 
+                                 <li>
+                                    <a href="#">HOME</a>
+                                 </li>
+                                 -->
+                              <ul id="topMain" class="nav nav-pills nav-main">
+                                 <li class="dropdown">
+                                    <!-- Quick Links -->
+                                    <a class="dropdown-toggle" href="#">
+                                    QUICK LINKS
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                       <li><a href="#">CUSTOMER SERVICE</a></li>
+                                       <li><a href="#">SELL / RENT PROPERTY</a></li>
+                                       <li><a href="#">HOME LOANS</a></li>
+                                       <li><a href="#">POST YOUR ADS</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </header>
+                  <!-- /Top Nav -->
+                  <div class="col-sm-10 col-sm-offset-2" id="slider">
+                     <ul class="nav nav-tabs">
+                        <li><a data-toggle="tab" href="#buy">BUY</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rent">RENT</a></li>
+                        <li><a data-toggle="tab" href="#projects">PROJECTS</a></li>
+                        <li><a data-toggle="tab" href="#commercial">COMMERCIAL</a></li>
+                        <li><a data-toggle="tab" href="#dealers">DEALERS</a></li>
+                     </ul>
+                     <div class="tab-content">
+                        <div id="buy" class="tab-pane fade  text-left">
+                           <div class="col-sm-2">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All Residential
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-s">
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">Projects</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Residential Projects</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Projects</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Residential</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Residential Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent/Builder Floor</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent House/Villa</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Studio Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Farm House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Serviced Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Commercial</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Showrooms</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> Commercial Office/Space</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Land/Inst. Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Industrial Lands/Plots</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Agricultural/Farm Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Hotel/Resorts</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Guest-House/Banquet-Halls</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Time Share</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Space in Retail Mall</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in Business Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in IT Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ware House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Cold Storage</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Factory</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Manufacturing</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Business center</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-6 "><input type="text" class="form-control slider-input" id="buy-sub" placeholder="Type Location or Project/Society or Keyword"></div>
+                           <div class="col-sm-2"> <input type="button" class="btn btn-primary" value="SEARCH"></div>
+                           <div class="col-sm-12 buy-sub">
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Construction Status
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="radio"><label><input type="radio" name="optradio">Under Construction
+                                                </label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="radio"><label><input type="radio" name="optradio">Ready to move</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Min)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Max)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Bedroom
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b" style="height:250px;overflow-y: scroll;">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Any</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">1 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">2 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">3 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">4 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">5 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">6 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">7 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK +</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Posted By
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Owner</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Builder</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Dealer</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2 pull-right"><input type="button" class="btn btn-primary" value="Clear All"></div>
+                           </div>
+                        </div>
+                        <div id="rent" class="tab-pane active in fade">
+                           <div class="col-sm-2">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Property Type
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-s">
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Residential</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Residential Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent/Builder Floor</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent House/Villa</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Studio Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Farm House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Serviced Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Commercial</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Showrooms</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> Commercial Office/Space</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Land/Inst. Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Industrial Lands/Plots</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Agricultural/Farm Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Hotel/Resorts</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Guest-House/Banquet-Halls</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Time Share</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Space in Retail Mall</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in Business Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in IT Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ware House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Cold Storage</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Factory</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Manufacturing</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Business center</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-6 "><input type="text" class="form-control slider-input" id="rent-sub" placeholder="Type Location or Project/Society or Keyword"></div>
+                           <div class="col-sm-2"> <input type="button" class="btn btn-primary" value="SEARCH"></div>
+                           <div class="col-sm-12 rent-sub">
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Rent Range (Min)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5000</li>
+                                       <li><a href="#"></a>5000</li>
+                                       <li><a href="#"></a>10000</li>
+                                       <li><a href="#"></a>15000</li>
+                                       <li><a href="#"></a>20000</li>
+                                       <li><a href="#"></a>25000</li>
+                                       <li><a href="#"></a>30000</li>
+                                       <li><a href="#"></a>35000</li>
+                                       <li><a href="#"></a>40000</li>
+                                       <li><a href="#"></a>45000</li>
+                                       <li><a href="#"></a>40000</li>
+                                       <li><a href="#"></a>45000</li>
+                                       <li><a href="#"></a>50000</li>
+                                       <li><a href="#"></a>50000 above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Rent Range (Max)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5000</li>
+                                       <li><a href="#"></a>5000</li>
+                                       <li><a href="#"></a>10000</li>
+                                       <li><a href="#"></a>15000</li>
+                                       <li><a href="#"></a>20000</li>
+                                       <li><a href="#"></a>25000</li>
+                                       <li><a href="#"></a>30000</li>
+                                       <li><a href="#"></a>35000</li>
+                                       <li><a href="#"></a>40000</li>
+                                       <li><a href="#"></a>45000</li>
+                                       <li><a href="#"></a>40000</li>
+                                       <li><a href="#"></a>45000</li>
+                                       <li><a href="#"></a>50000</li>
+                                       <li><a href="#"></a>50000 above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Bedroom
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b" style="height:250px;overflow-y: scroll;">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Any</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">1 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">2 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">3 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">4 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">5 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">6 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">7 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK +</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Posted By
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Owner</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Builder</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Dealer</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Search Type
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Rent</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">P.G.</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2 pull-right"><input type="button" class="btn btn-primary" value="Clear All"></div>
+                           </div>
+                        </div>
+                        <div id="projects" class="tab-pane fade">
+                           <div class="col-sm-2">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All Projects
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-s">
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">Residential Projects</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> New launch</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Under Construction</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ready to move</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">Commercial Projects</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> New launch</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Under Construction</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ready to move</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-6 "><input type="text" class="form-control slider-input" id="project-sub" placeholder="Type Location or Project/Society or Keyword"></div>
+                           <div class="col-sm-2"> <input type="button" class="btn btn-primary" value="SEARCH"></div>
+                           <div class="col-sm-12 project-sub">
+                              <div class="col-sm-3">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Min)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Max)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Bedroom
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b" style="height:250px;overflow-y: scroll;">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Any</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">1 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">2 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">3 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">4 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">5 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">6 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">7 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK +</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3 pull-right"><input type="button" class="btn btn-primary" value="Clear All"></div>
+                           </div>
+                        </div>
+                        <div id="commercial" class="tab-pane fade">
+                           <div class="col-sm-2">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All Commercial
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-s">
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Commercial</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Showrooms</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> Commercial Office/Space</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Land/Inst. Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Industrial Lands/Plots</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Agricultural/Farm Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Hotel/Resorts</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Guest-House/Banquet-Halls</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Time Share</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Space in Retail Mall</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in Business Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in IT Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ware House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Cold Storage</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Factory</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Manufacturing</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Business center</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-5 "><input type="text" class="form-control slider-input" id="commercial-sub" placeholder="Type Location or Project/Society or Keyword"></div>
+                           <div class="col-sm-1">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Buy
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-b">
+                                    <li>
+                                       <a href="#">
+                                          <div class="radio"><label><input type="radio" name="optradio">Buy</label>
+                                          </div>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="radio"><label><input type="radio" name="optradio">Lease</label>
+                                          </div>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-2"> <input type="button" class="btn btn-primary" value="SEARCH"></div>
+                           <div class="col-sm-12 commercial-sub">
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Construction Status
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="radio"><label><input type="radio" name="optradio">Under Construction
+                                                </label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="radio"><label><input type="radio" name="optradio">Ready to move</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Min)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Max)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Posted By
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Owner</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Builder</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Dealer</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Area
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b" style="height:250px;overflow-y: scroll;">
+                                       <form class="form-inline" >
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" id="min" placeholder="Min" >
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" id="max" placeholder="Max">
+                                          </div>
+                                          <div class="form-group">
+                                             <label for="sel1">Select Unit:</label>
+                                             <select class="form-control" id="unit">
+                                                <option>Sq.Ft.</option>
+                                                <option>Sq. Meter </option>
+                                                <option>Acres </option>
+                                             
+                                                <option>Marla </option>
+                                                
+                                                <option>Cents </option>
+                                                
+                                                <option>Bigha </option>
+                                              
+                                                <option>Kottah </option>
+                                              
+                                                <option>Kanal </option>
+                                              
+                                                <option>Grounds </option>
+                                                
+                                                <option>Ares </option>
+                                                
+                                                <option>Biswa </option>
+                                               
+                                                <option>Guntha</option>
+                                                
+                                                <option>Aankadam </option>
+                                             
+                                                <option>Hectares </option>
+                                               
+                                                <option>Rood </option>
+                                                
+                                                <option>Chataks</option> 
+                                               
+                                                <option>Perch </option>
+                                                
+                                                <option>Sq. Yards </option>
+                                              
+                                             </select>
+                                          </div>
+                                       </form>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2 pull-right"><input type="button" class="btn btn-primary" value="Clear All"></div>
+                           </div>
+                        </div>
+                        <div id="dealers" class="tab-pane fade">
+                           <div class="col-sm-2">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">All Residential
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-s">
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Residential</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Residential Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent/Builder Floor</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Independent House/Villa</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Studio Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Farm House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Serviced Apartment</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="checkbox"><label><input type="checkbox" value="">All Commercial</label>
+                                          </div>
+                                       </a>
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Shops</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Showrooms</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value=""> Commercial Office/Space</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Commercial Land/Inst. Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Industrial Lands/Plots</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Agricultural/Farm Land</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Hotel/Resorts</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Guest-House/Banquet-Halls</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Time Share</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Space in Retail Mall</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in Business Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Office in IT Park</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Ware House</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Cold Storage</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Factory</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Manufacturing</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Business center</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="#">
+                                                <div class="checkbox"><label><input type="checkbox" value="">Other</label>
+                                                </div>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-7"><input type="text" class="form-control slider-input" id="dealers-sub" placeholder="Type Location or Project/Society or Keyword"></div>
+                           <div class="col-sm-1">
+                              <div class="dropdown">
+                                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Buy
+                                 <span class="caret"></span></button>
+                                 <ul class="dropdown-menu menu-b">
+                                    <li>
+                                       <a href="#">
+                                          <div class="radio"><label><input type="radio" name="optradio">Buy</label>
+                                          </div>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="radio"><label><input type="radio" name="optradio">Rent</label>
+                                          </div>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="#">
+                                          <div class="radio"><label><input type="radio" name="optradio">P.G.</label>
+                                          </div>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-sm-2"> <input type="button" class="btn btn-primary" value="SEARCH"></div>
+                           <div class="col-sm-12 dealers-sub">
+                              <div class="col-sm-4">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Min)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-4">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Price Range (Max)
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b">
+                                       <li><a href="#"></a>Below 5 Lacs</li>
+                                       <li><a href="#"></a>5 Lacs</li>
+                                       <li><a href="#"></a>10 Lacs</li>
+                                       <li><a href="#"></a>15 Lacs</li>
+                                       <li><a href="#"></a>20 Lacs</li>
+                                       <li><a href="#"></a>25 Lacs</li>
+                                       <li><a href="#"></a>30 Lacs</li>
+                                       <li><a href="#"></a>35Lacs</li>
+                                       <li><a href="#"></a>40 Lacs</li>
+                                       <li><a href="#"></a>45 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs</li>
+                                       <li><a href="#"></a>50 Lacs above</li>
+                                       <li><a href="#"></a>On Request</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                 <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Bedroom
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu menu-b" style="height:250px;overflow-y: scroll;">
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">Any</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">1 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">2 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">3 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">4 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">5 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">6 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">7 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="#">
+                                             <div class="checkbox"><label><input type="checkbox" value="">8 BHK +</label>
+                                             </div>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2 pull-right"><input type="button" class="btn btn-primary" value="Clear All"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>

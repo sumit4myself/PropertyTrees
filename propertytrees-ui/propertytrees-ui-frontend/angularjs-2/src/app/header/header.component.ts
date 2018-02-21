@@ -31,7 +31,7 @@ Ftoggle(){
     $('#forget').hide();
     } 
 
-  constructor(private userServ: UserService) { }
+  constructor(private userServ: UserService,private searchFilter: SearchFilter) { }
 
   ngOnInit() {
   }

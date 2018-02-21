@@ -73,6 +73,10 @@
 	  $(aId + ' .panel-collapse.in').collapse('hide');
 	}
 	   
+	    $('[data-toggle="popover"]').popover({
+                       placement : 'top',
+                       trigger : 'hover'
+                   });
 });
 
 		$(window).load(function() {

@@ -153,15 +153,15 @@
 								 	<!--<form (ngSubmit)="onSubmit()" #loginForm="ngForm">-->
 								<ul>
 								 <li>First Name</li>
-								<li><input type="text" required placeholder="First Name" [(ngModel)]="data.firstName" class="form-control"></li>
+								<li><input type="text" required name="firstName" placeholder="First Name" [(ngModel)]="data.firstName" class="form-control"></li>
 								 <li>Last Name</li>
-								<li><input type="text" required placeholder="Last Name" [(ngModel)]="data.lastName" class="form-control"></li>
+								<li><input type="text" required name="lastName" placeholder="Last Name" [(ngModel)]="data.lastName" class="form-control"></li>
 								<li>Email</li>
-								<li><input type="email" required placeholder="Email Id" [(ngModel)]="data.email" class="form-control"></li>
+								<li><input type="email" required name="email" placeholder="Email Id" [(ngModel)]="data.email" class="form-control"></li>
 								<li>Password</li>
-								<li><input type="password" required placeholder="Password" [(ngModel)]="data.password" class="form-control"></li>
+								<li><input type="password" required name="password" placeholder="Password" [(ngModel)]="data.password" class="form-control"></li>
 								<li>Confirm Password</li>
-								<li><input type="password" required placeholder="Confirm Password" [(ngModel)]="data.repassword" class="form-control"></li>
+								<li><input type="password" required name="repassword"  placeholder="Confirm Password" [(ngModel)]="data.repassword" class="form-control"></li>
 							   <br> <li><button type="submit" name="userRegBtn" class="btn btn-default"  >Signup Now</button></li>
 								 <div style="display:none;" class="sign greenglow">
 									 <li>   <i class="icon-check"></i><br>
