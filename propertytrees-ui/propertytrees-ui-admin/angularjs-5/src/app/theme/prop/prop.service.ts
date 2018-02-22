@@ -243,6 +243,8 @@ getPropOnFloorOption(): Array<IOption> {
     }
 
     save(propObject): void {
+    if(propObject.fileToUpload)
+    {
     for (var i = 0; i < propObject.fileToUpload.length; i++) {
                 var file = propObject.fileToUpload[i];
                 if ('name' in file) {
@@ -252,7 +254,7 @@ getPropOnFloorOption(): Array<IOption> {
                     console.log("size: " + file.size + " bytes");
                 }
             }
-    
+    }
         console.log(JSON.stringify(propObject));
         this.http.post("http://localhost:9001/user/login/",propObject).subscribe(
       (res: Response) => {

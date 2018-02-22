@@ -3,7 +3,7 @@
     <!-- Basic Form Inputs card start -->
     <app-card [title]="'Property'" [cardOptionBlock]="true">
     <form>
-      <wizard >
+      <wizard>
   <wizard-step [canExit]="canExitStep1" stepTitle="Property">
           
           <div class="form-group row"></div>
@@ -114,7 +114,7 @@
         <div class="form-group row">Preferred Agreement Type : </div>
          <div class="form-group row">
             &nbsp;&nbsp;Any  <ui-switch class="js-single" [(ngModel)]="propModel.details.rentFamily" color="#4680ff" name="rentFamily" switchColor="#fff" size="medium" checked></ui-switch> CompanyLeaseType</div></div>
-            <button type="button" nextStep>Next Step</button>
+            <button type="button" class="btn btn-primary btn-round nextButton" nextStep>Next Step</button>
   </wizard-step>
 
   <wizard-step stepTitle="Location">
@@ -139,8 +139,8 @@
         <div class="form-group row"></div>
         <div class="form-group row"></div>
         <div class="form-group row"></div>
-        <button type="button" previousStep>Go to previous step</button>
-    <button type="button" nextStep>Go to next step</button>
+        <button type="button " class="btn btn-primary btn-round preButton" previousStep>Go to previous step</button>
+    <button type="button " class="btn btn-primary btn-round nextButton" nextStep>Go to next step</button>
   </wizard-step>
 
   <wizard-step stepTitle="Details" >
@@ -344,8 +344,8 @@
           </div>
         </div>
         </div>
-        <button type="button" previousStep>Go to previous step</button>
-    <button type="button" nextStep>Go to next step</button>
+        <button type="button " class="btn btn-primary btn-round preButton" previousStep>Go to previous step</button>
+    <button type="button " class="btn btn-primary btn-round nextButton" nextStep>Go to next step</button>
   </wizard-step>
   <wizard-step stepTitle="Pricing">
     <div class="form-group row"></div>
@@ -427,8 +427,8 @@
         <div class="form-group row"></div>
         <div class="form-group row"></div>
         <div class="form-group row"></div>
-        <button type="button" previousStep>Go to previous step</button>
-    <button type="button" nextStep>Go to next step</button>
+        <button type="button " class="btn btn-primary btn-round preButton" previousStep>Go to previous step</button>
+    <button type="button " class="btn btn-primary btn-round nextButton" nextStep>Go to next step</button>
   </wizard-step>
   <wizard-step stepTitle="Features">
      <div [ngSwitch]="isCompleted">
@@ -437,7 +437,7 @@
 
     <div class="form-group row">
           <label class="col-sm-2">Image:</label>
-          <input type="file"
+          <input class="col-sm-2" type="file"
            id="file" multiple
            (change)="handleFileInput($event.target.files)">
         </div>
@@ -538,8 +538,8 @@
         <h4>Thank you! You have completed all the steps.</h4>
       </div>
     </div>
-    <button type="button" previousStep>Previous Step</button>
-    <button type="button" (click)="saveMethod()">Finish</button>
+    <button *ngIf="!propModel.isSubmitted" type="button " class="btn btn-primary btn-round preButton" previousStep>Previous Step</button>
+    <button *ngIf="!propModel.isSubmitted" type="button " class="btn btn-primary btn-round nextButton" (click)="saveMethod()">Finish</button>
   </wizard-step> </wizard>
 </form>
 
