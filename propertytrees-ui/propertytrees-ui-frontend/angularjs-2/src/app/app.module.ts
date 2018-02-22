@@ -22,6 +22,13 @@ import { CommercialComponent } from './commercial/commercial.component';
 import { UserService } from './header/sign_up.service';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { SubFooterComponent } from './sub-footer/sub-footer.component';
+import { OurservicesComponent } from './ourservices/ourservices.component';
+import { OurclientsComponent } from './ourclients/ourclients.component';
+import { OurpricingComponent } from './ourpricing/ourpricing.component';
+import { AboutComponent } from './about/about.component';
+import { ContactusComponent } from './contactus/contactus.component';
+
+
 
 
 @NgModule({
@@ -43,7 +50,13 @@ import { SubFooterComponent } from './sub-footer/sub-footer.component';
     PropertyGalleryComponent,
     QuestionComponent,
     SubHeaderComponent,
-    SubFooterComponent
+    SubFooterComponent,
+    AboutComponent,
+    OurservicesComponent,
+    OurclientsComponent,
+    OurpricingComponent,
+    ContactusComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -90,6 +103,31 @@ import { SubFooterComponent } from './sub-footer/sub-footer.component';
     path: 'question' ,
     component: QuestionComponent
     },
+
+    {
+      path: 'about' ,
+      component: AboutComponent
+      },
+
+      {
+     path: 'ourpricing' ,
+     component: OurpricingComponent
+     },
+      {
+      path: 'ourclients' ,
+      component: OurclientsComponent
+      },
+      {
+      path: 'ourservices' ,
+      component: OurservicesComponent
+       },
+            {
+              path: 'contactus' ,
+              component: ContactusComponent
+              },
+
+
+
     {
     path: 'gallery' ,
     component: PropertyGalleryComponent
