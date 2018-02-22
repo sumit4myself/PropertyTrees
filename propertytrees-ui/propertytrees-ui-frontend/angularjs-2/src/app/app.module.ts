@@ -26,8 +26,7 @@ import { SubFooterComponent } from './sub-footer/sub-footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent,    
     HeaderComponent,
     HomeComponent,
     FooterComponent,
