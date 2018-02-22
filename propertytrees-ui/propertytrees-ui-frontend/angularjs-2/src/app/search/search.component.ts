@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from './search.service';
-import { Router} from '@angular/router';
+import { RouterModule,Router} from '@angular/router';
+// import {  } from '@angular/router';
 import {SearchFilter} from '../common/search.filter';
 
 @Component({
@@ -15,10 +16,10 @@ private type: String="buy";
 
 searchListMethod()
 {
-	console.log(JSON.stringify(this.searchFilter));
+	console.log(JSON.stringify(this.searchFilter)); 
 	if(this.searchFilter.type == 'astrologer' || this.searchFilter.type == 'architect' || this.searchFilter.type == 'consultant' || this.searchFilter.type == 'dealer' || this.searchFilter.type == 'commercial')
 	{
-	this.router.navigate(["/"+this.searchFilter.type,{data:JSON.stringify(this.searchFilter)}]);
+     	this.router.navigate(["/"+this.searchFilter.type,{data:JSON.stringify(this.searchFilter)}]);
 	}
 	else
 	{

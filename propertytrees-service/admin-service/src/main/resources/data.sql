@@ -23,7 +23,7 @@ insert into photo ( id,uuid, url) values ( 1,'uuid1','/assets/images/property-ga
 insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-gallery/ls_banner1.gif');
 insert into photo ( id,uuid, url) values ( 3,'uuid3','/assets/images/property-gallery/ls_banner2.gif');
 insert into photo ( id,uuid, url) values ( 4,'uuid4','/assets/images/property-gallery/ls_banner3.gif');
-insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/ls_banner3.gif');
+insert into photo ( id,uuid, url) values ( 5,'uuid5','/assets/images/property-gallery/ls_banner4.gif');
 insert into photo ( id,uuid, url) values ( 6,'uuid6','/assets/images/projects/slider1.png');
 insert into photo ( id,uuid, url) values ( 7,'uuid7','/assets/images/projects/slider2.png');
 insert into photo ( id,uuid, url) values ( 8,'uuid8','/assets/images/projects/slider3.png');
@@ -37,6 +37,7 @@ insert into photo ( id,uuid, url) values ( 15,'uuid15','/assets/images/projects/
 insert into photo ( id,uuid, url) values ( 16,'uuid16','/assets/images/projects/slider11.png');
 insert into photo ( id,uuid, url) values ( 17,'uuid17','/assets/images/projects/slider12.png');
 insert into photo ( id,uuid, url) values ( 18,'uuid18','/assets/images/projects/slider13.png');
+insert into photo ( id,uuid, url) values ( 19,'uuid18','/assets/images/projects/slider13.png');
 
 
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 1,'uuid1','SIDE','www.propertytrees.com',1) ;
