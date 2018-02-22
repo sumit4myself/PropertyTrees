@@ -37,7 +37,7 @@ insert into photo ( id,uuid, url) values ( 15,'uuid15','/assets/images/projects/
 insert into photo ( id,uuid, url) values ( 16,'uuid16','/assets/images/projects/slider11.png');
 insert into photo ( id,uuid, url) values ( 17,'uuid17','/assets/images/projects/slider12.png');
 insert into photo ( id,uuid, url) values ( 18,'uuid18','/assets/images/projects/slider13.png');
-insert into photo ( id,uuid, url) values ( 19,'uuid18','/assets/images/projects/slider13.png');
+
 
 
 insert into banner ( id , uuid ,banner_type,website ,photo_id ) values ( 1,'uuid1','SIDE','www.propertytrees.com',1) ;

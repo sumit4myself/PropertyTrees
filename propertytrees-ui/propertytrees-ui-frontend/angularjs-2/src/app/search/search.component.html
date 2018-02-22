@@ -3,11 +3,13 @@
    <ul class="nav nav-tabs"> 
       <li [class.active]="searchFilter.type=='buy'" ><a (click)="searchMethod('buy')">BUY</a></li>      
       <li [class.active]="searchFilter.type=='rent'"><a (click)="searchMethod('rent')">RENT</a></li>
-      <li [class.active]="searchFilter.type=='dealer'"><a (click)="searchListMethod()">DEALER</a></li>
       <li [class.active]="searchFilter.type=='commercial'"><a (click)="searchMethod('commercial')">COMMERCIAL</a></li>
+      <li [class.active]="searchFilter.type=='dealer'"><a (click)="searchMethod('dealer')">DEALER</a></li>
       <li [class.active]="searchFilter.type=='astrologer'"><a (click)="searchMethod('astrologer')">VASTU ASTROLOGER</a></li>
       <li [class.active]="searchFilter.type=='architect'"><a  (click)="searchMethod('architect')">ARCHITECT</a></li>
       <li [class.active]="searchFilter.type=='consultant'"><a (click)="searchMethod('consultant')">LEGAL CONSULTANT</a></li>
+      
+
    </ul>
    <div class="tab-content">
       <div id="rent" class="tab-pane active in fade">

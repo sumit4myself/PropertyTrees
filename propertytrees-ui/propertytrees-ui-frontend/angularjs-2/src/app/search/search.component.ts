@@ -70,6 +70,14 @@ else if(param=='architect')
 	console.log(this.search);
 }
 	
+// else if(param=='dealers')
+// {
+// 	this.search=[];
+// 	this.search.push("dealers1");
+// 	this.search.push("dealers2");
+// 	console.log(this.search);
+// }
+
 }
   constructor(private searchService: SearchService, private router:Router, private searchFilter: SearchFilter) {
   
