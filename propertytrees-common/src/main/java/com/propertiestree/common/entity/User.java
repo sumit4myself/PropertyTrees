@@ -2,6 +2,7 @@ package com.propertiestree.common.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +30,9 @@ public class User implements Serializable {
 	private String name;
 	private String emailId;
 	private String password;
-	private String city;
+	@OneToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "city_id")
+	private City city;
 	private String mobile;
 	private String mobile2;
 	private String mobile3;
@@ -76,11 +81,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getCity() {
+	public City getCity() {
 		return city;
 	}
 
-	public void setCity(String city) {
+	public void setCity(City city) {
 		this.city = city;
 	}
 

@@ -27,6 +27,10 @@ public class AbstractAdminController {
 	public static final String PROPERTY_NEW_PROJECTS_SEARCH_URI = PROPERTY_NEW_PROJECTS_URI;
 
 	public static final String PROPERTY_LOCATION_URI = "/location/city";
+	
+	public static final String PROPERTY_LOCATION_WITH_COUNT_PROP_URI = "/location/city/count/property";
+	
+	public static final String PROPERTY_LOCATION_WITH_COUNT_DEALER_URI = "/location/city/count/dealer";
 
 	public static final String USER_BASE_URI = "/user";
 

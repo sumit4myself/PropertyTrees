@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.propertiestree.admin.api.model.SearchCriteria;
 import com.propertiestree.admin.exception.UserNotFoundException;
 import com.propertiestree.admin.helper.UUIDGenerator;
+import com.propertiestree.admin.repository.LocationRepository;
 import com.propertiestree.admin.repository.UserRepository;
 import com.propertiestree.admin.search.SearchPredicateBuilder;
 import com.propertiestree.admin.service.UserService;
@@ -27,6 +28,8 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repository;
 	@Autowired
 	private UUIDGenerator uuidGenerator;
+	@Autowired
+	private LocationRepository locationRepository;
 	
 	@Autowired
 	@Qualifier("userSearchPredicateBuilder")
@@ -37,6 +40,7 @@ public class UserServiceImpl implements UserService {
 		User user = new User();
 		BeanUtils.copyProperties(registration, user);
 		user.setUuid(uuidGenerator.nextLargeUID());
+		user.setCity(locationRepository.findByUuid(registration.getCity()).get());
 		return repository.save(user);
 	}
 

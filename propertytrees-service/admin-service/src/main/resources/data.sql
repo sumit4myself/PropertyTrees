@@ -15,9 +15,9 @@ insert into CITY values
 (11,'Delhi East','UUID001CT11',201);
 
 insert into user_account
-(city, email_id, landline_phone, landline_phone2, mobile, mobile2, mobile3, name, password, type, uuid, id) 
+(city_id, email_id, landline_phone, landline_phone2, mobile, mobile2, mobile3, name, password, type, uuid, id) 
 values
-('Noida', 'abc.xyz@mail.com', '', '', '9999999999', '', '', 'Test User', 'My@pass', 'BUYER', 'UUIDDUMY001', '10');
+(10, 'abc.xyz@mail.com', '', '', '9999999999', '', '', 'Test User', 'My@pass', 'BUYER', 'UUIDDUMY001', '10');
 
 insert into photo ( id,uuid, url) values ( 1,'uuid1','/assets/images/property-gallery/ls_banner.gif');
 insert into photo ( id,uuid, url) values ( 2,'uuid2','/assets/images/property-gallery/ls_banner1.gif');

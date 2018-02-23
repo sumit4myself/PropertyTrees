@@ -29,7 +29,7 @@ public class UserSearchPredicateBuilder extends SearchPredicateBuilder {
 		for (SearchCriteria criteria : criterias) {
 			switch (criteria.getField()) {
 				case "city": {
-					cityExpression = applyCityOperator(cityExpression, user.city,
+					cityExpression = applyCityOperator(cityExpression, user.city.name,
 							criteria);
 					break;
 				}

@@ -12,5 +12,5 @@ public interface UserRepository extends AbstractRepository<User,Long> {
 	Optional<User> findByUuid(String uuid);
     
     void deleteByUuid(String uuid);
-
+    
 }

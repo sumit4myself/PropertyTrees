@@ -23,7 +23,7 @@ public class LeaglConsultantSearchPredicateBuilder extends SearchPredicateBuilde
 		for (SearchCriteria criteria : criterias) {
 			switch (criteria.getField()) {
 				case "city": {
-					cityExpression = applyCityOperator(cityExpression, architect.city,
+					cityExpression = applyCityOperator(cityExpression, architect.city.name,
 							criteria);
 					break;
 				}

@@ -26,7 +26,7 @@ public class AgentSearchPredicateBuilder extends SearchPredicateBuilder {
 		for (SearchCriteria criteria : criterias) {
 			switch (criteria.getField()) {
 				case "city": {
-					cityExpression = applyCityOperator(cityExpression, agent.city,
+					cityExpression = applyCityOperator(cityExpression, agent.city.name,
 							criteria);
 					break;
 				}
