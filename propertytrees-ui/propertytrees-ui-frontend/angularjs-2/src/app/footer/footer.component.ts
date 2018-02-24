@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
 	console.log(JSON.stringify(myroute)); 
 	if(myroute == 'about' || myroute == 'ourservices' ||  myroute == 'ourclients' ||  myroute == 'ourpricing' ||  myroute == 'contactus' ||  myroute == 'customerSupport')
 	{
-     	this.router.navigate(["/"+myroute,{data:JSON.stringify(myroute)}]);
+     	this.router.navigate(["/"+myroute]);
 	}
 	else
 	{
