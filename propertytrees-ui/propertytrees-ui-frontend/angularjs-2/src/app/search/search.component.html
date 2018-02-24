@@ -8,6 +8,7 @@
       <li [class.active]="searchFilter.type=='astrologer'"><a (click)="searchMethod('astrologer')">VASTU ASTROLOGER</a></li>
       <li [class.active]="searchFilter.type=='architect'"><a  (click)="searchMethod('architect')">ARCHITECT</a></li>
       <li [class.active]="searchFilter.type=='consultant'"><a (click)="searchMethod('consultant')">LEGAL CONSULTANT</a></li>
+     
       
 
    </ul>
@@ -195,7 +196,7 @@
          </div>
          <div class="col-sm-6 "><input type="text" [(ngModel)]="searchFilter.searchValue" class="form-control slider-input" id="buy-sub" placeholder="Type Location or Project/Society or Keyword"></div>
          <div class="col-sm-2"> <a (click)="searchListMethod()"> <button type="button" class="btn btn-primary" (click)="searchListMethod()">Search</button></a></div>
-         <div class="col-sm-12 buy-sub" *ngIf="searchFilter.type != 'astrologer' && searchFilter.type != 'architect' && searchFilter.type != 'commercial' && searchFilter.type != 'dealer' && searchFilter.type != 'consultant'" style="display: none;">
+         <div class="col-sm-12 buy-sub" *ngIf="searchFilter.type != 'astrologer' && searchFilter.type != 'architect' && searchFilter.type != 'commercial' && searchFilter.type != 'dealer' && searchFilter.type != 'consultant' && searchFilter.type != 'about'" style="display: none;">
             <div class="col-sm-2">
                <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Construction Status

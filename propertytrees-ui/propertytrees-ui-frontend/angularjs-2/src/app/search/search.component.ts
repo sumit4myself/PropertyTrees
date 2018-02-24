@@ -51,6 +51,7 @@ else if(param=='projects')
 }
 else if(param=='commercial')
 {
+	
 	this.search=[];
 	this.search=this.searchService.buyService1();
 	console.log(this.search);
@@ -70,13 +71,22 @@ else if(param=='architect')
 	console.log(this.search);
 }
 	
-// else if(param=='dealers')
-// {
-// 	this.search=[];
-// 	this.search.push("dealers1");
-// 	this.search.push("dealers2");
-// 	console.log(this.search);
-// }
+ else if(param=='dealers')
+ {
+ 	this.search=[];
+ 	this.search.push("dealers1");
+	this.search.push("dealers2");
+	console.log(this.search);
+ }
+
+
+ else if(param=='about')
+ {
+ 	this.search=[];
+ 	this.search.push("about1");
+	this.search.push("about2");
+	console.log(this.search);
+ }
 
 }
   constructor(private searchService: SearchService, private router:Router, private searchFilter: SearchFilter) {

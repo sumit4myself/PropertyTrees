@@ -928,7 +928,8 @@ content: "Collapse All";
 background: #415f38;
 }
 #header.gray {
-background-color: #4f4f4f !important;
+background-color: #444 !important;
+    
 }
 
 @media only screen and (max-width: 480px){

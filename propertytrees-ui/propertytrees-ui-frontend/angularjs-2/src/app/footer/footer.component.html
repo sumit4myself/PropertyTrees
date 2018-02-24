@@ -18,12 +18,19 @@
 				<!-- COMPANY -->
 				<h4 class="letter-spacing-1">COMPANY</h4>
 				<ul class="footer-links list-unstyled">
-					<li><a (click)="searchFilter.onLinkClick('home1')" >Home</a></li>
-					<li><a (click)="searchFilter.onLinkClick('about')">About Us</a></li>
+					<!-- <li><a (click)="searchFilter.onLinkClick('')" >Home</a></li> -->
+					
+					<li><a href="" >Home</a></li>
+					<li><a (click)="navigation_route('about')" >About Us</a></li>
+					<li><a (click)="navigation_route('ourservices')" >Our Services</a></li>
+					<li><a (click)="navigation_route('ourclients')" >Our Clients</a></li>
+					<li><a (click)="navigation_route('ourpricing')" >Our Pricing</a></li>
+					<li><a (click)="navigation_route('contactus')" >Contact Us</a></li>
+					<!-- <li><a (click)="searchFilter.onLinkClick('about')">About Us</a></li>
 					<li><a (click)="searchFilter.onLinkClick('ourservices')">Our Services</a></li>
 					<li><a (click)="searchFilter.onLinkClick('ourclients')">Our Clients</a></li>
 					<li><a (click)="searchFilter.onLinkClick('ourpricing')">Our Pricing</a></li>
-					<li><a (click)="searchFilter.onLinkClick('contactus')">Contact Us</a></li>
+					<li><a (click)="searchFilter.onLinkClick('contactus')">Contact Us</a></li> -->
 				</ul>
 				<!-- /COMPANY -->
 

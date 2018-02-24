@@ -40,7 +40,7 @@
 
     </div>
 
-    <a class="slidetop-toggle" href="#"><!-- toggle button -->
+<a class="slidetop-toggle" href="#"><!-- toggle button --> 
     </a>
 
 </div>
@@ -264,22 +264,20 @@
 										<a href="#">HOME</a>
 									</li>
 								-->
-                        <ul id="topMain" class="nav nav-pills nav-main">
-
-
-                            <li class="dropdown">
-                                <!-- Quick Links -->
-                                <a class="dropdown-toggle" href="#">
-											QUICK LINKS
-										</a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#">CUSTOMER SERVICE</a></li>
-                                    <li><a href="#">SELL / RENT PROPERTY</a></li>
-                                    <li><a href="#">HOME LOANS</a></li>
-                                    <li><a href="#">POST YOUR ADS</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                                <ul id="topMain" class="nav nav-pills nav-main">
+								
+                                        <li class="dropdown"><!-- Quick Links -->
+                                               <a class="dropdown-toggle" (click)="navigation_route('customerSupport')" >
+                                                    
+                                                   Customer Support
+                                               </a>
+                                           </li>
+                                           <li class="dropdown">
+                                               <a class="dropdown-toggle" (click)="searchFilter.onAdminPanel()">
+                                                   Post Property Free
+                                               </a>
+                                           </li>
+                                       </ul>
 
                     </nav>
                 </div>
@@ -290,7 +288,6 @@
 
         <app-search></app-search>
     </div>
-
 
     <!-- Listing -->
     <section class="top-header">

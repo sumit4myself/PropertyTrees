@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import { Router } from '@angular/router/src/router';
 
 @Component({
   selector: 'app-legal-consultant',
@@ -8,12 +9,20 @@ import { ActivatedRoute} from '@angular/router';
 })
 export class LegalConsultantComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute) { 
-	  console.log("Inside Constructor");
-	  console.log(this.router.snapshot.params["data"]);
+  navigation_route(myroute)
+  {
+    console.log(JSON.stringify(myroute)); 
+    if( myroute == 'customerSupport')
+    {
+         this.router.navigate(["/"+myroute,{data:JSON.stringify(myroute)}]);
+    }
+    else
+    {
+    this.router.navigate(["/",{data:JSON.stringify("home")}]);
+    }
   }
-
+  constructor(private router:Router) { }
   ngOnInit() {
-  }
 
-}
+  }
+} 
