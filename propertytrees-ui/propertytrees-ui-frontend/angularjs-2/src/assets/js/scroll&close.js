@@ -46,7 +46,7 @@
 
 	 
 	   
-	<!--Side menu -->
+	// <!--Side menu -->
 			
     function Ftoggle(){
         $(".forgot").slideToggle('slow');
