@@ -27,6 +27,7 @@ import { OurclientsComponent } from './ourclients/ourclients.component';
 import { OurpricingComponent } from './ourpricing/ourpricing.component';
 import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DealerListComponent } from './dealer-list/dealer-list.component';
 
 
 
@@ -55,7 +56,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     OurservicesComponent,
     OurclientsComponent,
     OurpricingComponent,
-    ContactusComponent
+    ContactusComponent,
+    DealerListComponent
     
   ],
   imports: [
@@ -77,8 +79,16 @@ import { ContactusComponent } from './contactus/contactus.component';
     component: DealersComponent
     },
     {
+    path: 'project' ,
+    component: ProjectsComponent
+    },
+    {
     path: 'astrologer' ,
     component: AstrologerComponent
+    },
+    {
+    path: 'dealerList' ,
+    component: DealerListComponent
     }
     ,
     {

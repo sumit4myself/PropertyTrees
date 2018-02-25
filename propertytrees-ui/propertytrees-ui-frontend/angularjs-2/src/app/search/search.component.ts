@@ -17,9 +17,13 @@ private type: String="buy";
 searchListMethod()
 {
 	console.log(JSON.stringify(this.searchFilter)); 
-	if(this.searchFilter.type == 'astrologer' || this.searchFilter.type == 'architect' || this.searchFilter.type == 'consultant' || this.searchFilter.type == 'dealer' || this.searchFilter.type == 'commercial')
+	if(this.searchFilter.type == 'astrologer' || this.searchFilter.type == 'architect' || this.searchFilter.type == 'consultant' || this.searchFilter.type == 'commercial')
 	{
      	this.router.navigate(["/"+this.searchFilter.type,{data:JSON.stringify(this.searchFilter)}]);
+	}
+	else if(this.searchFilter.type == 'dealer')
+	{
+	this.router.navigate(["/dealerList",{data:JSON.stringify(this.searchFilter)}]);
 	}
 	else
 	{
