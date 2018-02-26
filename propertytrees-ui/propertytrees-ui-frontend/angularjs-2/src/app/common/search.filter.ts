@@ -10,7 +10,7 @@ promiseCity: Promise<String[]>= this.getCity();
 
    onLinkClick(x,y)
 {
-	window.open(x+"?id="+y, "_blank");
+	window.open("#/"+x+"?id="+y, "_blank");
 }
 
 onAdminPanel()

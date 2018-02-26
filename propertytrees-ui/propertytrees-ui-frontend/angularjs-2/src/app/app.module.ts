@@ -28,7 +28,7 @@ import { OurpricingComponent } from './ourpricing/ourpricing.component';
 import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DealerListComponent } from './dealer-list/dealer-list.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -144,7 +144,7 @@ import { DealerListComponent } from './dealer-list/dealer-list.component';
     }
     ])
   ],
-  providers: [UserService],
+  providers: [UserService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
